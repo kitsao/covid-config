@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>Laboratory Information</h:title>
+    <model>
+      <instance>
+        <laboratory_information delimiter="#" id="laboratory_information" prefix="J1!laboratory_information!" version="2020-03-29 09:24:45">
+          <inputs>
+            <meta>
+              <location>
+                <lat/>
+                <long/>
+                <error/>
+                <message/>
+              </location>
+            </meta>
+            <source>user</source>
+            <source_id/>
+            <contact>
+              <_id/>
+              <name/>
+            </contact>
+            <parent>
+              <parent>
+                <contact>
+                  <name/>
+                  <phone/>
+                </contact>
+              </parent>
+            </parent>
+          </inputs>
+          <patient_id/>
+          <patient_name/>
+          <lab_information>
+            <preliminary_results/>
+            <lab_confirmation_date/>
+          </lab_information>
+          <meta tag="hidden">
+            <instanceID/>
+          </meta>
+        </laboratory_information>
+      </instance>
+      <instance id="contact-summary"/>
+      <bind nodeset="/laboratory_information/inputs" relevant="./source = 'user'"/>
+      <bind nodeset="/laboratory_information/inputs/source" type="string"/>
+      <bind nodeset="/laboratory_information/inputs/source_id" type="string"/>
+      <bind nodeset="/laboratory_information/inputs/contact/_id" type="db:person"/>
+      <bind nodeset="/laboratory_information/inputs/contact/name" type="string"/>
+      <bind nodeset="/laboratory_information/inputs/parent/parent/contact/name" type="string"/>
+      <bind nodeset="/laboratory_information/inputs/parent/parent/contact/phone" type="string"/>
+      <bind calculate="../inputs/contact/_id" nodeset="/laboratory_information/patient_id" type="string"/>
+      <bind calculate="../inputs/contact/name" nodeset="/laboratory_information/patient_name" type="string"/>
+      <bind nodeset="/laboratory_information/lab_information/preliminary_results" required="true()" type="select1"/>
+      <bind nodeset="/laboratory_information/lab_information/lab_confirmation_date" required="true()" type="date"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/laboratory_information/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body class="pages">
+    <group appearance="field-list" ref="/laboratory_information/inputs">
+      <label>Patient</label>
+      <group ref="/laboratory_information/inputs/contact">
+        <label>Contact</label>
+        <input appearance="db-object" ref="/laboratory_information/inputs/contact/_id">
+          <label>ID of patient</label>
+        </input>
+      </group>
+      <group ref="/laboratory_information/inputs/parent">
+        <label>Parent</label>
+        <group ref="/laboratory_information/inputs/parent/parent">
+          <label>Parent</label>
+          <group ref="/laboratory_information/inputs/parent/parent/contact">
+            <label>Contact</label>
+          </group>
+        </group>
+      </group>
+    </group>
+    <group appearance="field-list" ref="/laboratory_information/lab_information">
+      <label>Laboratory information</label>
+      <select1 ref="/laboratory_information/lab_information/preliminary_results">
+        <label>Preliminary lab results:</label>
+        <item>
+          <label>Positive</label>
+          <value>pos</value>
+        </item>
+        <item>
+          <label>Negative</label>
+          <value>neg</value>
+        </item>
+      </select1>
+      <input ref="/laboratory_information/lab_information/lab_confirmation_date">
+        <label>Date of laboratory confirmation:</label>
+      </input>
+    </group>
+  </h:body>
+</h:html>

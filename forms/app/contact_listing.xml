@@ -1,0 +1,3072 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>Contact Listing Form</h:title>
+    <model>
+      <instance>
+        <contact_listing delimiter="#" id="contact_listing" prefix="J1!contact_listing!" version="2019-08-15">
+          <inputs>
+            <meta>
+              <location>
+                <lat/>
+                <long/>
+                <error/>
+                <message/>
+              </location>
+            </meta>
+            <source>user</source>
+            <source_id/>
+            <contact>
+              <_id/>
+              <name/>
+              <parent/>
+            </contact>
+          </inputs>
+          <place_id/>
+          <group_case>
+            <outbreak_case_id/>
+            <family_name/>
+            <given_names/>
+            <household_head/>
+            <address/>
+            <town/>
+            <county/>
+            <subcounty/>
+            <date_of_symptom_onset/>
+            <location/>
+            <contacts_identified/>
+            <contact db-doc="true" jr:template="">
+              <parent/>
+              <family_name/>
+              <given_names/>
+              <sex/>
+              <date_of_birth/>
+              <init>
+                <age/>
+                <age_months/>
+                <ephemeral_months/>
+                <ephemeral_years/>
+                <dob_approx/>
+                <dob_iso/>
+              </init>
+              <role/>
+              <relation_to_case/>
+              <date_of_last_contact/>
+              <type_of_contact/>
+              <household_head/>
+              <subcounty/>
+              <town/>
+              <address/>
+              <phone/>
+              <healthcare_worker/>
+              <facility/>
+              <created_by_doc db-doc-ref="/contact_listing"/>
+            </contact>
+          </group_case>
+          <meta tag="hidden">
+            <instanceID/>
+          </meta>
+        </contact_listing>
+      </instance>
+      <instance id="contact-summary"/>
+      <bind nodeset="/contact_listing/inputs" relevant="./source = 'user'"/>
+      <bind nodeset="/contact_listing/inputs/source" type="string"/>
+      <bind nodeset="/contact_listing/inputs/source_id" type="string"/>
+      <bind nodeset="/contact_listing/inputs/contact/_id" type="db:person"/>
+      <bind nodeset="/contact_listing/inputs/contact/name" type="string"/>
+      <bind nodeset="/contact_listing/inputs/contact/parent" type="string"/>
+      <bind calculate="../inputs/contact/_id" nodeset="/contact_listing/place_id" type="string"/>
+      <bind nodeset="/contact_listing/group_case/outbreak_case_id" required="true()" type="int"/>
+      <bind nodeset="/contact_listing/group_case/family_name" required="true()" type="string"/>
+      <bind nodeset="/contact_listing/group_case/given_names" required="true()" type="string"/>
+      <bind nodeset="/contact_listing/group_case/household_head" required="true()" type="string"/>
+      <bind nodeset="/contact_listing/group_case/address" required="true()" type="string"/>
+      <bind nodeset="/contact_listing/group_case/town" required="true()" type="string"/>
+      <bind nodeset="/contact_listing/group_case/county" required="true()" type="select1"/>
+      <bind nodeset="/contact_listing/group_case/subcounty" required="true()" type="select1"/>
+      <bind constraint="floor(decimal-date-time(.)) &lt;= floor(decimal-date-time(today()))" jr:constraintMsg="Date should not be in future" nodeset="/contact_listing/group_case/date_of_symptom_onset" required="true()" type="date"/>
+      <bind nodeset="/contact_listing/group_case/location" required="true()" type="string"/>
+      <bind nodeset="/contact_listing/group_case/contacts_identified" required="true()" type="select1"/>
+      <bind nodeset="/contact_listing/group_case/contact" relevant=" /contact_listing/group_case/contacts_identified  = 'yes'"/>
+      <bind calculate="../../../inputs/contact/parent" nodeset="/contact_listing/group_case/contact/parent" type="string"/>
+      <bind nodeset="/contact_listing/group_case/contact/family_name" required="true()" type="string"/>
+      <bind nodeset="/contact_listing/group_case/contact/given_names" required="true()" type="string"/>
+      <bind nodeset="/contact_listing/group_case/contact/sex" required="true()" type="select1"/>
+      <bind calculate=" /contact_listing/group_case/contact/init/dob_iso " nodeset="/contact_listing/group_case/contact/date_of_birth" type="string"/>
+      <bind nodeset="/contact_listing/group_case/contact/init" required="true()"/>
+      <bind nodeset="/contact_listing/group_case/contact/init/age" required="true()" type="int"/>
+      <bind calculate="0" nodeset="/contact_listing/group_case/contact/init/age_months" required="true()" type="string"/>
+      <bind calculate="if(format-date-time(today(),&quot;%m&quot;) -  /contact_listing/group_case/contact/init/age_months  &lt; 0, format-date-time(today(),&quot;%m&quot;) -  /contact_listing/group_case/contact/init/age_months  + 12, format-date-time(today(),&quot;%m&quot;) -  /contact_listing/group_case/contact/init/age_months )" nodeset="/contact_listing/group_case/contact/init/ephemeral_months" type="string"/>
+      <bind calculate="if(format-date-time(today(),&quot;%m&quot;) -  /contact_listing/group_case/contact/init/age_months  &lt; 0, format-date-time(today(),&quot;%Y&quot;) -  /contact_listing/group_case/contact/init/age  - 1, format-date-time(today(),&quot;%Y&quot;) -  /contact_listing/group_case/contact/init/age )" nodeset="/contact_listing/group_case/contact/init/ephemeral_years" type="string"/>
+      <bind calculate="date(concat(string( /contact_listing/group_case/contact/init/ephemeral_years ),'-',if( /contact_listing/group_case/contact/init/ephemeral_months &lt;10, concat('0',string( /contact_listing/group_case/contact/init/ephemeral_months )),  /contact_listing/group_case/contact/init/ephemeral_months ),'-',string(format-date-time(today(), &quot;%d&quot;))))" nodeset="/contact_listing/group_case/contact/init/dob_approx" type="string"/>
+      <bind calculate="format-date-time(decimal-date-time(../dob_approx),&quot;%Y-%m-%d&quot;)" nodeset="/contact_listing/group_case/contact/init/dob_iso" type="string"/>
+      <bind calculate="covid_contact" nodeset="/contact_listing/group_case/contact/role" type="string"/>
+      <bind nodeset="/contact_listing/group_case/contact/relation_to_case" type="string"/>
+      <bind nodeset="/contact_listing/group_case/contact/date_of_last_contact" required="true()" type="date"/>
+      <bind nodeset="/contact_listing/group_case/contact/type_of_contact" required="true()" type="select"/>
+      <bind nodeset="/contact_listing/group_case/contact/household_head" required="true()" type="string"/>
+      <bind nodeset="/contact_listing/group_case/contact/subcounty" required="true()" type="select1"/>
+      <bind nodeset="/contact_listing/group_case/contact/town" required="true()" type="string"/>
+      <bind nodeset="/contact_listing/group_case/contact/address" required="true()" type="string"/>
+      <bind constraint="true()" jr:constraintMsg="Please make sure the number is not already in use by another person and is in the format +254 7XX XXX XXX or 07XX XXX XXX." nodeset="/contact_listing/group_case/contact/phone" type="tel"/>
+      <bind nodeset="/contact_listing/group_case/contact/healthcare_worker" required="true()" type="select1"/>
+      <bind nodeset="/contact_listing/group_case/contact/facility" relevant=" /contact_listing/group_case/contact/healthcare_worker  = 'yes'" required="true()" type="string"/>
+      <bind calculate="." nodeset="/contact_listing/group_case/contact/created_by_doc" type="string"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/contact_listing/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body class="pages">
+    <group appearance="field-list" ref="/contact_listing/inputs">
+      <label>Patient</label>
+      <group ref="/contact_listing/inputs/contact">
+        <label>Contact</label>
+        <input appearance="db-object" ref="/contact_listing/inputs/contact/_id">
+          <label>What is the surveillance officer's desk?</label>
+          <hint>Select a person from list</hint>
+        </input>
+      </group>
+    </group>
+    <group appearance="field-list" ref="/contact_listing/group_case">
+      <label>Case Information</label>
+      <input ref="/contact_listing/group_case/outbreak_case_id">
+        <label>Outbreak Case ID</label>
+      </input>
+      <input ref="/contact_listing/group_case/family_name">
+        <label>Surname</label>
+      </input>
+      <input ref="/contact_listing/group_case/given_names">
+        <label>Other names</label>
+      </input>
+      <input ref="/contact_listing/group_case/household_head">
+        <label>Head of household</label>
+      </input>
+      <input appearance="multiline" ref="/contact_listing/group_case/address">
+        <label>Address</label>
+      </input>
+      <input ref="/contact_listing/group_case/town">
+        <label>Town</label>
+      </input>
+      <select1 appearance="minimal" ref="/contact_listing/group_case/county">
+        <label>County</label>
+        <item>
+          <label>Baringo</label>
+          <value>baringo</value>
+        </item>
+        <item>
+          <label>Bomet</label>
+          <value>bomet</value>
+        </item>
+        <item>
+          <label>Bungoma</label>
+          <value>bungoma</value>
+        </item>
+        <item>
+          <label>Busia</label>
+          <value>busia</value>
+        </item>
+        <item>
+          <label>Elgeyo-Marakwet</label>
+          <value>elgeyo-marakwet</value>
+        </item>
+        <item>
+          <label>Embu</label>
+          <value>embu</value>
+        </item>
+        <item>
+          <label>Garissa</label>
+          <value>garissa</value>
+        </item>
+        <item>
+          <label>Homa Bay</label>
+          <value>homa bay</value>
+        </item>
+        <item>
+          <label>Isiolo</label>
+          <value>isiolo</value>
+        </item>
+        <item>
+          <label>Kajiado</label>
+          <value>kajiado</value>
+        </item>
+        <item>
+          <label>Kakamega</label>
+          <value>kakamega</value>
+        </item>
+        <item>
+          <label>Kericho</label>
+          <value>kericho</value>
+        </item>
+        <item>
+          <label>Kiambu</label>
+          <value>kiambu</value>
+        </item>
+        <item>
+          <label>Kilifi</label>
+          <value>kilifi</value>
+        </item>
+        <item>
+          <label>Kirinyaga</label>
+          <value>kirinyaga</value>
+        </item>
+        <item>
+          <label>Kisii</label>
+          <value>kisii</value>
+        </item>
+        <item>
+          <label>Kisumu</label>
+          <value>kisumu</value>
+        </item>
+        <item>
+          <label>Kitui</label>
+          <value>kitui</value>
+        </item>
+        <item>
+          <label>Kwale</label>
+          <value>kwale</value>
+        </item>
+        <item>
+          <label>Laikipia</label>
+          <value>laikipia</value>
+        </item>
+        <item>
+          <label>Lamu</label>
+          <value>lamu</value>
+        </item>
+        <item>
+          <label>Machakos</label>
+          <value>machakos</value>
+        </item>
+        <item>
+          <label>Makueni</label>
+          <value>makueni</value>
+        </item>
+        <item>
+          <label>Mandera</label>
+          <value>mandera</value>
+        </item>
+        <item>
+          <label>Marsabit</label>
+          <value>marsabit</value>
+        </item>
+        <item>
+          <label>Meru</label>
+          <value>meru</value>
+        </item>
+        <item>
+          <label>Migori</label>
+          <value>migori</value>
+        </item>
+        <item>
+          <label>Mombasa</label>
+          <value>mombasa</value>
+        </item>
+        <item>
+          <label>Murang'a</label>
+          <value>murang'a</value>
+        </item>
+        <item>
+          <label>Nairobi</label>
+          <value>nairobi</value>
+        </item>
+        <item>
+          <label>Nakuru</label>
+          <value>nakuru</value>
+        </item>
+        <item>
+          <label>Nandi</label>
+          <value>nandi</value>
+        </item>
+        <item>
+          <label>Narok</label>
+          <value>narok</value>
+        </item>
+        <item>
+          <label>Nyamira</label>
+          <value>nyamira</value>
+        </item>
+        <item>
+          <label>Nyandarua</label>
+          <value>nyandarua</value>
+        </item>
+        <item>
+          <label>Nyeri</label>
+          <value>nyeri</value>
+        </item>
+        <item>
+          <label>Samburu</label>
+          <value>samburu</value>
+        </item>
+        <item>
+          <label>Siaya</label>
+          <value>siaya</value>
+        </item>
+        <item>
+          <label>Taita–Taveta</label>
+          <value>taita–taveta</value>
+        </item>
+        <item>
+          <label>Tana River</label>
+          <value>tana river</value>
+        </item>
+        <item>
+          <label>Tharaka-Nithi</label>
+          <value>tharaka-nithi</value>
+        </item>
+        <item>
+          <label>Trans-Nzoia</label>
+          <value>trans-nzoia</value>
+        </item>
+        <item>
+          <label>Turkana</label>
+          <value>turkana</value>
+        </item>
+        <item>
+          <label>Uasin Gishu</label>
+          <value>uasin gishu</value>
+        </item>
+        <item>
+          <label>Vihiga</label>
+          <value>vihiga</value>
+        </item>
+        <item>
+          <label>Wajir</label>
+          <value>wajir</value>
+        </item>
+        <item>
+          <label>West Pokot</label>
+          <value>west pokot</value>
+        </item>
+      </select1>
+      <select1 appearance="minimal" ref="/contact_listing/group_case/subcounty">
+        <label>Subcounty</label>
+        <item>
+          <label>Athi River</label>
+          <value>athi river</value>
+        </item>
+        <item>
+          <label>Awendo</label>
+          <value>awendo</value>
+        </item>
+        <item>
+          <label>Balambala</label>
+          <value>balambala</value>
+        </item>
+        <item>
+          <label>Banisa</label>
+          <value>banisa</value>
+        </item>
+        <item>
+          <label>Baringo Central</label>
+          <value>baringo central</value>
+        </item>
+        <item>
+          <label>Baringo North</label>
+          <value>baringo north</value>
+        </item>
+        <item>
+          <label>Belgut</label>
+          <value>belgut</value>
+        </item>
+        <item>
+          <label>Bomet Central</label>
+          <value>bomet central</value>
+        </item>
+        <item>
+          <label>Bomet East</label>
+          <value>bomet east</value>
+        </item>
+        <item>
+          <label>Bondo</label>
+          <value>bondo</value>
+        </item>
+        <item>
+          <label>Borabu</label>
+          <value>borabu</value>
+        </item>
+        <item>
+          <label>Bumula</label>
+          <value>bumula</value>
+        </item>
+        <item>
+          <label>Buna</label>
+          <value>buna</value>
+        </item>
+        <item>
+          <label>Bungoma Central</label>
+          <value>bungoma central</value>
+        </item>
+        <item>
+          <label>Bungoma East</label>
+          <value>bungoma east</value>
+        </item>
+        <item>
+          <label>Bungoma North</label>
+          <value>bungoma north</value>
+        </item>
+        <item>
+          <label>Bungoma South</label>
+          <value>bungoma south</value>
+        </item>
+        <item>
+          <label>Bungoma West</label>
+          <value>bungoma west</value>
+        </item>
+        <item>
+          <label>Bunyala</label>
+          <value>bunyala</value>
+        </item>
+        <item>
+          <label>Bureti</label>
+          <value>bureti</value>
+        </item>
+        <item>
+          <label>Busia</label>
+          <value>busia</value>
+        </item>
+        <item>
+          <label>Butere</label>
+          <value>butere</value>
+        </item>
+        <item>
+          <label>Butula</label>
+          <value>butula</value>
+        </item>
+        <item>
+          <label>Buuri</label>
+          <value>buuri</value>
+        </item>
+        <item>
+          <label>Changamwe</label>
+          <value>changamwe</value>
+        </item>
+        <item>
+          <label>Chepalungu</label>
+          <value>chepalungu</value>
+        </item>
+        <item>
+          <label>Cheptais</label>
+          <value>cheptais</value>
+        </item>
+        <item>
+          <label>Chesumei</label>
+          <value>chesumei</value>
+        </item>
+        <item>
+          <label>Dadaab</label>
+          <value>dadaab</value>
+        </item>
+        <item>
+          <label>Dagoretti North</label>
+          <value>dagoretti north</value>
+        </item>
+        <item>
+          <label>Dagoretti South</label>
+          <value>dagoretti south</value>
+        </item>
+        <item>
+          <label>Eldas</label>
+          <value>eldas</value>
+        </item>
+        <item>
+          <label>Eldoret East /Ainabkoi</label>
+          <value>eldoret east /ainabkoi</value>
+        </item>
+        <item>
+          <label>Eldoret South /Wareng (Kapsaret)</label>
+          <value>eldoret south /wareng (kapsaret)</value>
+        </item>
+        <item>
+          <label>Eldoret West /Turbo</label>
+          <value>eldoret west /turbo</value>
+        </item>
+        <item>
+          <label>Embakasi Central</label>
+          <value>embakasi central</value>
+        </item>
+        <item>
+          <label>Embakasi East</label>
+          <value>embakasi east</value>
+        </item>
+        <item>
+          <label>Embakasi North</label>
+          <value>embakasi north</value>
+        </item>
+        <item>
+          <label>Embakasi South</label>
+          <value>embakasi south</value>
+        </item>
+        <item>
+          <label>Embakasi West</label>
+          <value>embakasi west</value>
+        </item>
+        <item>
+          <label>Embu East</label>
+          <value>embu east</value>
+        </item>
+        <item>
+          <label>Embu North</label>
+          <value>embu north</value>
+        </item>
+        <item>
+          <label>Embu West</label>
+          <value>embu west</value>
+        </item>
+        <item>
+          <label>Emuhaya</label>
+          <value>emuhaya</value>
+        </item>
+        <item>
+          <label>Endebess</label>
+          <value>endebess</value>
+        </item>
+        <item>
+          <label>Fafi</label>
+          <value>fafi</value>
+        </item>
+        <item>
+          <label>Ganze</label>
+          <value>ganze</value>
+        </item>
+        <item>
+          <label>Garbatulla</label>
+          <value>garbatulla</value>
+        </item>
+        <item>
+          <label>Garissa</label>
+          <value>garissa</value>
+        </item>
+        <item>
+          <label>Gatanga</label>
+          <value>gatanga</value>
+        </item>
+        <item>
+          <label>Gatundu North</label>
+          <value>gatundu north</value>
+        </item>
+        <item>
+          <label>Gatundu South</label>
+          <value>gatundu south</value>
+        </item>
+        <item>
+          <label>Gem</label>
+          <value>gem</value>
+        </item>
+        <item>
+          <label>Gilgil</label>
+          <value>gilgil</value>
+        </item>
+        <item>
+          <label>Githunguri</label>
+          <value>githunguri</value>
+        </item>
+        <item>
+          <label>Gucha</label>
+          <value>gucha</value>
+        </item>
+        <item>
+          <label>Gucha South</label>
+          <value>gucha south</value>
+        </item>
+        <item>
+          <label>Habaswein</label>
+          <value>habaswein</value>
+        </item>
+        <item>
+          <label>Hamisi</label>
+          <value>hamisi</value>
+        </item>
+        <item>
+          <label>Homa Bay</label>
+          <value>homa bay</value>
+        </item>
+        <item>
+          <label>Hulugho</label>
+          <value>hulugho</value>
+        </item>
+        <item>
+          <label>Igembe Central</label>
+          <value>igembe central</value>
+        </item>
+        <item>
+          <label>Igembe North</label>
+          <value>igembe north</value>
+        </item>
+        <item>
+          <label>Igembe South</label>
+          <value>igembe south</value>
+        </item>
+        <item>
+          <label>Ijara</label>
+          <value>ijara</value>
+        </item>
+        <item>
+          <label>Ikutha</label>
+          <value>ikutha</value>
+        </item>
+        <item>
+          <label>Imenti North</label>
+          <value>imenti north</value>
+        </item>
+        <item>
+          <label>Imenti South</label>
+          <value>imenti south</value>
+        </item>
+        <item>
+          <label>Isinya</label>
+          <value>isinya</value>
+        </item>
+        <item>
+          <label>Isiolo</label>
+          <value>isiolo</value>
+        </item>
+        <item>
+          <label>Jomvu</label>
+          <value>jomvu</value>
+        </item>
+        <item>
+          <label>Juja</label>
+          <value>juja</value>
+        </item>
+        <item>
+          <label>Kabete</label>
+          <value>kabete</value>
+        </item>
+        <item>
+          <label>Kahuro</label>
+          <value>kahuro</value>
+        </item>
+        <item>
+          <label>Kajiado Central</label>
+          <value>kajiado central</value>
+        </item>
+        <item>
+          <label>Kajiado North</label>
+          <value>kajiado north</value>
+        </item>
+        <item>
+          <label>Kajiado West</label>
+          <value>kajiado west</value>
+        </item>
+        <item>
+          <label>Kakamega Central</label>
+          <value>kakamega central</value>
+        </item>
+        <item>
+          <label>Kakamega East</label>
+          <value>kakamega east</value>
+        </item>
+        <item>
+          <label>Kakamega North</label>
+          <value>kakamega north</value>
+        </item>
+        <item>
+          <label>Kakamega South</label>
+          <value>kakamega south</value>
+        </item>
+        <item>
+          <label>Kaloleni</label>
+          <value>kaloleni</value>
+        </item>
+        <item>
+          <label>Kamukunji</label>
+          <value>kamukunji</value>
+        </item>
+        <item>
+          <label>Kandara</label>
+          <value>kandara</value>
+        </item>
+        <item>
+          <label>Kangema</label>
+          <value>kangema</value>
+        </item>
+        <item>
+          <label>Kangundo</label>
+          <value>kangundo</value>
+        </item>
+        <item>
+          <label>Kasarani</label>
+          <value>kasarani</value>
+        </item>
+        <item>
+          <label>Kathiani</label>
+          <value>kathiani</value>
+        </item>
+        <item>
+          <label>Kathonzweni</label>
+          <value>kathonzweni</value>
+        </item>
+        <item>
+          <label>Katulani</label>
+          <value>katulani</value>
+        </item>
+        <item>
+          <label>Keiro North</label>
+          <value>keiro north</value>
+        </item>
+        <item>
+          <label>Keiyo South</label>
+          <value>keiyo south</value>
+        </item>
+        <item>
+          <label>Kenyenya</label>
+          <value>kenyenya</value>
+        </item>
+        <item>
+          <label>Kericho East</label>
+          <value>kericho east</value>
+        </item>
+        <item>
+          <label>Kesses</label>
+          <value>kesses</value>
+        </item>
+        <item>
+          <label>Khwisero</label>
+          <value>khwisero</value>
+        </item>
+        <item>
+          <label>Kiambaa</label>
+          <value>kiambaa</value>
+        </item>
+        <item>
+          <label>Kiambu East</label>
+          <value>kiambu east</value>
+        </item>
+        <item>
+          <label>Kibish</label>
+          <value>kibish</value>
+        </item>
+        <item>
+          <label>Kibra</label>
+          <value>kibra</value>
+        </item>
+        <item>
+          <label>Kibwezi</label>
+          <value>kibwezi</value>
+        </item>
+        <item>
+          <label>Kieni East</label>
+          <value>kieni east</value>
+        </item>
+        <item>
+          <label>Kieni West</label>
+          <value>kieni west</value>
+        </item>
+        <item>
+          <label>Kigumo</label>
+          <value>kigumo</value>
+        </item>
+        <item>
+          <label>Kikuyu</label>
+          <value>kikuyu</value>
+        </item>
+        <item>
+          <label>Kilifi North</label>
+          <value>kilifi north</value>
+        </item>
+        <item>
+          <label>Kilifi South</label>
+          <value>kilifi south</value>
+        </item>
+        <item>
+          <label>Kilungu</label>
+          <value>kilungu</value>
+        </item>
+        <item>
+          <label>Kimilili</label>
+          <value>kimilili</value>
+        </item>
+        <item>
+          <label>Kiminini</label>
+          <value>kiminini</value>
+        </item>
+        <item>
+          <label>Kinango</label>
+          <value>kinango</value>
+        </item>
+        <item>
+          <label>Kinangop</label>
+          <value>kinangop</value>
+        </item>
+        <item>
+          <label>Kipipiri</label>
+          <value>kipipiri</value>
+        </item>
+        <item>
+          <label>Kipkelion</label>
+          <value>kipkelion</value>
+        </item>
+        <item>
+          <label>Kipkomo</label>
+          <value>kipkomo</value>
+        </item>
+        <item>
+          <label>Kirinyaga Central</label>
+          <value>kirinyaga central</value>
+        </item>
+        <item>
+          <label>Kirinyaga East</label>
+          <value>kirinyaga east</value>
+        </item>
+        <item>
+          <label>Kirinyaga West</label>
+          <value>kirinyaga west</value>
+        </item>
+        <item>
+          <label>Kisasi</label>
+          <value>kisasi</value>
+        </item>
+        <item>
+          <label>Kisauni</label>
+          <value>kisauni</value>
+        </item>
+        <item>
+          <label>Kisii Central</label>
+          <value>kisii central</value>
+        </item>
+        <item>
+          <label>Kisii South</label>
+          <value>kisii south</value>
+        </item>
+        <item>
+          <label>Kisumu Central</label>
+          <value>kisumu central</value>
+        </item>
+        <item>
+          <label>Kisumu East</label>
+          <value>kisumu east</value>
+        </item>
+        <item>
+          <label>Kisumu West</label>
+          <value>kisumu west</value>
+        </item>
+        <item>
+          <label>Kitui Central</label>
+          <value>kitui central</value>
+        </item>
+        <item>
+          <label>Kitui West</label>
+          <value>kitui west</value>
+        </item>
+        <item>
+          <label>Kitutu Central</label>
+          <value>kitutu central</value>
+        </item>
+        <item>
+          <label>Koibatek</label>
+          <value>koibatek</value>
+        </item>
+        <item>
+          <label>Konoin</label>
+          <value>konoin</value>
+        </item>
+        <item>
+          <label>Kotulo</label>
+          <value>kotulo</value>
+        </item>
+        <item>
+          <label>Kuresoi North</label>
+          <value>kuresoi north</value>
+        </item>
+        <item>
+          <label>Kuresoi South</label>
+          <value>kuresoi south</value>
+        </item>
+        <item>
+          <label>Kuria East</label>
+          <value>kuria east</value>
+        </item>
+        <item>
+          <label>Kuria West</label>
+          <value>kuria west</value>
+        </item>
+        <item>
+          <label>Kwanza</label>
+          <value>kwanza</value>
+        </item>
+        <item>
+          <label>Kyuso</label>
+          <value>kyuso</value>
+        </item>
+        <item>
+          <label>Lafey</label>
+          <value>lafey</value>
+        </item>
+        <item>
+          <label>Lagdera</label>
+          <value>lagdera</value>
+        </item>
+        <item>
+          <label>Laikipia Central</label>
+          <value>laikipia central</value>
+        </item>
+        <item>
+          <label>Laikipia East</label>
+          <value>laikipia east</value>
+        </item>
+        <item>
+          <label>Laikipia North</label>
+          <value>laikipia north</value>
+        </item>
+        <item>
+          <label>Laikipia West</label>
+          <value>laikipia west</value>
+        </item>
+        <item>
+          <label>Lamu East</label>
+          <value>lamu east</value>
+        </item>
+        <item>
+          <label>Lamu West</label>
+          <value>lamu west</value>
+        </item>
+        <item>
+          <label>Langata</label>
+          <value>langata</value>
+        </item>
+        <item>
+          <label>Lari</label>
+          <value>lari</value>
+        </item>
+        <item>
+          <label>Likoni</label>
+          <value>likoni</value>
+        </item>
+        <item>
+          <label>Likuyani</label>
+          <value>likuyani</value>
+        </item>
+        <item>
+          <label>Limuru</label>
+          <value>limuru</value>
+        </item>
+        <item>
+          <label>Loima</label>
+          <value>loima</value>
+        </item>
+        <item>
+          <label>Loitoktok</label>
+          <value>loitoktok</value>
+        </item>
+        <item>
+          <label>Londiani</label>
+          <value>londiani</value>
+        </item>
+        <item>
+          <label>Lower Yatta</label>
+          <value>lower yatta</value>
+        </item>
+        <item>
+          <label>Loyangalani</label>
+          <value>loyangalani</value>
+        </item>
+        <item>
+          <label>Luanda</label>
+          <value>luanda</value>
+        </item>
+        <item>
+          <label>Lugari</label>
+          <value>lugari</value>
+        </item>
+        <item>
+          <label>LungaLunga</label>
+          <value>lungalunga</value>
+        </item>
+        <item>
+          <label>Maara</label>
+          <value>maara</value>
+        </item>
+        <item>
+          <label>Machakos</label>
+          <value>machakos</value>
+        </item>
+        <item>
+          <label>Magarini</label>
+          <value>magarini</value>
+        </item>
+        <item>
+          <label>Makadara</label>
+          <value>makadara</value>
+        </item>
+        <item>
+          <label>Makindu</label>
+          <value>makindu</value>
+        </item>
+        <item>
+          <label>Makueni</label>
+          <value>makueni</value>
+        </item>
+        <item>
+          <label>Malindi</label>
+          <value>malindi</value>
+        </item>
+        <item>
+          <label>Mandera Central</label>
+          <value>mandera central</value>
+        </item>
+        <item>
+          <label>Mandera East</label>
+          <value>mandera east</value>
+        </item>
+        <item>
+          <label>Mandera North</label>
+          <value>mandera north</value>
+        </item>
+        <item>
+          <label>Mandera West</label>
+          <value>mandera west</value>
+        </item>
+        <item>
+          <label>Manga</label>
+          <value>manga</value>
+        </item>
+        <item>
+          <label>Marakwet East</label>
+          <value>marakwet east</value>
+        </item>
+        <item>
+          <label>Marakwet West</label>
+          <value>marakwet west</value>
+        </item>
+        <item>
+          <label>Marani</label>
+          <value>marani</value>
+        </item>
+        <item>
+          <label>Marigat</label>
+          <value>marigat</value>
+        </item>
+        <item>
+          <label>Marsabit Central</label>
+          <value>marsabit central</value>
+        </item>
+        <item>
+          <label>Marsabit North / Chalbi</label>
+          <value>marsabit north / chalbi</value>
+        </item>
+        <item>
+          <label>Marsabit South /Laisamis</label>
+          <value>marsabit south /laisamis</value>
+        </item>
+        <item>
+          <label>Masaba North</label>
+          <value>masaba north</value>
+        </item>
+        <item>
+          <label>Masaba South</label>
+          <value>masaba south</value>
+        </item>
+        <item>
+          <label>Mashuru</label>
+          <value>mashuru</value>
+        </item>
+        <item>
+          <label>Masinga</label>
+          <value>masinga</value>
+        </item>
+        <item>
+          <label>Matete</label>
+          <value>matete</value>
+        </item>
+        <item>
+          <label>Mathare</label>
+          <value>mathare</value>
+        </item>
+        <item>
+          <label>Mathioya</label>
+          <value>mathioya</value>
+        </item>
+        <item>
+          <label>Mathira East</label>
+          <value>mathira east</value>
+        </item>
+        <item>
+          <label>Mathira West</label>
+          <value>mathira west</value>
+        </item>
+        <item>
+          <label>Matinyani</label>
+          <value>matinyani</value>
+        </item>
+        <item>
+          <label>Matuga</label>
+          <value>matuga</value>
+        </item>
+        <item>
+          <label>Matungu</label>
+          <value>matungu</value>
+        </item>
+        <item>
+          <label>Matungulu</label>
+          <value>matungulu</value>
+        </item>
+        <item>
+          <label>Mbeere North</label>
+          <value>mbeere north</value>
+        </item>
+        <item>
+          <label>Mbeere South</label>
+          <value>mbeere south</value>
+        </item>
+        <item>
+          <label>Mbita</label>
+          <value>mbita</value>
+        </item>
+        <item>
+          <label>Mbooni East</label>
+          <value>mbooni east</value>
+        </item>
+        <item>
+          <label>Mbooni West</label>
+          <value>mbooni west</value>
+        </item>
+        <item>
+          <label>Merti</label>
+          <value>merti</value>
+        </item>
+        <item>
+          <label>Meru Central</label>
+          <value>meru central</value>
+        </item>
+        <item>
+          <label>Meru South</label>
+          <value>meru south</value>
+        </item>
+        <item>
+          <label>Migwani / Mwingi West</label>
+          <value>migwani / mwingi west</value>
+        </item>
+        <item>
+          <label>Mirangine</label>
+          <value>mirangine</value>
+        </item>
+        <item>
+          <label>Mogotio</label>
+          <value>mogotio</value>
+        </item>
+        <item>
+          <label>Moiben</label>
+          <value>moiben</value>
+        </item>
+        <item>
+          <label>Molo</label>
+          <value>molo</value>
+        </item>
+        <item>
+          <label>Mombasa</label>
+          <value>mombasa</value>
+        </item>
+        <item>
+          <label>Moyale</label>
+          <value>moyale</value>
+        </item>
+        <item>
+          <label>Msambweni</label>
+          <value>msambweni</value>
+        </item>
+        <item>
+          <label>Mt Elgon</label>
+          <value>mt elgon</value>
+        </item>
+        <item>
+          <label>Muhoroni</label>
+          <value>muhoroni</value>
+        </item>
+        <item>
+          <label>Mukaa</label>
+          <value>mukaa</value>
+        </item>
+        <item>
+          <label>Mukurweini</label>
+          <value>mukurweini</value>
+        </item>
+        <item>
+          <label>Mumias East</label>
+          <value>mumias east</value>
+        </item>
+        <item>
+          <label>Mumias West</label>
+          <value>mumias west</value>
+        </item>
+        <item>
+          <label>Mumoni</label>
+          <value>mumoni</value>
+        </item>
+        <item>
+          <label>Murang'a East</label>
+          <value>murang'a east</value>
+        </item>
+        <item>
+          <label>Murang'a South</label>
+          <value>murang'a south</value>
+        </item>
+        <item>
+          <label>Mutitu</label>
+          <value>mutitu</value>
+        </item>
+        <item>
+          <label>Mutomo</label>
+          <value>mutomo</value>
+        </item>
+        <item>
+          <label>Mwala</label>
+          <value>mwala</value>
+        </item>
+        <item>
+          <label>Mwatate</label>
+          <value>mwatate</value>
+        </item>
+        <item>
+          <label>Mwea East</label>
+          <value>mwea east</value>
+        </item>
+        <item>
+          <label>Mwea West</label>
+          <value>mwea west</value>
+        </item>
+        <item>
+          <label>Mwingi Central</label>
+          <value>mwingi central</value>
+        </item>
+        <item>
+          <label>Mwingi East</label>
+          <value>mwingi east</value>
+        </item>
+        <item>
+          <label>Naivasha</label>
+          <value>naivasha</value>
+        </item>
+        <item>
+          <label>Nakuru East</label>
+          <value>nakuru east</value>
+        </item>
+        <item>
+          <label>Nakuru North</label>
+          <value>nakuru north</value>
+        </item>
+        <item>
+          <label>Nakuru West</label>
+          <value>nakuru west</value>
+        </item>
+        <item>
+          <label>Nambale</label>
+          <value>nambale</value>
+        </item>
+        <item>
+          <label>Nandi Central</label>
+          <value>nandi central</value>
+        </item>
+        <item>
+          <label>Nandi East</label>
+          <value>nandi east</value>
+        </item>
+        <item>
+          <label>Nandi North</label>
+          <value>nandi north</value>
+        </item>
+        <item>
+          <label>Nandi South (Aldai)</label>
+          <value>nandi south (aldai)</value>
+        </item>
+        <item>
+          <label>Narok East</label>
+          <value>narok east</value>
+        </item>
+        <item>
+          <label>Narok North</label>
+          <value>narok north</value>
+        </item>
+        <item>
+          <label>Narok South</label>
+          <value>narok south</value>
+        </item>
+        <item>
+          <label>Narok West</label>
+          <value>narok west</value>
+        </item>
+        <item>
+          <label>Navakholo</label>
+          <value>navakholo</value>
+        </item>
+        <item>
+          <label>Ndhiwa</label>
+          <value>ndhiwa</value>
+        </item>
+        <item>
+          <label>Njoro</label>
+          <value>njoro</value>
+        </item>
+        <item>
+          <label>North Horr</label>
+          <value>north horr</value>
+        </item>
+        <item>
+          <label>Nyahururu</label>
+          <value>nyahururu</value>
+        </item>
+        <item>
+          <label>Nyakach</label>
+          <value>nyakach</value>
+        </item>
+        <item>
+          <label>Nyali</label>
+          <value>nyali</value>
+        </item>
+        <item>
+          <label>Nyamache</label>
+          <value>nyamache</value>
+        </item>
+        <item>
+          <label>Nyamira North</label>
+          <value>nyamira north</value>
+        </item>
+        <item>
+          <label>Nyamira South</label>
+          <value>nyamira south</value>
+        </item>
+        <item>
+          <label>Nyandarua Central</label>
+          <value>nyandarua central</value>
+        </item>
+        <item>
+          <label>Nyandarua North</label>
+          <value>nyandarua north</value>
+        </item>
+        <item>
+          <label>Nyandarua South</label>
+          <value>nyandarua south</value>
+        </item>
+        <item>
+          <label>Nyandarua West</label>
+          <value>nyandarua west</value>
+        </item>
+        <item>
+          <label>Nyando</label>
+          <value>nyando</value>
+        </item>
+        <item>
+          <label>Nyatike</label>
+          <value>nyatike</value>
+        </item>
+        <item>
+          <label>Nyeri Central</label>
+          <value>nyeri central</value>
+        </item>
+        <item>
+          <label>Nyeri South</label>
+          <value>nyeri south</value>
+        </item>
+        <item>
+          <label>Nzambani</label>
+          <value>nzambani</value>
+        </item>
+        <item>
+          <label>Nzaui</label>
+          <value>nzaui</value>
+        </item>
+        <item>
+          <label>Pokot Central</label>
+          <value>pokot central</value>
+        </item>
+        <item>
+          <label>Pokot East</label>
+          <value>pokot east</value>
+        </item>
+        <item>
+          <label>Pokot North</label>
+          <value>pokot north</value>
+        </item>
+        <item>
+          <label>Pokot South</label>
+          <value>pokot south</value>
+        </item>
+        <item>
+          <label>Rabai</label>
+          <value>rabai</value>
+        </item>
+        <item>
+          <label>Rachuonyo East</label>
+          <value>rachuonyo east</value>
+        </item>
+        <item>
+          <label>Rachuonyo North</label>
+          <value>rachuonyo north</value>
+        </item>
+        <item>
+          <label>Rachuonyo South</label>
+          <value>rachuonyo south</value>
+        </item>
+        <item>
+          <label>Rangwe</label>
+          <value>rangwe</value>
+        </item>
+        <item>
+          <label>Rarieda</label>
+          <value>rarieda</value>
+        </item>
+        <item>
+          <label>Rongai</label>
+          <value>rongai</value>
+        </item>
+        <item>
+          <label>Rongo</label>
+          <value>rongo</value>
+        </item>
+        <item>
+          <label>Roysambu</label>
+          <value>roysambu</value>
+        </item>
+        <item>
+          <label>Ruaraka</label>
+          <value>ruaraka</value>
+        </item>
+        <item>
+          <label>Ruiru</label>
+          <value>ruiru</value>
+        </item>
+        <item>
+          <label>Sabatia</label>
+          <value>sabatia</value>
+        </item>
+        <item>
+          <label>Samburu Central</label>
+          <value>samburu central</value>
+        </item>
+        <item>
+          <label>Samburu East</label>
+          <value>samburu east</value>
+        </item>
+        <item>
+          <label>Samburu North</label>
+          <value>samburu north</value>
+        </item>
+        <item>
+          <label>Sameta</label>
+          <value>sameta</value>
+        </item>
+        <item>
+          <label>Samia</label>
+          <value>samia</value>
+        </item>
+        <item>
+          <label>Seme</label>
+          <value>seme</value>
+        </item>
+        <item>
+          <label>Siaya</label>
+          <value>siaya</value>
+        </item>
+        <item>
+          <label>Soin /Sigowet</label>
+          <value>soin /sigowet</value>
+        </item>
+        <item>
+          <label>Sololo</label>
+          <value>sololo</value>
+        </item>
+        <item>
+          <label>Sotik</label>
+          <value>sotik</value>
+        </item>
+        <item>
+          <label>Soy</label>
+          <value>soy</value>
+        </item>
+        <item>
+          <label>Starehe</label>
+          <value>starehe</value>
+        </item>
+        <item>
+          <label>Suba</label>
+          <value>suba</value>
+        </item>
+        <item>
+          <label>Subukia</label>
+          <value>subukia</value>
+        </item>
+        <item>
+          <label>Suna East</label>
+          <value>suna east</value>
+        </item>
+        <item>
+          <label>Suna West</label>
+          <value>suna west</value>
+        </item>
+        <item>
+          <label>Taita</label>
+          <value>taita</value>
+        </item>
+        <item>
+          <label>Tana Delta</label>
+          <value>tana delta</value>
+        </item>
+        <item>
+          <label>Tana North</label>
+          <value>tana north</value>
+        </item>
+        <item>
+          <label>Tana River</label>
+          <value>tana river</value>
+        </item>
+        <item>
+          <label>Tarbaj</label>
+          <value>tarbaj</value>
+        </item>
+        <item>
+          <label>Taveta</label>
+          <value>taveta</value>
+        </item>
+        <item>
+          <label>Teso North</label>
+          <value>teso north</value>
+        </item>
+        <item>
+          <label>Teso South</label>
+          <value>teso south</value>
+        </item>
+        <item>
+          <label>Tetu</label>
+          <value>tetu</value>
+        </item>
+        <item>
+          <label>Tharaka North</label>
+          <value>tharaka north</value>
+        </item>
+        <item>
+          <label>Tharaka South</label>
+          <value>tharaka south</value>
+        </item>
+        <item>
+          <label>Thika East</label>
+          <value>thika east</value>
+        </item>
+        <item>
+          <label>Thika West</label>
+          <value>thika west</value>
+        </item>
+        <item>
+          <label>Tigania Central</label>
+          <value>tigania central</value>
+        </item>
+        <item>
+          <label>Tigania East</label>
+          <value>tigania east</value>
+        </item>
+        <item>
+          <label>Tigania West</label>
+          <value>tigania west</value>
+        </item>
+        <item>
+          <label>Tinderet</label>
+          <value>tinderet</value>
+        </item>
+        <item>
+          <label>Trans Zoia East</label>
+          <value>trans zoia east</value>
+        </item>
+        <item>
+          <label>Trans Zoia West</label>
+          <value>trans zoia west</value>
+        </item>
+        <item>
+          <label>Transmara East</label>
+          <value>transmara east</value>
+        </item>
+        <item>
+          <label>Transmara West</label>
+          <value>transmara west</value>
+        </item>
+        <item>
+          <label>Tseikuru</label>
+          <value>tseikuru</value>
+        </item>
+        <item>
+          <label>Turkana Central</label>
+          <value>turkana central</value>
+        </item>
+        <item>
+          <label>Turkana East</label>
+          <value>turkana east</value>
+        </item>
+        <item>
+          <label>Turkana North</label>
+          <value>turkana north</value>
+        </item>
+        <item>
+          <label>Turkana South</label>
+          <value>turkana south</value>
+        </item>
+        <item>
+          <label>Turkana West</label>
+          <value>turkana west</value>
+        </item>
+        <item>
+          <label>Ugenya</label>
+          <value>ugenya</value>
+        </item>
+        <item>
+          <label>Ugunja</label>
+          <value>ugunja</value>
+        </item>
+        <item>
+          <label>Uriri</label>
+          <value>uriri</value>
+        </item>
+        <item>
+          <label>Vihiga</label>
+          <value>vihiga</value>
+        </item>
+        <item>
+          <label>Voi</label>
+          <value>voi</value>
+        </item>
+        <item>
+          <label>Wajir East</label>
+          <value>wajir east</value>
+        </item>
+        <item>
+          <label>Wajir North</label>
+          <value>wajir north</value>
+        </item>
+        <item>
+          <label>Wajir South</label>
+          <value>wajir south</value>
+        </item>
+        <item>
+          <label>Wajir West</label>
+          <value>wajir west</value>
+        </item>
+        <item>
+          <label>Webuye West</label>
+          <value>webuye west</value>
+        </item>
+        <item>
+          <label>West Pokot</label>
+          <value>west pokot</value>
+        </item>
+        <item>
+          <label>Westlands</label>
+          <value>westlands</value>
+        </item>
+        <item>
+          <label>Yatta</label>
+          <value>yatta</value>
+        </item>
+      </select1>
+      <input ref="/contact_listing/group_case/date_of_symptom_onset">
+        <label>Date of symptom onset</label>
+      </input>
+      <input ref="/contact_listing/group_case/location">
+        <label>Location case identified</label>
+      </input>
+      <select1 appearance="horizontal" ref="/contact_listing/group_case/contacts_identified">
+        <label>Are there contacts that have been identified for this case?</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <group ref="/contact_listing/group_case/contact">
+        <label>Contact Information</label>
+        <repeat nodeset="/contact_listing/group_case/contact">
+          <input ref="/contact_listing/group_case/contact/family_name">
+            <label>Surname</label>
+          </input>
+          <input ref="/contact_listing/group_case/contact/given_names">
+            <label>Other names</label>
+          </input>
+          <select1 appearance="horizontal" ref="/contact_listing/group_case/contact/sex">
+            <label>Sex</label>
+            <item>
+              <label>Male</label>
+              <value>male</value>
+            </item>
+            <item>
+              <label>Female</label>
+              <value>female</value>
+            </item>
+          </select1>
+          <group ref="/contact_listing/group_case/contact/init">
+            <label></label>
+            <input ref="/contact_listing/group_case/contact/init/age">
+              <label>Age (years)</label>
+            </input>
+          </group>
+          <input ref="/contact_listing/group_case/contact/relation_to_case">
+            <label>Relation to case</label>
+          </input>
+          <input ref="/contact_listing/group_case/contact/date_of_last_contact">
+            <label>Date of last contact</label>
+          </input>
+          <select ref="/contact_listing/group_case/contact/type_of_contact">
+            <label>Type of contact</label>
+            <hint>1 = Working together in close proximity or sharing the same classroom environment with a nCoV patient.
+2 = Traveling together with a nCoV patient in any kind of conveyance.
+3 = Living in the same household as a nCoV patient.
+4 = Health care associated exposure, including providing direct care for nCoV patients, working with health care workers infected with novel coronavirus, visiting patients or staying in the same close environment as a nCoV patient.</hint>
+            <item>
+              <label>1</label>
+              <value>1</value>
+            </item>
+            <item>
+              <label>2</label>
+              <value>2</value>
+            </item>
+            <item>
+              <label>3</label>
+              <value>3</value>
+            </item>
+            <item>
+              <label>4</label>
+              <value>4</value>
+            </item>
+          </select>
+          <input ref="/contact_listing/group_case/contact/household_head">
+            <label>Head of houshold</label>
+          </input>
+          <select1 appearance="minimal" ref="/contact_listing/group_case/contact/subcounty">
+            <label>Sub county</label>
+            <item>
+              <label>Athi River</label>
+              <value>athi river</value>
+            </item>
+            <item>
+              <label>Awendo</label>
+              <value>awendo</value>
+            </item>
+            <item>
+              <label>Balambala</label>
+              <value>balambala</value>
+            </item>
+            <item>
+              <label>Banisa</label>
+              <value>banisa</value>
+            </item>
+            <item>
+              <label>Baringo Central</label>
+              <value>baringo central</value>
+            </item>
+            <item>
+              <label>Baringo North</label>
+              <value>baringo north</value>
+            </item>
+            <item>
+              <label>Belgut</label>
+              <value>belgut</value>
+            </item>
+            <item>
+              <label>Bomet Central</label>
+              <value>bomet central</value>
+            </item>
+            <item>
+              <label>Bomet East</label>
+              <value>bomet east</value>
+            </item>
+            <item>
+              <label>Bondo</label>
+              <value>bondo</value>
+            </item>
+            <item>
+              <label>Borabu</label>
+              <value>borabu</value>
+            </item>
+            <item>
+              <label>Bumula</label>
+              <value>bumula</value>
+            </item>
+            <item>
+              <label>Buna</label>
+              <value>buna</value>
+            </item>
+            <item>
+              <label>Bungoma Central</label>
+              <value>bungoma central</value>
+            </item>
+            <item>
+              <label>Bungoma East</label>
+              <value>bungoma east</value>
+            </item>
+            <item>
+              <label>Bungoma North</label>
+              <value>bungoma north</value>
+            </item>
+            <item>
+              <label>Bungoma South</label>
+              <value>bungoma south</value>
+            </item>
+            <item>
+              <label>Bungoma West</label>
+              <value>bungoma west</value>
+            </item>
+            <item>
+              <label>Bunyala</label>
+              <value>bunyala</value>
+            </item>
+            <item>
+              <label>Bureti</label>
+              <value>bureti</value>
+            </item>
+            <item>
+              <label>Busia</label>
+              <value>busia</value>
+            </item>
+            <item>
+              <label>Butere</label>
+              <value>butere</value>
+            </item>
+            <item>
+              <label>Butula</label>
+              <value>butula</value>
+            </item>
+            <item>
+              <label>Buuri</label>
+              <value>buuri</value>
+            </item>
+            <item>
+              <label>Changamwe</label>
+              <value>changamwe</value>
+            </item>
+            <item>
+              <label>Chepalungu</label>
+              <value>chepalungu</value>
+            </item>
+            <item>
+              <label>Cheptais</label>
+              <value>cheptais</value>
+            </item>
+            <item>
+              <label>Chesumei</label>
+              <value>chesumei</value>
+            </item>
+            <item>
+              <label>Dadaab</label>
+              <value>dadaab</value>
+            </item>
+            <item>
+              <label>Dagoretti North</label>
+              <value>dagoretti north</value>
+            </item>
+            <item>
+              <label>Dagoretti South</label>
+              <value>dagoretti south</value>
+            </item>
+            <item>
+              <label>Eldas</label>
+              <value>eldas</value>
+            </item>
+            <item>
+              <label>Eldoret East /Ainabkoi</label>
+              <value>eldoret east /ainabkoi</value>
+            </item>
+            <item>
+              <label>Eldoret South /Wareng (Kapsaret)</label>
+              <value>eldoret south /wareng (kapsaret)</value>
+            </item>
+            <item>
+              <label>Eldoret West /Turbo</label>
+              <value>eldoret west /turbo</value>
+            </item>
+            <item>
+              <label>Embakasi Central</label>
+              <value>embakasi central</value>
+            </item>
+            <item>
+              <label>Embakasi East</label>
+              <value>embakasi east</value>
+            </item>
+            <item>
+              <label>Embakasi North</label>
+              <value>embakasi north</value>
+            </item>
+            <item>
+              <label>Embakasi South</label>
+              <value>embakasi south</value>
+            </item>
+            <item>
+              <label>Embakasi West</label>
+              <value>embakasi west</value>
+            </item>
+            <item>
+              <label>Embu East</label>
+              <value>embu east</value>
+            </item>
+            <item>
+              <label>Embu North</label>
+              <value>embu north</value>
+            </item>
+            <item>
+              <label>Embu West</label>
+              <value>embu west</value>
+            </item>
+            <item>
+              <label>Emuhaya</label>
+              <value>emuhaya</value>
+            </item>
+            <item>
+              <label>Endebess</label>
+              <value>endebess</value>
+            </item>
+            <item>
+              <label>Fafi</label>
+              <value>fafi</value>
+            </item>
+            <item>
+              <label>Ganze</label>
+              <value>ganze</value>
+            </item>
+            <item>
+              <label>Garbatulla</label>
+              <value>garbatulla</value>
+            </item>
+            <item>
+              <label>Garissa</label>
+              <value>garissa</value>
+            </item>
+            <item>
+              <label>Gatanga</label>
+              <value>gatanga</value>
+            </item>
+            <item>
+              <label>Gatundu North</label>
+              <value>gatundu north</value>
+            </item>
+            <item>
+              <label>Gatundu South</label>
+              <value>gatundu south</value>
+            </item>
+            <item>
+              <label>Gem</label>
+              <value>gem</value>
+            </item>
+            <item>
+              <label>Gilgil</label>
+              <value>gilgil</value>
+            </item>
+            <item>
+              <label>Githunguri</label>
+              <value>githunguri</value>
+            </item>
+            <item>
+              <label>Gucha</label>
+              <value>gucha</value>
+            </item>
+            <item>
+              <label>Gucha South</label>
+              <value>gucha south</value>
+            </item>
+            <item>
+              <label>Habaswein</label>
+              <value>habaswein</value>
+            </item>
+            <item>
+              <label>Hamisi</label>
+              <value>hamisi</value>
+            </item>
+            <item>
+              <label>Homa Bay</label>
+              <value>homa bay</value>
+            </item>
+            <item>
+              <label>Hulugho</label>
+              <value>hulugho</value>
+            </item>
+            <item>
+              <label>Igembe Central</label>
+              <value>igembe central</value>
+            </item>
+            <item>
+              <label>Igembe North</label>
+              <value>igembe north</value>
+            </item>
+            <item>
+              <label>Igembe South</label>
+              <value>igembe south</value>
+            </item>
+            <item>
+              <label>Ijara</label>
+              <value>ijara</value>
+            </item>
+            <item>
+              <label>Ikutha</label>
+              <value>ikutha</value>
+            </item>
+            <item>
+              <label>Imenti North</label>
+              <value>imenti north</value>
+            </item>
+            <item>
+              <label>Imenti South</label>
+              <value>imenti south</value>
+            </item>
+            <item>
+              <label>Isinya</label>
+              <value>isinya</value>
+            </item>
+            <item>
+              <label>Isiolo</label>
+              <value>isiolo</value>
+            </item>
+            <item>
+              <label>Jomvu</label>
+              <value>jomvu</value>
+            </item>
+            <item>
+              <label>Juja</label>
+              <value>juja</value>
+            </item>
+            <item>
+              <label>Kabete</label>
+              <value>kabete</value>
+            </item>
+            <item>
+              <label>Kahuro</label>
+              <value>kahuro</value>
+            </item>
+            <item>
+              <label>Kajiado Central</label>
+              <value>kajiado central</value>
+            </item>
+            <item>
+              <label>Kajiado North</label>
+              <value>kajiado north</value>
+            </item>
+            <item>
+              <label>Kajiado West</label>
+              <value>kajiado west</value>
+            </item>
+            <item>
+              <label>Kakamega Central</label>
+              <value>kakamega central</value>
+            </item>
+            <item>
+              <label>Kakamega East</label>
+              <value>kakamega east</value>
+            </item>
+            <item>
+              <label>Kakamega North</label>
+              <value>kakamega north</value>
+            </item>
+            <item>
+              <label>Kakamega South</label>
+              <value>kakamega south</value>
+            </item>
+            <item>
+              <label>Kaloleni</label>
+              <value>kaloleni</value>
+            </item>
+            <item>
+              <label>Kamukunji</label>
+              <value>kamukunji</value>
+            </item>
+            <item>
+              <label>Kandara</label>
+              <value>kandara</value>
+            </item>
+            <item>
+              <label>Kangema</label>
+              <value>kangema</value>
+            </item>
+            <item>
+              <label>Kangundo</label>
+              <value>kangundo</value>
+            </item>
+            <item>
+              <label>Kasarani</label>
+              <value>kasarani</value>
+            </item>
+            <item>
+              <label>Kathiani</label>
+              <value>kathiani</value>
+            </item>
+            <item>
+              <label>Kathonzweni</label>
+              <value>kathonzweni</value>
+            </item>
+            <item>
+              <label>Katulani</label>
+              <value>katulani</value>
+            </item>
+            <item>
+              <label>Keiro North</label>
+              <value>keiro north</value>
+            </item>
+            <item>
+              <label>Keiyo South</label>
+              <value>keiyo south</value>
+            </item>
+            <item>
+              <label>Kenyenya</label>
+              <value>kenyenya</value>
+            </item>
+            <item>
+              <label>Kericho East</label>
+              <value>kericho east</value>
+            </item>
+            <item>
+              <label>Kesses</label>
+              <value>kesses</value>
+            </item>
+            <item>
+              <label>Khwisero</label>
+              <value>khwisero</value>
+            </item>
+            <item>
+              <label>Kiambaa</label>
+              <value>kiambaa</value>
+            </item>
+            <item>
+              <label>Kiambu East</label>
+              <value>kiambu east</value>
+            </item>
+            <item>
+              <label>Kibish</label>
+              <value>kibish</value>
+            </item>
+            <item>
+              <label>Kibra</label>
+              <value>kibra</value>
+            </item>
+            <item>
+              <label>Kibwezi</label>
+              <value>kibwezi</value>
+            </item>
+            <item>
+              <label>Kieni East</label>
+              <value>kieni east</value>
+            </item>
+            <item>
+              <label>Kieni West</label>
+              <value>kieni west</value>
+            </item>
+            <item>
+              <label>Kigumo</label>
+              <value>kigumo</value>
+            </item>
+            <item>
+              <label>Kikuyu</label>
+              <value>kikuyu</value>
+            </item>
+            <item>
+              <label>Kilifi North</label>
+              <value>kilifi north</value>
+            </item>
+            <item>
+              <label>Kilifi South</label>
+              <value>kilifi south</value>
+            </item>
+            <item>
+              <label>Kilungu</label>
+              <value>kilungu</value>
+            </item>
+            <item>
+              <label>Kimilili</label>
+              <value>kimilili</value>
+            </item>
+            <item>
+              <label>Kiminini</label>
+              <value>kiminini</value>
+            </item>
+            <item>
+              <label>Kinango</label>
+              <value>kinango</value>
+            </item>
+            <item>
+              <label>Kinangop</label>
+              <value>kinangop</value>
+            </item>
+            <item>
+              <label>Kipipiri</label>
+              <value>kipipiri</value>
+            </item>
+            <item>
+              <label>Kipkelion</label>
+              <value>kipkelion</value>
+            </item>
+            <item>
+              <label>Kipkomo</label>
+              <value>kipkomo</value>
+            </item>
+            <item>
+              <label>Kirinyaga Central</label>
+              <value>kirinyaga central</value>
+            </item>
+            <item>
+              <label>Kirinyaga East</label>
+              <value>kirinyaga east</value>
+            </item>
+            <item>
+              <label>Kirinyaga West</label>
+              <value>kirinyaga west</value>
+            </item>
+            <item>
+              <label>Kisasi</label>
+              <value>kisasi</value>
+            </item>
+            <item>
+              <label>Kisauni</label>
+              <value>kisauni</value>
+            </item>
+            <item>
+              <label>Kisii Central</label>
+              <value>kisii central</value>
+            </item>
+            <item>
+              <label>Kisii South</label>
+              <value>kisii south</value>
+            </item>
+            <item>
+              <label>Kisumu Central</label>
+              <value>kisumu central</value>
+            </item>
+            <item>
+              <label>Kisumu East</label>
+              <value>kisumu east</value>
+            </item>
+            <item>
+              <label>Kisumu West</label>
+              <value>kisumu west</value>
+            </item>
+            <item>
+              <label>Kitui Central</label>
+              <value>kitui central</value>
+            </item>
+            <item>
+              <label>Kitui West</label>
+              <value>kitui west</value>
+            </item>
+            <item>
+              <label>Kitutu Central</label>
+              <value>kitutu central</value>
+            </item>
+            <item>
+              <label>Koibatek</label>
+              <value>koibatek</value>
+            </item>
+            <item>
+              <label>Konoin</label>
+              <value>konoin</value>
+            </item>
+            <item>
+              <label>Kotulo</label>
+              <value>kotulo</value>
+            </item>
+            <item>
+              <label>Kuresoi North</label>
+              <value>kuresoi north</value>
+            </item>
+            <item>
+              <label>Kuresoi South</label>
+              <value>kuresoi south</value>
+            </item>
+            <item>
+              <label>Kuria East</label>
+              <value>kuria east</value>
+            </item>
+            <item>
+              <label>Kuria West</label>
+              <value>kuria west</value>
+            </item>
+            <item>
+              <label>Kwanza</label>
+              <value>kwanza</value>
+            </item>
+            <item>
+              <label>Kyuso</label>
+              <value>kyuso</value>
+            </item>
+            <item>
+              <label>Lafey</label>
+              <value>lafey</value>
+            </item>
+            <item>
+              <label>Lagdera</label>
+              <value>lagdera</value>
+            </item>
+            <item>
+              <label>Laikipia Central</label>
+              <value>laikipia central</value>
+            </item>
+            <item>
+              <label>Laikipia East</label>
+              <value>laikipia east</value>
+            </item>
+            <item>
+              <label>Laikipia North</label>
+              <value>laikipia north</value>
+            </item>
+            <item>
+              <label>Laikipia West</label>
+              <value>laikipia west</value>
+            </item>
+            <item>
+              <label>Lamu East</label>
+              <value>lamu east</value>
+            </item>
+            <item>
+              <label>Lamu West</label>
+              <value>lamu west</value>
+            </item>
+            <item>
+              <label>Langata</label>
+              <value>langata</value>
+            </item>
+            <item>
+              <label>Lari</label>
+              <value>lari</value>
+            </item>
+            <item>
+              <label>Likoni</label>
+              <value>likoni</value>
+            </item>
+            <item>
+              <label>Likuyani</label>
+              <value>likuyani</value>
+            </item>
+            <item>
+              <label>Limuru</label>
+              <value>limuru</value>
+            </item>
+            <item>
+              <label>Loima</label>
+              <value>loima</value>
+            </item>
+            <item>
+              <label>Loitoktok</label>
+              <value>loitoktok</value>
+            </item>
+            <item>
+              <label>Londiani</label>
+              <value>londiani</value>
+            </item>
+            <item>
+              <label>Lower Yatta</label>
+              <value>lower yatta</value>
+            </item>
+            <item>
+              <label>Loyangalani</label>
+              <value>loyangalani</value>
+            </item>
+            <item>
+              <label>Luanda</label>
+              <value>luanda</value>
+            </item>
+            <item>
+              <label>Lugari</label>
+              <value>lugari</value>
+            </item>
+            <item>
+              <label>LungaLunga</label>
+              <value>lungalunga</value>
+            </item>
+            <item>
+              <label>Maara</label>
+              <value>maara</value>
+            </item>
+            <item>
+              <label>Machakos</label>
+              <value>machakos</value>
+            </item>
+            <item>
+              <label>Magarini</label>
+              <value>magarini</value>
+            </item>
+            <item>
+              <label>Makadara</label>
+              <value>makadara</value>
+            </item>
+            <item>
+              <label>Makindu</label>
+              <value>makindu</value>
+            </item>
+            <item>
+              <label>Makueni</label>
+              <value>makueni</value>
+            </item>
+            <item>
+              <label>Malindi</label>
+              <value>malindi</value>
+            </item>
+            <item>
+              <label>Mandera Central</label>
+              <value>mandera central</value>
+            </item>
+            <item>
+              <label>Mandera East</label>
+              <value>mandera east</value>
+            </item>
+            <item>
+              <label>Mandera North</label>
+              <value>mandera north</value>
+            </item>
+            <item>
+              <label>Mandera West</label>
+              <value>mandera west</value>
+            </item>
+            <item>
+              <label>Manga</label>
+              <value>manga</value>
+            </item>
+            <item>
+              <label>Marakwet East</label>
+              <value>marakwet east</value>
+            </item>
+            <item>
+              <label>Marakwet West</label>
+              <value>marakwet west</value>
+            </item>
+            <item>
+              <label>Marani</label>
+              <value>marani</value>
+            </item>
+            <item>
+              <label>Marigat</label>
+              <value>marigat</value>
+            </item>
+            <item>
+              <label>Marsabit Central</label>
+              <value>marsabit central</value>
+            </item>
+            <item>
+              <label>Marsabit North / Chalbi</label>
+              <value>marsabit north / chalbi</value>
+            </item>
+            <item>
+              <label>Marsabit South /Laisamis</label>
+              <value>marsabit south /laisamis</value>
+            </item>
+            <item>
+              <label>Masaba North</label>
+              <value>masaba north</value>
+            </item>
+            <item>
+              <label>Masaba South</label>
+              <value>masaba south</value>
+            </item>
+            <item>
+              <label>Mashuru</label>
+              <value>mashuru</value>
+            </item>
+            <item>
+              <label>Masinga</label>
+              <value>masinga</value>
+            </item>
+            <item>
+              <label>Matete</label>
+              <value>matete</value>
+            </item>
+            <item>
+              <label>Mathare</label>
+              <value>mathare</value>
+            </item>
+            <item>
+              <label>Mathioya</label>
+              <value>mathioya</value>
+            </item>
+            <item>
+              <label>Mathira East</label>
+              <value>mathira east</value>
+            </item>
+            <item>
+              <label>Mathira West</label>
+              <value>mathira west</value>
+            </item>
+            <item>
+              <label>Matinyani</label>
+              <value>matinyani</value>
+            </item>
+            <item>
+              <label>Matuga</label>
+              <value>matuga</value>
+            </item>
+            <item>
+              <label>Matungu</label>
+              <value>matungu</value>
+            </item>
+            <item>
+              <label>Matungulu</label>
+              <value>matungulu</value>
+            </item>
+            <item>
+              <label>Mbeere North</label>
+              <value>mbeere north</value>
+            </item>
+            <item>
+              <label>Mbeere South</label>
+              <value>mbeere south</value>
+            </item>
+            <item>
+              <label>Mbita</label>
+              <value>mbita</value>
+            </item>
+            <item>
+              <label>Mbooni East</label>
+              <value>mbooni east</value>
+            </item>
+            <item>
+              <label>Mbooni West</label>
+              <value>mbooni west</value>
+            </item>
+            <item>
+              <label>Merti</label>
+              <value>merti</value>
+            </item>
+            <item>
+              <label>Meru Central</label>
+              <value>meru central</value>
+            </item>
+            <item>
+              <label>Meru South</label>
+              <value>meru south</value>
+            </item>
+            <item>
+              <label>Migwani / Mwingi West</label>
+              <value>migwani / mwingi west</value>
+            </item>
+            <item>
+              <label>Mirangine</label>
+              <value>mirangine</value>
+            </item>
+            <item>
+              <label>Mogotio</label>
+              <value>mogotio</value>
+            </item>
+            <item>
+              <label>Moiben</label>
+              <value>moiben</value>
+            </item>
+            <item>
+              <label>Molo</label>
+              <value>molo</value>
+            </item>
+            <item>
+              <label>Mombasa</label>
+              <value>mombasa</value>
+            </item>
+            <item>
+              <label>Moyale</label>
+              <value>moyale</value>
+            </item>
+            <item>
+              <label>Msambweni</label>
+              <value>msambweni</value>
+            </item>
+            <item>
+              <label>Mt Elgon</label>
+              <value>mt elgon</value>
+            </item>
+            <item>
+              <label>Muhoroni</label>
+              <value>muhoroni</value>
+            </item>
+            <item>
+              <label>Mukaa</label>
+              <value>mukaa</value>
+            </item>
+            <item>
+              <label>Mukurweini</label>
+              <value>mukurweini</value>
+            </item>
+            <item>
+              <label>Mumias East</label>
+              <value>mumias east</value>
+            </item>
+            <item>
+              <label>Mumias West</label>
+              <value>mumias west</value>
+            </item>
+            <item>
+              <label>Mumoni</label>
+              <value>mumoni</value>
+            </item>
+            <item>
+              <label>Murang'a East</label>
+              <value>murang'a east</value>
+            </item>
+            <item>
+              <label>Murang'a South</label>
+              <value>murang'a south</value>
+            </item>
+            <item>
+              <label>Mutitu</label>
+              <value>mutitu</value>
+            </item>
+            <item>
+              <label>Mutomo</label>
+              <value>mutomo</value>
+            </item>
+            <item>
+              <label>Mwala</label>
+              <value>mwala</value>
+            </item>
+            <item>
+              <label>Mwatate</label>
+              <value>mwatate</value>
+            </item>
+            <item>
+              <label>Mwea East</label>
+              <value>mwea east</value>
+            </item>
+            <item>
+              <label>Mwea West</label>
+              <value>mwea west</value>
+            </item>
+            <item>
+              <label>Mwingi Central</label>
+              <value>mwingi central</value>
+            </item>
+            <item>
+              <label>Mwingi East</label>
+              <value>mwingi east</value>
+            </item>
+            <item>
+              <label>Naivasha</label>
+              <value>naivasha</value>
+            </item>
+            <item>
+              <label>Nakuru East</label>
+              <value>nakuru east</value>
+            </item>
+            <item>
+              <label>Nakuru North</label>
+              <value>nakuru north</value>
+            </item>
+            <item>
+              <label>Nakuru West</label>
+              <value>nakuru west</value>
+            </item>
+            <item>
+              <label>Nambale</label>
+              <value>nambale</value>
+            </item>
+            <item>
+              <label>Nandi Central</label>
+              <value>nandi central</value>
+            </item>
+            <item>
+              <label>Nandi East</label>
+              <value>nandi east</value>
+            </item>
+            <item>
+              <label>Nandi North</label>
+              <value>nandi north</value>
+            </item>
+            <item>
+              <label>Nandi South (Aldai)</label>
+              <value>nandi south (aldai)</value>
+            </item>
+            <item>
+              <label>Narok East</label>
+              <value>narok east</value>
+            </item>
+            <item>
+              <label>Narok North</label>
+              <value>narok north</value>
+            </item>
+            <item>
+              <label>Narok South</label>
+              <value>narok south</value>
+            </item>
+            <item>
+              <label>Narok West</label>
+              <value>narok west</value>
+            </item>
+            <item>
+              <label>Navakholo</label>
+              <value>navakholo</value>
+            </item>
+            <item>
+              <label>Ndhiwa</label>
+              <value>ndhiwa</value>
+            </item>
+            <item>
+              <label>Njoro</label>
+              <value>njoro</value>
+            </item>
+            <item>
+              <label>North Horr</label>
+              <value>north horr</value>
+            </item>
+            <item>
+              <label>Nyahururu</label>
+              <value>nyahururu</value>
+            </item>
+            <item>
+              <label>Nyakach</label>
+              <value>nyakach</value>
+            </item>
+            <item>
+              <label>Nyali</label>
+              <value>nyali</value>
+            </item>
+            <item>
+              <label>Nyamache</label>
+              <value>nyamache</value>
+            </item>
+            <item>
+              <label>Nyamira North</label>
+              <value>nyamira north</value>
+            </item>
+            <item>
+              <label>Nyamira South</label>
+              <value>nyamira south</value>
+            </item>
+            <item>
+              <label>Nyandarua Central</label>
+              <value>nyandarua central</value>
+            </item>
+            <item>
+              <label>Nyandarua North</label>
+              <value>nyandarua north</value>
+            </item>
+            <item>
+              <label>Nyandarua South</label>
+              <value>nyandarua south</value>
+            </item>
+            <item>
+              <label>Nyandarua West</label>
+              <value>nyandarua west</value>
+            </item>
+            <item>
+              <label>Nyando</label>
+              <value>nyando</value>
+            </item>
+            <item>
+              <label>Nyatike</label>
+              <value>nyatike</value>
+            </item>
+            <item>
+              <label>Nyeri Central</label>
+              <value>nyeri central</value>
+            </item>
+            <item>
+              <label>Nyeri South</label>
+              <value>nyeri south</value>
+            </item>
+            <item>
+              <label>Nzambani</label>
+              <value>nzambani</value>
+            </item>
+            <item>
+              <label>Nzaui</label>
+              <value>nzaui</value>
+            </item>
+            <item>
+              <label>Pokot Central</label>
+              <value>pokot central</value>
+            </item>
+            <item>
+              <label>Pokot East</label>
+              <value>pokot east</value>
+            </item>
+            <item>
+              <label>Pokot North</label>
+              <value>pokot north</value>
+            </item>
+            <item>
+              <label>Pokot South</label>
+              <value>pokot south</value>
+            </item>
+            <item>
+              <label>Rabai</label>
+              <value>rabai</value>
+            </item>
+            <item>
+              <label>Rachuonyo East</label>
+              <value>rachuonyo east</value>
+            </item>
+            <item>
+              <label>Rachuonyo North</label>
+              <value>rachuonyo north</value>
+            </item>
+            <item>
+              <label>Rachuonyo South</label>
+              <value>rachuonyo south</value>
+            </item>
+            <item>
+              <label>Rangwe</label>
+              <value>rangwe</value>
+            </item>
+            <item>
+              <label>Rarieda</label>
+              <value>rarieda</value>
+            </item>
+            <item>
+              <label>Rongai</label>
+              <value>rongai</value>
+            </item>
+            <item>
+              <label>Rongo</label>
+              <value>rongo</value>
+            </item>
+            <item>
+              <label>Roysambu</label>
+              <value>roysambu</value>
+            </item>
+            <item>
+              <label>Ruaraka</label>
+              <value>ruaraka</value>
+            </item>
+            <item>
+              <label>Ruiru</label>
+              <value>ruiru</value>
+            </item>
+            <item>
+              <label>Sabatia</label>
+              <value>sabatia</value>
+            </item>
+            <item>
+              <label>Samburu Central</label>
+              <value>samburu central</value>
+            </item>
+            <item>
+              <label>Samburu East</label>
+              <value>samburu east</value>
+            </item>
+            <item>
+              <label>Samburu North</label>
+              <value>samburu north</value>
+            </item>
+            <item>
+              <label>Sameta</label>
+              <value>sameta</value>
+            </item>
+            <item>
+              <label>Samia</label>
+              <value>samia</value>
+            </item>
+            <item>
+              <label>Seme</label>
+              <value>seme</value>
+            </item>
+            <item>
+              <label>Siaya</label>
+              <value>siaya</value>
+            </item>
+            <item>
+              <label>Soin /Sigowet</label>
+              <value>soin /sigowet</value>
+            </item>
+            <item>
+              <label>Sololo</label>
+              <value>sololo</value>
+            </item>
+            <item>
+              <label>Sotik</label>
+              <value>sotik</value>
+            </item>
+            <item>
+              <label>Soy</label>
+              <value>soy</value>
+            </item>
+            <item>
+              <label>Starehe</label>
+              <value>starehe</value>
+            </item>
+            <item>
+              <label>Suba</label>
+              <value>suba</value>
+            </item>
+            <item>
+              <label>Subukia</label>
+              <value>subukia</value>
+            </item>
+            <item>
+              <label>Suna East</label>
+              <value>suna east</value>
+            </item>
+            <item>
+              <label>Suna West</label>
+              <value>suna west</value>
+            </item>
+            <item>
+              <label>Taita</label>
+              <value>taita</value>
+            </item>
+            <item>
+              <label>Tana Delta</label>
+              <value>tana delta</value>
+            </item>
+            <item>
+              <label>Tana North</label>
+              <value>tana north</value>
+            </item>
+            <item>
+              <label>Tana River</label>
+              <value>tana river</value>
+            </item>
+            <item>
+              <label>Tarbaj</label>
+              <value>tarbaj</value>
+            </item>
+            <item>
+              <label>Taveta</label>
+              <value>taveta</value>
+            </item>
+            <item>
+              <label>Teso North</label>
+              <value>teso north</value>
+            </item>
+            <item>
+              <label>Teso South</label>
+              <value>teso south</value>
+            </item>
+            <item>
+              <label>Tetu</label>
+              <value>tetu</value>
+            </item>
+            <item>
+              <label>Tharaka North</label>
+              <value>tharaka north</value>
+            </item>
+            <item>
+              <label>Tharaka South</label>
+              <value>tharaka south</value>
+            </item>
+            <item>
+              <label>Thika East</label>
+              <value>thika east</value>
+            </item>
+            <item>
+              <label>Thika West</label>
+              <value>thika west</value>
+            </item>
+            <item>
+              <label>Tigania Central</label>
+              <value>tigania central</value>
+            </item>
+            <item>
+              <label>Tigania East</label>
+              <value>tigania east</value>
+            </item>
+            <item>
+              <label>Tigania West</label>
+              <value>tigania west</value>
+            </item>
+            <item>
+              <label>Tinderet</label>
+              <value>tinderet</value>
+            </item>
+            <item>
+              <label>Trans Zoia East</label>
+              <value>trans zoia east</value>
+            </item>
+            <item>
+              <label>Trans Zoia West</label>
+              <value>trans zoia west</value>
+            </item>
+            <item>
+              <label>Transmara East</label>
+              <value>transmara east</value>
+            </item>
+            <item>
+              <label>Transmara West</label>
+              <value>transmara west</value>
+            </item>
+            <item>
+              <label>Tseikuru</label>
+              <value>tseikuru</value>
+            </item>
+            <item>
+              <label>Turkana Central</label>
+              <value>turkana central</value>
+            </item>
+            <item>
+              <label>Turkana East</label>
+              <value>turkana east</value>
+            </item>
+            <item>
+              <label>Turkana North</label>
+              <value>turkana north</value>
+            </item>
+            <item>
+              <label>Turkana South</label>
+              <value>turkana south</value>
+            </item>
+            <item>
+              <label>Turkana West</label>
+              <value>turkana west</value>
+            </item>
+            <item>
+              <label>Ugenya</label>
+              <value>ugenya</value>
+            </item>
+            <item>
+              <label>Ugunja</label>
+              <value>ugunja</value>
+            </item>
+            <item>
+              <label>Uriri</label>
+              <value>uriri</value>
+            </item>
+            <item>
+              <label>Vihiga</label>
+              <value>vihiga</value>
+            </item>
+            <item>
+              <label>Voi</label>
+              <value>voi</value>
+            </item>
+            <item>
+              <label>Wajir East</label>
+              <value>wajir east</value>
+            </item>
+            <item>
+              <label>Wajir North</label>
+              <value>wajir north</value>
+            </item>
+            <item>
+              <label>Wajir South</label>
+              <value>wajir south</value>
+            </item>
+            <item>
+              <label>Wajir West</label>
+              <value>wajir west</value>
+            </item>
+            <item>
+              <label>Webuye West</label>
+              <value>webuye west</value>
+            </item>
+            <item>
+              <label>West Pokot</label>
+              <value>west pokot</value>
+            </item>
+            <item>
+              <label>Westlands</label>
+              <value>westlands</value>
+            </item>
+            <item>
+              <label>Yatta</label>
+              <value>yatta</value>
+            </item>
+          </select1>
+          <input ref="/contact_listing/group_case/contact/town">
+            <label>Town</label>
+          </input>
+          <input appearance="multiline" ref="/contact_listing/group_case/contact/address">
+            <label>Address</label>
+          </input>
+          <input ref="/contact_listing/group_case/contact/phone">
+            <label>Phone Number</label>
+          </input>
+          <select1 appearance="horizontal" ref="/contact_listing/group_case/contact/healthcare_worker">
+            <label>Healthcare worker</label>
+            <item>
+              <label>Yes</label>
+              <value>yes</value>
+            </item>
+            <item>
+              <label>No</label>
+              <value>no</value>
+            </item>
+          </select1>
+          <input ref="/contact_listing/group_case/contact/facility">
+            <label>Facility</label>
+          </input>
+        </repeat>
+      </group>
+    </group>
+  </h:body>
+</h:html>

@@ -1,0 +1,2352 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>Traveller Surveillance Form</h:title>
+    <model>
+      <itext>
+        <translation lang="en">
+          <text id="static_instance-select_counties-0">
+            <value>Baringo</value>
+          </text>
+          <text id="static_instance-select_counties-1">
+            <value>Bomet</value>
+          </text>
+          <text id="static_instance-select_counties-10">
+            <value>Kakamega</value>
+          </text>
+          <text id="static_instance-select_counties-11">
+            <value>Kericho</value>
+          </text>
+          <text id="static_instance-select_counties-12">
+            <value>Kiambu</value>
+          </text>
+          <text id="static_instance-select_counties-13">
+            <value>Kilifi</value>
+          </text>
+          <text id="static_instance-select_counties-14">
+            <value>Kirinyaga</value>
+          </text>
+          <text id="static_instance-select_counties-15">
+            <value>Kisii</value>
+          </text>
+          <text id="static_instance-select_counties-16">
+            <value>Kisumu</value>
+          </text>
+          <text id="static_instance-select_counties-17">
+            <value>Kitui</value>
+          </text>
+          <text id="static_instance-select_counties-18">
+            <value>Kwale</value>
+          </text>
+          <text id="static_instance-select_counties-19">
+            <value>Laikipia</value>
+          </text>
+          <text id="static_instance-select_counties-2">
+            <value>Bungoma</value>
+          </text>
+          <text id="static_instance-select_counties-20">
+            <value>Lamu</value>
+          </text>
+          <text id="static_instance-select_counties-21">
+            <value>Machakos</value>
+          </text>
+          <text id="static_instance-select_counties-22">
+            <value>Makueni</value>
+          </text>
+          <text id="static_instance-select_counties-23">
+            <value>Mandera</value>
+          </text>
+          <text id="static_instance-select_counties-24">
+            <value>Marsabit</value>
+          </text>
+          <text id="static_instance-select_counties-25">
+            <value>Meru</value>
+          </text>
+          <text id="static_instance-select_counties-26">
+            <value>Migori</value>
+          </text>
+          <text id="static_instance-select_counties-27">
+            <value>Mombasa</value>
+          </text>
+          <text id="static_instance-select_counties-28">
+            <value>Murang'a</value>
+          </text>
+          <text id="static_instance-select_counties-29">
+            <value>Nairobi</value>
+          </text>
+          <text id="static_instance-select_counties-3">
+            <value>Busia</value>
+          </text>
+          <text id="static_instance-select_counties-30">
+            <value>Nakuru</value>
+          </text>
+          <text id="static_instance-select_counties-31">
+            <value>Nandi</value>
+          </text>
+          <text id="static_instance-select_counties-32">
+            <value>Narok</value>
+          </text>
+          <text id="static_instance-select_counties-33">
+            <value>Nyamira</value>
+          </text>
+          <text id="static_instance-select_counties-34">
+            <value>Nyandarua</value>
+          </text>
+          <text id="static_instance-select_counties-35">
+            <value>Nyeri</value>
+          </text>
+          <text id="static_instance-select_counties-36">
+            <value>Samburu</value>
+          </text>
+          <text id="static_instance-select_counties-37">
+            <value>Siaya</value>
+          </text>
+          <text id="static_instance-select_counties-38">
+            <value>Taita–Taveta</value>
+          </text>
+          <text id="static_instance-select_counties-39">
+            <value>Tana River</value>
+          </text>
+          <text id="static_instance-select_counties-4">
+            <value>Elgeyo-Marakwet</value>
+          </text>
+          <text id="static_instance-select_counties-40">
+            <value>Tharaka-Nithi</value>
+          </text>
+          <text id="static_instance-select_counties-41">
+            <value>Trans-Nzoia</value>
+          </text>
+          <text id="static_instance-select_counties-42">
+            <value>Turkana</value>
+          </text>
+          <text id="static_instance-select_counties-43">
+            <value>Uasin Gishu</value>
+          </text>
+          <text id="static_instance-select_counties-44">
+            <value>Vihiga</value>
+          </text>
+          <text id="static_instance-select_counties-45">
+            <value>Wajir</value>
+          </text>
+          <text id="static_instance-select_counties-46">
+            <value>West Pokot</value>
+          </text>
+          <text id="static_instance-select_counties-5">
+            <value>Embu</value>
+          </text>
+          <text id="static_instance-select_counties-6">
+            <value>Garissa</value>
+          </text>
+          <text id="static_instance-select_counties-7">
+            <value>Homa Bay</value>
+          </text>
+          <text id="static_instance-select_counties-8">
+            <value>Isiolo</value>
+          </text>
+          <text id="static_instance-select_counties-9">
+            <value>Kajiado</value>
+          </text>
+          <text id="static_instance-select_countries-0">
+            <value>Afghanistan</value>
+          </text>
+          <text id="static_instance-select_countries-1">
+            <value>Albania</value>
+          </text>
+          <text id="static_instance-select_countries-10">
+            <value>Azerbaijan</value>
+          </text>
+          <text id="static_instance-select_countries-100">
+            <value>Libya</value>
+          </text>
+          <text id="static_instance-select_countries-101">
+            <value>Liechtenstein</value>
+          </text>
+          <text id="static_instance-select_countries-102">
+            <value>Lithuania</value>
+          </text>
+          <text id="static_instance-select_countries-103">
+            <value>Luxembourg</value>
+          </text>
+          <text id="static_instance-select_countries-104">
+            <value>Madagascar</value>
+          </text>
+          <text id="static_instance-select_countries-105">
+            <value>Malawi</value>
+          </text>
+          <text id="static_instance-select_countries-106">
+            <value>Malaysia</value>
+          </text>
+          <text id="static_instance-select_countries-107">
+            <value>Maldives</value>
+          </text>
+          <text id="static_instance-select_countries-108">
+            <value>Mali</value>
+          </text>
+          <text id="static_instance-select_countries-109">
+            <value>Malta</value>
+          </text>
+          <text id="static_instance-select_countries-11">
+            <value>The Bahamas</value>
+          </text>
+          <text id="static_instance-select_countries-110">
+            <value>Marshall Islands</value>
+          </text>
+          <text id="static_instance-select_countries-111">
+            <value>Mauritania</value>
+          </text>
+          <text id="static_instance-select_countries-112">
+            <value>Mauritius</value>
+          </text>
+          <text id="static_instance-select_countries-113">
+            <value>Mexico</value>
+          </text>
+          <text id="static_instance-select_countries-114">
+            <value>Micronesia, Federated States of</value>
+          </text>
+          <text id="static_instance-select_countries-115">
+            <value>Moldova</value>
+          </text>
+          <text id="static_instance-select_countries-116">
+            <value>Monaco</value>
+          </text>
+          <text id="static_instance-select_countries-117">
+            <value>Mongolia</value>
+          </text>
+          <text id="static_instance-select_countries-118">
+            <value>Montenegro</value>
+          </text>
+          <text id="static_instance-select_countries-119">
+            <value>Morocco</value>
+          </text>
+          <text id="static_instance-select_countries-12">
+            <value>Bahrain</value>
+          </text>
+          <text id="static_instance-select_countries-120">
+            <value>Mozambique</value>
+          </text>
+          <text id="static_instance-select_countries-121">
+            <value>Myanmar (Burma)</value>
+          </text>
+          <text id="static_instance-select_countries-122">
+            <value>Namibia</value>
+          </text>
+          <text id="static_instance-select_countries-123">
+            <value>Nauru</value>
+          </text>
+          <text id="static_instance-select_countries-124">
+            <value>Nepal</value>
+          </text>
+          <text id="static_instance-select_countries-125">
+            <value>Netherlands</value>
+          </text>
+          <text id="static_instance-select_countries-126">
+            <value>New Zealand</value>
+          </text>
+          <text id="static_instance-select_countries-127">
+            <value>Nicaragua</value>
+          </text>
+          <text id="static_instance-select_countries-128">
+            <value>Niger</value>
+          </text>
+          <text id="static_instance-select_countries-129">
+            <value>Nigeria</value>
+          </text>
+          <text id="static_instance-select_countries-13">
+            <value>Bangladesh</value>
+          </text>
+          <text id="static_instance-select_countries-130">
+            <value>North Macedonia</value>
+          </text>
+          <text id="static_instance-select_countries-131">
+            <value>Norway</value>
+          </text>
+          <text id="static_instance-select_countries-132">
+            <value>Oman</value>
+          </text>
+          <text id="static_instance-select_countries-133">
+            <value>Pakistan</value>
+          </text>
+          <text id="static_instance-select_countries-134">
+            <value>Palau</value>
+          </text>
+          <text id="static_instance-select_countries-135">
+            <value>Panama</value>
+          </text>
+          <text id="static_instance-select_countries-136">
+            <value>Papua New Guinea</value>
+          </text>
+          <text id="static_instance-select_countries-137">
+            <value>Paraguay</value>
+          </text>
+          <text id="static_instance-select_countries-138">
+            <value>Peru</value>
+          </text>
+          <text id="static_instance-select_countries-139">
+            <value>Philippines</value>
+          </text>
+          <text id="static_instance-select_countries-14">
+            <value>Barbados</value>
+          </text>
+          <text id="static_instance-select_countries-140">
+            <value>Poland</value>
+          </text>
+          <text id="static_instance-select_countries-141">
+            <value>Portugal</value>
+          </text>
+          <text id="static_instance-select_countries-142">
+            <value>Qatar</value>
+          </text>
+          <text id="static_instance-select_countries-143">
+            <value>Romania</value>
+          </text>
+          <text id="static_instance-select_countries-144">
+            <value>Russia</value>
+          </text>
+          <text id="static_instance-select_countries-145">
+            <value>Rwanda</value>
+          </text>
+          <text id="static_instance-select_countries-146">
+            <value>Saint Kitts and Nevis</value>
+          </text>
+          <text id="static_instance-select_countries-147">
+            <value>Saint Lucia</value>
+          </text>
+          <text id="static_instance-select_countries-148">
+            <value>Saint Vincent and the Grenadines</value>
+          </text>
+          <text id="static_instance-select_countries-149">
+            <value>Samoa</value>
+          </text>
+          <text id="static_instance-select_countries-15">
+            <value>Belarus</value>
+          </text>
+          <text id="static_instance-select_countries-150">
+            <value>San Marino</value>
+          </text>
+          <text id="static_instance-select_countries-151">
+            <value>Sao Tome and Principe</value>
+          </text>
+          <text id="static_instance-select_countries-152">
+            <value>Saudi Arabia</value>
+          </text>
+          <text id="static_instance-select_countries-153">
+            <value>Senegal</value>
+          </text>
+          <text id="static_instance-select_countries-154">
+            <value>Serbia</value>
+          </text>
+          <text id="static_instance-select_countries-155">
+            <value>Seychelles</value>
+          </text>
+          <text id="static_instance-select_countries-156">
+            <value>Sierra Leone</value>
+          </text>
+          <text id="static_instance-select_countries-157">
+            <value>Singapore</value>
+          </text>
+          <text id="static_instance-select_countries-158">
+            <value>Slovakia</value>
+          </text>
+          <text id="static_instance-select_countries-159">
+            <value>Slovenia</value>
+          </text>
+          <text id="static_instance-select_countries-16">
+            <value>Belgium</value>
+          </text>
+          <text id="static_instance-select_countries-160">
+            <value>Solomon Islands</value>
+          </text>
+          <text id="static_instance-select_countries-161">
+            <value>Somalia</value>
+          </text>
+          <text id="static_instance-select_countries-162">
+            <value>South Africa</value>
+          </text>
+          <text id="static_instance-select_countries-163">
+            <value>Spain</value>
+          </text>
+          <text id="static_instance-select_countries-164">
+            <value>Sri Lanka</value>
+          </text>
+          <text id="static_instance-select_countries-165">
+            <value>Sudan</value>
+          </text>
+          <text id="static_instance-select_countries-166">
+            <value>Sudan, South</value>
+          </text>
+          <text id="static_instance-select_countries-167">
+            <value>Suriname</value>
+          </text>
+          <text id="static_instance-select_countries-168">
+            <value>Sweden</value>
+          </text>
+          <text id="static_instance-select_countries-169">
+            <value>Switzerland</value>
+          </text>
+          <text id="static_instance-select_countries-17">
+            <value>Belize</value>
+          </text>
+          <text id="static_instance-select_countries-170">
+            <value>Syria</value>
+          </text>
+          <text id="static_instance-select_countries-171">
+            <value>Taiwan</value>
+          </text>
+          <text id="static_instance-select_countries-172">
+            <value>Tajikistan</value>
+          </text>
+          <text id="static_instance-select_countries-173">
+            <value>Tanzania</value>
+          </text>
+          <text id="static_instance-select_countries-174">
+            <value>Thailand</value>
+          </text>
+          <text id="static_instance-select_countries-175">
+            <value>Togo</value>
+          </text>
+          <text id="static_instance-select_countries-176">
+            <value>Tonga</value>
+          </text>
+          <text id="static_instance-select_countries-177">
+            <value>Trinidad and Tobago</value>
+          </text>
+          <text id="static_instance-select_countries-178">
+            <value>Tunisia</value>
+          </text>
+          <text id="static_instance-select_countries-179">
+            <value>Turkey</value>
+          </text>
+          <text id="static_instance-select_countries-18">
+            <value>Benin</value>
+          </text>
+          <text id="static_instance-select_countries-180">
+            <value>Turkmenistan</value>
+          </text>
+          <text id="static_instance-select_countries-181">
+            <value>Tuvalu</value>
+          </text>
+          <text id="static_instance-select_countries-182">
+            <value>Uganda</value>
+          </text>
+          <text id="static_instance-select_countries-183">
+            <value>Ukraine</value>
+          </text>
+          <text id="static_instance-select_countries-184">
+            <value>United Arab Emirates</value>
+          </text>
+          <text id="static_instance-select_countries-185">
+            <value>United Kingdom</value>
+          </text>
+          <text id="static_instance-select_countries-186">
+            <value>United States</value>
+          </text>
+          <text id="static_instance-select_countries-187">
+            <value>Uruguay</value>
+          </text>
+          <text id="static_instance-select_countries-188">
+            <value>Uzbekistan</value>
+          </text>
+          <text id="static_instance-select_countries-189">
+            <value>Vanuatu</value>
+          </text>
+          <text id="static_instance-select_countries-19">
+            <value>Bhutan</value>
+          </text>
+          <text id="static_instance-select_countries-190">
+            <value>Vatican City</value>
+          </text>
+          <text id="static_instance-select_countries-191">
+            <value>Venezuela</value>
+          </text>
+          <text id="static_instance-select_countries-192">
+            <value>Vietnam</value>
+          </text>
+          <text id="static_instance-select_countries-193">
+            <value>Yemen</value>
+          </text>
+          <text id="static_instance-select_countries-194">
+            <value>Zambia</value>
+          </text>
+          <text id="static_instance-select_countries-195">
+            <value>Zimbabwe</value>
+          </text>
+          <text id="static_instance-select_countries-2">
+            <value>Algeria</value>
+          </text>
+          <text id="static_instance-select_countries-20">
+            <value>Bolivia</value>
+          </text>
+          <text id="static_instance-select_countries-21">
+            <value>Bosnia and Herzegovina</value>
+          </text>
+          <text id="static_instance-select_countries-22">
+            <value>Botswana</value>
+          </text>
+          <text id="static_instance-select_countries-23">
+            <value>Brazil</value>
+          </text>
+          <text id="static_instance-select_countries-24">
+            <value>Brunei</value>
+          </text>
+          <text id="static_instance-select_countries-25">
+            <value>Bulgaria</value>
+          </text>
+          <text id="static_instance-select_countries-26">
+            <value>Burkina Faso</value>
+          </text>
+          <text id="static_instance-select_countries-27">
+            <value>Burundi</value>
+          </text>
+          <text id="static_instance-select_countries-28">
+            <value>Cabo Verde</value>
+          </text>
+          <text id="static_instance-select_countries-29">
+            <value>Cambodia</value>
+          </text>
+          <text id="static_instance-select_countries-3">
+            <value>Andorra</value>
+          </text>
+          <text id="static_instance-select_countries-30">
+            <value>Cameroon</value>
+          </text>
+          <text id="static_instance-select_countries-31">
+            <value>Canada</value>
+          </text>
+          <text id="static_instance-select_countries-32">
+            <value>Central African Republic</value>
+          </text>
+          <text id="static_instance-select_countries-33">
+            <value>Chad</value>
+          </text>
+          <text id="static_instance-select_countries-34">
+            <value>Chile</value>
+          </text>
+          <text id="static_instance-select_countries-35">
+            <value>China</value>
+          </text>
+          <text id="static_instance-select_countries-36">
+            <value>Colombia</value>
+          </text>
+          <text id="static_instance-select_countries-37">
+            <value>Comoros</value>
+          </text>
+          <text id="static_instance-select_countries-38">
+            <value>Congo, Democratic Republic of the</value>
+          </text>
+          <text id="static_instance-select_countries-39">
+            <value>Congo, Republic of the</value>
+          </text>
+          <text id="static_instance-select_countries-4">
+            <value>Angola</value>
+          </text>
+          <text id="static_instance-select_countries-40">
+            <value>Costa Rica</value>
+          </text>
+          <text id="static_instance-select_countries-41">
+            <value>Côte d'Ivoire</value>
+          </text>
+          <text id="static_instance-select_countries-42">
+            <value>Croatia</value>
+          </text>
+          <text id="static_instance-select_countries-43">
+            <value>Cuba</value>
+          </text>
+          <text id="static_instance-select_countries-44">
+            <value>Cyprus</value>
+          </text>
+          <text id="static_instance-select_countries-45">
+            <value>Czech Republic</value>
+          </text>
+          <text id="static_instance-select_countries-46">
+            <value>Denmark</value>
+          </text>
+          <text id="static_instance-select_countries-47">
+            <value>Djibouti</value>
+          </text>
+          <text id="static_instance-select_countries-48">
+            <value>Dominica</value>
+          </text>
+          <text id="static_instance-select_countries-49">
+            <value>Dominican Republic</value>
+          </text>
+          <text id="static_instance-select_countries-5">
+            <value>Antigua and Barbuda</value>
+          </text>
+          <text id="static_instance-select_countries-50">
+            <value>East Timor (Timor-Leste)</value>
+          </text>
+          <text id="static_instance-select_countries-51">
+            <value>Ecuador</value>
+          </text>
+          <text id="static_instance-select_countries-52">
+            <value>Egypt</value>
+          </text>
+          <text id="static_instance-select_countries-53">
+            <value>El Salvador</value>
+          </text>
+          <text id="static_instance-select_countries-54">
+            <value>Equatorial Guinea</value>
+          </text>
+          <text id="static_instance-select_countries-55">
+            <value>Eritrea</value>
+          </text>
+          <text id="static_instance-select_countries-56">
+            <value>Estonia</value>
+          </text>
+          <text id="static_instance-select_countries-57">
+            <value>Eswatini</value>
+          </text>
+          <text id="static_instance-select_countries-58">
+            <value>Ethiopia</value>
+          </text>
+          <text id="static_instance-select_countries-59">
+            <value>Fiji</value>
+          </text>
+          <text id="static_instance-select_countries-6">
+            <value>Argentina</value>
+          </text>
+          <text id="static_instance-select_countries-60">
+            <value>Finland</value>
+          </text>
+          <text id="static_instance-select_countries-61">
+            <value>France</value>
+          </text>
+          <text id="static_instance-select_countries-62">
+            <value>Gabon</value>
+          </text>
+          <text id="static_instance-select_countries-63">
+            <value>The Gambia</value>
+          </text>
+          <text id="static_instance-select_countries-64">
+            <value>Georgia</value>
+          </text>
+          <text id="static_instance-select_countries-65">
+            <value>Germany</value>
+          </text>
+          <text id="static_instance-select_countries-66">
+            <value>Ghana</value>
+          </text>
+          <text id="static_instance-select_countries-67">
+            <value>Greece</value>
+          </text>
+          <text id="static_instance-select_countries-68">
+            <value>Grenada</value>
+          </text>
+          <text id="static_instance-select_countries-69">
+            <value>Guatemala</value>
+          </text>
+          <text id="static_instance-select_countries-7">
+            <value>Armenia</value>
+          </text>
+          <text id="static_instance-select_countries-70">
+            <value>Guinea</value>
+          </text>
+          <text id="static_instance-select_countries-71">
+            <value>Guinea-Bissau</value>
+          </text>
+          <text id="static_instance-select_countries-72">
+            <value>Guyana</value>
+          </text>
+          <text id="static_instance-select_countries-73">
+            <value>Haiti</value>
+          </text>
+          <text id="static_instance-select_countries-74">
+            <value>Honduras</value>
+          </text>
+          <text id="static_instance-select_countries-75">
+            <value>Hungary</value>
+          </text>
+          <text id="static_instance-select_countries-76">
+            <value>Iceland</value>
+          </text>
+          <text id="static_instance-select_countries-77">
+            <value>India</value>
+          </text>
+          <text id="static_instance-select_countries-78">
+            <value>Indonesia</value>
+          </text>
+          <text id="static_instance-select_countries-79">
+            <value>Iran</value>
+          </text>
+          <text id="static_instance-select_countries-8">
+            <value>Australia</value>
+          </text>
+          <text id="static_instance-select_countries-80">
+            <value>Iraq</value>
+          </text>
+          <text id="static_instance-select_countries-81">
+            <value>Ireland</value>
+          </text>
+          <text id="static_instance-select_countries-82">
+            <value>Israel</value>
+          </text>
+          <text id="static_instance-select_countries-83">
+            <value>Italy</value>
+          </text>
+          <text id="static_instance-select_countries-84">
+            <value>Jamaica</value>
+          </text>
+          <text id="static_instance-select_countries-85">
+            <value>Japan</value>
+          </text>
+          <text id="static_instance-select_countries-86">
+            <value>Jordan</value>
+          </text>
+          <text id="static_instance-select_countries-87">
+            <value>Kazakhstan</value>
+          </text>
+          <text id="static_instance-select_countries-88">
+            <value>Kenya</value>
+          </text>
+          <text id="static_instance-select_countries-89">
+            <value>Kiribati</value>
+          </text>
+          <text id="static_instance-select_countries-9">
+            <value>Austria</value>
+          </text>
+          <text id="static_instance-select_countries-90">
+            <value>Korea, North</value>
+          </text>
+          <text id="static_instance-select_countries-91">
+            <value>Korea, South</value>
+          </text>
+          <text id="static_instance-select_countries-92">
+            <value>Kosovo</value>
+          </text>
+          <text id="static_instance-select_countries-93">
+            <value>Kuwait</value>
+          </text>
+          <text id="static_instance-select_countries-94">
+            <value>Kyrgyzstan</value>
+          </text>
+          <text id="static_instance-select_countries-95">
+            <value>Laos</value>
+          </text>
+          <text id="static_instance-select_countries-96">
+            <value>Latvia</value>
+          </text>
+          <text id="static_instance-select_countries-97">
+            <value>Lebanon</value>
+          </text>
+          <text id="static_instance-select_countries-98">
+            <value>Lesotho</value>
+          </text>
+          <text id="static_instance-select_countries-99">
+            <value>Liberia</value>
+          </text>
+          <text id="static_instance-select_gender-0">
+            <value>Male</value>
+          </text>
+          <text id="static_instance-select_gender-1">
+            <value>Female</value>
+          </text>
+          <text id="static_instance-select_outcomes-0">
+            <value>Released</value>
+          </text>
+          <text id="static_instance-select_outcomes-1">
+            <value>Referred for risk assessment at airport</value>
+          </text>
+          <text id="static_instance-select_outcomes-2">
+            <value>Referred to designated hospital</value>
+          </text>
+          <text id="static_instance-select_travel_modes-0">
+            <value>Air</value>
+          </text>
+          <text id="static_instance-select_travel_modes-1">
+            <value>Road</value>
+          </text>
+          <text id="static_instance-select_travel_modes-2">
+            <value>Water</value>
+          </text>
+          <text id="static_instance-select_yes_no-0">
+            <value>Yes</value>
+          </text>
+          <text id="static_instance-select_yes_no-1">
+            <value>No</value>
+          </text>
+        </translation>
+      </itext>
+      <instance>
+        <traveller_surveillance delimiter="#" id="traveller_surveillance" prefix="J1!traveller_surveillance!" version="2019-08-15">
+          <inputs>
+            <meta>
+              <location>
+                <lat/>
+                <long/>
+                <error/>
+                <message/>
+              </location>
+            </meta>
+            <source>user</source>
+            <source_id/>
+            <contact>
+              <_id/>
+              <name/>
+              <date_of_birth/>
+              <sex/>
+              <primary_phone/>
+            </contact>
+          </inputs>
+          <patient_id/>
+          <patient_age_in_years/>
+          <patient_age_in_months/>
+          <patient_age_display/>
+          <has_symptoms/>
+          <has_symptoms_only/>
+          <needs_follow_up/>
+          <group_biodata>
+            <n_details/>
+            <arrival_date/>
+            <mode_of_arrival/>
+            <airline/>
+            <flight_number/>
+            <seat_number/>
+            <destination_city/>
+            <phone/>
+            <alternate_phone/>
+            <email/>
+            <residing_in_kenya/>
+            <provide_contact_info_note/>
+            <contact_person_name/>
+            <village/>
+            <sublocation/>
+            <county/>
+            <postal_address/>
+            <contact_person_phone/>
+          </group_biodata>
+          <group_assessment>
+            <n_symptoms/>
+            <fever/>
+            <cough/>
+            <difficulty_breathing/>
+            <temperature/>
+            <n_results/>
+            <airport_code/>
+            <symptoms_calculation/>
+            <outcome/>
+            <n_results_guidance/>
+            <n_results_report/>
+            <n_fill_investigation/>
+            <receiving_officer/>
+          </group_assessment>
+          <r_summary>
+            <r_submit/>
+            <r_summary/>
+            <r_patient_info/>
+            <r_screening/>
+            <r_no_symptoms/>
+            <r_symptoms/>
+            <c_fever/>
+            <c_cough/>
+            <c_difficulty_breathing/>
+            <c_temp/>
+            <r_action/>
+            <action/>
+            <r_action_taken/>
+            <r_followup/>
+            <r_followup_note/>
+          </r_summary>
+          <meta tag="hidden">
+            <instanceID/>
+          </meta>
+        </traveller_surveillance>
+      </instance>
+      <instance id="contact-summary"/>
+      <instance id="select_countries">
+        <root>
+          <item>
+            <itextId>static_instance-select_countries-0</itextId>
+            <name>afghanistan</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-1</itextId>
+            <name>albania</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-2</itextId>
+            <name>algeria</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-3</itextId>
+            <name>andorra</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-4</itextId>
+            <name>angola</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-5</itextId>
+            <name>antigua and barbuda</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-6</itextId>
+            <name>argentina</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-7</itextId>
+            <name>armenia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-8</itextId>
+            <name>australia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-9</itextId>
+            <name>austria</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-10</itextId>
+            <name>azerbaijan</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-11</itextId>
+            <name>the bahamas</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-12</itextId>
+            <name>bahrain</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-13</itextId>
+            <name>bangladesh</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-14</itextId>
+            <name>barbados</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-15</itextId>
+            <name>belarus</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-16</itextId>
+            <name>belgium</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-17</itextId>
+            <name>belize</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-18</itextId>
+            <name>benin</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-19</itextId>
+            <name>bhutan</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-20</itextId>
+            <name>bolivia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-21</itextId>
+            <name>bosnia and herzegovina</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-22</itextId>
+            <name>botswana</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-23</itextId>
+            <name>brazil</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-24</itextId>
+            <name>brunei</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-25</itextId>
+            <name>bulgaria</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-26</itextId>
+            <name>burkina faso</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-27</itextId>
+            <name>burundi</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-28</itextId>
+            <name>cabo verde</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-29</itextId>
+            <name>cambodia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-30</itextId>
+            <name>cameroon</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-31</itextId>
+            <name>canada</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-32</itextId>
+            <name>central african republic</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-33</itextId>
+            <name>chad</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-34</itextId>
+            <name>chile</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-35</itextId>
+            <name>china</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-36</itextId>
+            <name>colombia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-37</itextId>
+            <name>comoros</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-38</itextId>
+            <name>congo, democratic republic of the</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-39</itextId>
+            <name>congo, republic of the</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-40</itextId>
+            <name>costa rica</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-41</itextId>
+            <name>côte d'ivoire</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-42</itextId>
+            <name>croatia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-43</itextId>
+            <name>cuba</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-44</itextId>
+            <name>cyprus</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-45</itextId>
+            <name>czech republic</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-46</itextId>
+            <name>denmark</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-47</itextId>
+            <name>djibouti</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-48</itextId>
+            <name>dominica</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-49</itextId>
+            <name>dominican republic</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-50</itextId>
+            <name>east timor (timor-leste)</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-51</itextId>
+            <name>ecuador</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-52</itextId>
+            <name>egypt</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-53</itextId>
+            <name>el salvador</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-54</itextId>
+            <name>equatorial guinea</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-55</itextId>
+            <name>eritrea</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-56</itextId>
+            <name>estonia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-57</itextId>
+            <name>eswatini</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-58</itextId>
+            <name>ethiopia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-59</itextId>
+            <name>fiji</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-60</itextId>
+            <name>finland</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-61</itextId>
+            <name>france</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-62</itextId>
+            <name>gabon</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-63</itextId>
+            <name>the gambia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-64</itextId>
+            <name>georgia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-65</itextId>
+            <name>germany</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-66</itextId>
+            <name>ghana</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-67</itextId>
+            <name>greece</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-68</itextId>
+            <name>grenada</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-69</itextId>
+            <name>guatemala</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-70</itextId>
+            <name>guinea</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-71</itextId>
+            <name>guinea-bissau</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-72</itextId>
+            <name>guyana</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-73</itextId>
+            <name>haiti</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-74</itextId>
+            <name>honduras</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-75</itextId>
+            <name>hungary</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-76</itextId>
+            <name>iceland</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-77</itextId>
+            <name>india</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-78</itextId>
+            <name>indonesia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-79</itextId>
+            <name>iran</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-80</itextId>
+            <name>iraq</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-81</itextId>
+            <name>ireland</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-82</itextId>
+            <name>israel</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-83</itextId>
+            <name>italy</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-84</itextId>
+            <name>jamaica</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-85</itextId>
+            <name>japan</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-86</itextId>
+            <name>jordan</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-87</itextId>
+            <name>kazakhstan</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-88</itextId>
+            <name>kenya</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-89</itextId>
+            <name>kiribati</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-90</itextId>
+            <name>korea, north</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-91</itextId>
+            <name>korea, south</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-92</itextId>
+            <name>kosovo</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-93</itextId>
+            <name>kuwait</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-94</itextId>
+            <name>kyrgyzstan</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-95</itextId>
+            <name>laos</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-96</itextId>
+            <name>latvia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-97</itextId>
+            <name>lebanon</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-98</itextId>
+            <name>lesotho</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-99</itextId>
+            <name>liberia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-100</itextId>
+            <name>libya</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-101</itextId>
+            <name>liechtenstein</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-102</itextId>
+            <name>lithuania</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-103</itextId>
+            <name>luxembourg</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-104</itextId>
+            <name>madagascar</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-105</itextId>
+            <name>malawi</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-106</itextId>
+            <name>malaysia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-107</itextId>
+            <name>maldives</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-108</itextId>
+            <name>mali</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-109</itextId>
+            <name>malta</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-110</itextId>
+            <name>marshall islands</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-111</itextId>
+            <name>mauritania</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-112</itextId>
+            <name>mauritius</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-113</itextId>
+            <name>mexico</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-114</itextId>
+            <name>micronesia, federated states of</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-115</itextId>
+            <name>moldova</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-116</itextId>
+            <name>monaco</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-117</itextId>
+            <name>mongolia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-118</itextId>
+            <name>montenegro</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-119</itextId>
+            <name>morocco</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-120</itextId>
+            <name>mozambique</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-121</itextId>
+            <name>myanmar (burma)</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-122</itextId>
+            <name>namibia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-123</itextId>
+            <name>nauru</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-124</itextId>
+            <name>nepal</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-125</itextId>
+            <name>netherlands</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-126</itextId>
+            <name>new zealand</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-127</itextId>
+            <name>nicaragua</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-128</itextId>
+            <name>niger</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-129</itextId>
+            <name>nigeria</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-130</itextId>
+            <name>north macedonia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-131</itextId>
+            <name>norway</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-132</itextId>
+            <name>oman</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-133</itextId>
+            <name>pakistan</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-134</itextId>
+            <name>palau</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-135</itextId>
+            <name>panama</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-136</itextId>
+            <name>papua new guinea</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-137</itextId>
+            <name>paraguay</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-138</itextId>
+            <name>peru</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-139</itextId>
+            <name>philippines</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-140</itextId>
+            <name>poland</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-141</itextId>
+            <name>portugal</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-142</itextId>
+            <name>qatar</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-143</itextId>
+            <name>romania</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-144</itextId>
+            <name>russia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-145</itextId>
+            <name>rwanda</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-146</itextId>
+            <name>saint kitts and nevis</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-147</itextId>
+            <name>saint lucia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-148</itextId>
+            <name>saint vincent and the grenadines</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-149</itextId>
+            <name>samoa</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-150</itextId>
+            <name>san marino</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-151</itextId>
+            <name>sao tome and principe</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-152</itextId>
+            <name>saudi arabia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-153</itextId>
+            <name>senegal</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-154</itextId>
+            <name>serbia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-155</itextId>
+            <name>seychelles</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-156</itextId>
+            <name>sierra leone</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-157</itextId>
+            <name>singapore</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-158</itextId>
+            <name>slovakia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-159</itextId>
+            <name>slovenia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-160</itextId>
+            <name>solomon islands</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-161</itextId>
+            <name>somalia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-162</itextId>
+            <name>south africa</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-163</itextId>
+            <name>spain</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-164</itextId>
+            <name>sri lanka</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-165</itextId>
+            <name>sudan</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-166</itextId>
+            <name>sudan, south</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-167</itextId>
+            <name>suriname</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-168</itextId>
+            <name>sweden</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-169</itextId>
+            <name>switzerland</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-170</itextId>
+            <name>syria</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-171</itextId>
+            <name>taiwan</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-172</itextId>
+            <name>tajikistan</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-173</itextId>
+            <name>tanzania</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-174</itextId>
+            <name>thailand</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-175</itextId>
+            <name>togo</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-176</itextId>
+            <name>tonga</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-177</itextId>
+            <name>trinidad and tobago</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-178</itextId>
+            <name>tunisia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-179</itextId>
+            <name>turkey</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-180</itextId>
+            <name>turkmenistan</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-181</itextId>
+            <name>tuvalu</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-182</itextId>
+            <name>uganda</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-183</itextId>
+            <name>ukraine</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-184</itextId>
+            <name>united arab emirates</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-185</itextId>
+            <name>united kingdom</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-186</itextId>
+            <name>united states</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-187</itextId>
+            <name>uruguay</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-188</itextId>
+            <name>uzbekistan</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-189</itextId>
+            <name>vanuatu</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-190</itextId>
+            <name>vatican city</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-191</itextId>
+            <name>venezuela</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-192</itextId>
+            <name>vietnam</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-193</itextId>
+            <name>yemen</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-194</itextId>
+            <name>zambia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_countries-195</itextId>
+            <name>zimbabwe</name>
+          </item>
+        </root>
+      </instance>
+      <instance id="select_travel_modes">
+        <root>
+          <item>
+            <itextId>static_instance-select_travel_modes-0</itextId>
+            <name>air</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_travel_modes-1</itextId>
+            <name>road</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_travel_modes-2</itextId>
+            <name>water</name>
+          </item>
+        </root>
+      </instance>
+      <instance id="select_counties">
+        <root>
+          <item>
+            <itextId>static_instance-select_counties-0</itextId>
+            <name>baringo</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-1</itextId>
+            <name>bomet</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-2</itextId>
+            <name>bungoma</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-3</itextId>
+            <name>busia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-4</itextId>
+            <name>elgeyo-marakwet</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-5</itextId>
+            <name>embu</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-6</itextId>
+            <name>garissa</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-7</itextId>
+            <name>homa bay</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-8</itextId>
+            <name>isiolo</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-9</itextId>
+            <name>kajiado</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-10</itextId>
+            <name>kakamega</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-11</itextId>
+            <name>kericho</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-12</itextId>
+            <name>kiambu</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-13</itextId>
+            <name>kilifi</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-14</itextId>
+            <name>kirinyaga</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-15</itextId>
+            <name>kisii</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-16</itextId>
+            <name>kisumu</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-17</itextId>
+            <name>kitui</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-18</itextId>
+            <name>kwale</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-19</itextId>
+            <name>laikipia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-20</itextId>
+            <name>lamu</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-21</itextId>
+            <name>machakos</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-22</itextId>
+            <name>makueni</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-23</itextId>
+            <name>mandera</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-24</itextId>
+            <name>marsabit</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-25</itextId>
+            <name>meru</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-26</itextId>
+            <name>migori</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-27</itextId>
+            <name>mombasa</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-28</itextId>
+            <name>murang'a</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-29</itextId>
+            <name>nairobi</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-30</itextId>
+            <name>nakuru</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-31</itextId>
+            <name>nandi</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-32</itextId>
+            <name>narok</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-33</itextId>
+            <name>nyamira</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-34</itextId>
+            <name>nyandarua</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-35</itextId>
+            <name>nyeri</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-36</itextId>
+            <name>samburu</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-37</itextId>
+            <name>siaya</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-38</itextId>
+            <name>taita–taveta</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-39</itextId>
+            <name>tana river</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-40</itextId>
+            <name>tharaka-nithi</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-41</itextId>
+            <name>trans-nzoia</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-42</itextId>
+            <name>turkana</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-43</itextId>
+            <name>uasin gishu</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-44</itextId>
+            <name>vihiga</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-45</itextId>
+            <name>wajir</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_counties-46</itextId>
+            <name>west pokot</name>
+          </item>
+        </root>
+      </instance>
+      <instance id="select_yes_no">
+        <root>
+          <item>
+            <itextId>static_instance-select_yes_no-0</itextId>
+            <name>yes</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_yes_no-1</itextId>
+            <name>no</name>
+          </item>
+        </root>
+      </instance>
+      <instance id="select_gender">
+        <root>
+          <item>
+            <itextId>static_instance-select_gender-0</itextId>
+            <name>male</name>
+          </item>
+          <item>
+            <itextId>static_instance-select_gender-1</itextId>
+            <name>female</name>
+          </item>
+        </root>
+      </instance>
+      <instance id="select_outcomes">
+        <root>
+          <item>
+            <itextId>static_instance-select_outcomes-0</itextId>
+            <name>released</name>
+            <has_symptoms>0</has_symptoms>
+          </item>
+          <item>
+            <itextId>static_instance-select_outcomes-1</itextId>
+            <name>referred_airport</name>
+            <has_symptoms>1</has_symptoms>
+          </item>
+          <item>
+            <itextId>static_instance-select_outcomes-2</itextId>
+            <name>referred_hospital</name>
+            <has_symptoms>1</has_symptoms>
+          </item>
+        </root>
+      </instance>
+      <bind nodeset="/traveller_surveillance/inputs" relevant="./source = 'user'"/>
+      <bind nodeset="/traveller_surveillance/inputs/source" type="string"/>
+      <bind nodeset="/traveller_surveillance/inputs/source_id" type="string"/>
+      <bind nodeset="/traveller_surveillance/inputs/contact/_id" type="db:person"/>
+      <bind nodeset="/traveller_surveillance/inputs/contact/name" type="string"/>
+      <bind nodeset="/traveller_surveillance/inputs/contact/date_of_birth" type="string"/>
+      <bind nodeset="/traveller_surveillance/inputs/contact/sex" type="string"/>
+      <bind nodeset="/traveller_surveillance/inputs/contact/primary_phone" type="string"/>
+      <bind calculate="../inputs/contact/_id" nodeset="/traveller_surveillance/patient_id" type="string"/>
+      <bind calculate="floor( difference-in-months(  /traveller_surveillance/inputs/contact/date_of_birth , today() ) div 12 )" nodeset="/traveller_surveillance/patient_age_in_years" type="string"/>
+      <bind calculate="difference-in-months(  /traveller_surveillance/inputs/contact/date_of_birth , today() )" nodeset="/traveller_surveillance/patient_age_in_months" type="string"/>
+      <bind calculate="concat(
+ concat( /traveller_surveillance/patient_age_in_years , if( /traveller_surveillance/patient_age_in_years =1,' year and ',' years and ')),
+ concat( /traveller_surveillance/patient_age_in_months  mod 12, if(( /traveller_surveillance/patient_age_in_months  mod 12)=1,' month old',' months old'))
+)" nodeset="/traveller_surveillance/patient_age_display" type="string"/>
+      <bind calculate="if( /traveller_surveillance/group_assessment/cough  = 'yes' or  /traveller_surveillance/group_assessment/fever  = 'yes' or  /traveller_surveillance/group_assessment/difficulty_breathing  = 'yes' or  /traveller_surveillance/group_assessment/temperature  &gt;=38, 'true', 'false')" nodeset="/traveller_surveillance/has_symptoms" type="string"/>
+      <bind calculate="if( /traveller_surveillance/group_assessment/cough  = 'yes' or  /traveller_surveillance/group_assessment/fever  = 'yes' or  /traveller_surveillance/group_assessment/difficulty_breathing  = 'yes', 'true', 'false')" nodeset="/traveller_surveillance/has_symptoms_only" type="string"/>
+      <bind calculate="if( /traveller_surveillance/has_symptoms  = 'true' or  /traveller_surveillance/group_assessment/temperature  &gt;= 38, 'yes', 'no')" nodeset="/traveller_surveillance/needs_follow_up" type="string"/>
+      <bind nodeset="/traveller_surveillance/group_biodata/n_details" readonly="true()" required="true()" type="string"/>
+      <bind constraint="floor(decimal-date-time(.)) &lt;= floor(decimal-date-time(today()))" jr:constraintMsg="Date must not be in the future" nodeset="/traveller_surveillance/group_biodata/arrival_date" required="true()" type="date"/>
+      <bind nodeset="/traveller_surveillance/group_biodata/mode_of_arrival" required="true()" type="select1"/>
+      <bind nodeset="/traveller_surveillance/group_biodata/airline" relevant=" /traveller_surveillance/group_biodata/mode_of_arrival  = 'air'" required="true()" type="string"/>
+      <bind nodeset="/traveller_surveillance/group_biodata/flight_number" relevant=" /traveller_surveillance/group_biodata/mode_of_arrival  = 'air'" required="true()" type="string"/>
+      <bind nodeset="/traveller_surveillance/group_biodata/seat_number" relevant=" /traveller_surveillance/group_biodata/mode_of_arrival  = 'air'" required="true()" type="string"/>
+      <bind nodeset="/traveller_surveillance/group_biodata/destination_city" required="true()" type="string"/>
+      <bind constraint="true()" jr:constraintMsg="Please make sure the number is not already in use by another person and is in the format +254 7XX XXX XXX or 07XX XXX XXX." nodeset="/traveller_surveillance/group_biodata/phone" required="true()" type="tel"/>
+      <bind constraint="true()" jr:constraintMsg="Please make sure the number is not already in use by another person and is in the format +254 7XX XXX XXX or 07XX XXX XXX." nodeset="/traveller_surveillance/group_biodata/alternate_phone" required="false()" type="tel"/>
+      <bind nodeset="/traveller_surveillance/group_biodata/email" required="false()" type="string"/>
+      <bind nodeset="/traveller_surveillance/group_biodata/residing_in_kenya" required="true()" type="select1"/>
+      <bind nodeset="/traveller_surveillance/group_biodata/provide_contact_info_note" readonly="true()" relevant=" /traveller_surveillance/group_biodata/residing_in_kenya  = 'yes'" required="true()" type="string"/>
+      <bind nodeset="/traveller_surveillance/group_biodata/contact_person_name" relevant=" /traveller_surveillance/group_biodata/residing_in_kenya  = 'yes'" required="true()" type="string"/>
+      <bind nodeset="/traveller_surveillance/group_biodata/village" relevant=" /traveller_surveillance/group_biodata/residing_in_kenya  = 'yes'" required="true()" type="string"/>
+      <bind nodeset="/traveller_surveillance/group_biodata/sublocation" relevant=" /traveller_surveillance/group_biodata/residing_in_kenya  = 'yes'" required="true()" type="string"/>
+      <bind nodeset="/traveller_surveillance/group_biodata/county" relevant=" /traveller_surveillance/group_biodata/residing_in_kenya  = 'yes'" required="true()" type="select1"/>
+      <bind nodeset="/traveller_surveillance/group_biodata/postal_address" relevant=" /traveller_surveillance/group_biodata/residing_in_kenya  = 'yes'" required="false()" type="string"/>
+      <bind nodeset="/traveller_surveillance/group_biodata/contact_person_phone" relevant=" /traveller_surveillance/group_biodata/residing_in_kenya  = 'yes'" required="false()" type="tel"/>
+      <bind nodeset="/traveller_surveillance/group_assessment/n_symptoms" readonly="true()" type="string"/>
+      <bind nodeset="/traveller_surveillance/group_assessment/fever" required="true()" type="select1"/>
+      <bind nodeset="/traveller_surveillance/group_assessment/cough" required="true()" type="select1"/>
+      <bind nodeset="/traveller_surveillance/group_assessment/difficulty_breathing" required="true()" type="select1"/>
+      <bind constraint=".&lt;=45" jr:constraintMsg="should not be more than 45 degree centrigade" nodeset="/traveller_surveillance/group_assessment/temperature" required="true()" type="decimal"/>
+      <bind nodeset="/traveller_surveillance/group_assessment/n_results" readonly="true()" relevant=" /traveller_surveillance/has_symptoms  = 'true'" type="string"/>
+      <bind nodeset="/traveller_surveillance/group_assessment/airport_code" required="true()" type="string"/>
+      <bind calculate="if( /traveller_surveillance/has_symptoms ='true',1,0)" nodeset="/traveller_surveillance/group_assessment/symptoms_calculation" required="true()" type="string"/>
+      <bind nodeset="/traveller_surveillance/group_assessment/outcome" required="true()" type="select1"/>
+      <bind nodeset="/traveller_surveillance/group_assessment/n_results_guidance" readonly="true()" relevant=" /traveller_surveillance/has_symptoms  = 'true'" type="string"/>
+      <bind nodeset="/traveller_surveillance/group_assessment/n_results_report" readonly="true()" relevant=" /traveller_surveillance/group_assessment/outcome  = 'released'" type="string"/>
+      <bind nodeset="/traveller_surveillance/group_assessment/n_fill_investigation" readonly="true()" required="true()" type="string"/>
+      <bind nodeset="/traveller_surveillance/group_assessment/receiving_officer" required="true()" type="string"/>
+      <bind nodeset="/traveller_surveillance/r_summary/r_submit" readonly="true()" required="true()" type="string"/>
+      <bind nodeset="/traveller_surveillance/r_summary/r_summary" readonly="true()" type="string"/>
+      <bind nodeset="/traveller_surveillance/r_summary/r_patient_info" readonly="true()" type="string"/>
+      <bind nodeset="/traveller_surveillance/r_summary/r_screening" readonly="true()" type="string"/>
+      <bind nodeset="/traveller_surveillance/r_summary/r_no_symptoms" readonly="true()" relevant=" /traveller_surveillance/has_symptoms ='false'" type="string"/>
+      <bind nodeset="/traveller_surveillance/r_summary/r_symptoms" readonly="true()" relevant=" /traveller_surveillance/has_symptoms ='true'" type="string"/>
+      <bind nodeset="/traveller_surveillance/r_summary/c_fever" readonly="true()" relevant=" /traveller_surveillance/group_assessment/fever ='yes'" type="string"/>
+      <bind nodeset="/traveller_surveillance/r_summary/c_cough" readonly="true()" relevant=" /traveller_surveillance/group_assessment/cough ='yes'" type="string"/>
+      <bind nodeset="/traveller_surveillance/r_summary/c_difficulty_breathing" readonly="true()" relevant=" /traveller_surveillance/group_assessment/difficulty_breathing ='yes'" type="string"/>
+      <bind nodeset="/traveller_surveillance/r_summary/c_temp" readonly="true()" relevant=" /traveller_surveillance/group_assessment/temperature  &gt;= 38" type="string"/>
+      <bind nodeset="/traveller_surveillance/r_summary/r_action" readonly="true()" type="string"/>
+      <bind calculate="jr:choice-name( /traveller_surveillance/group_assessment/outcome , ' /traveller_surveillance/group_assessment/outcome ')" nodeset="/traveller_surveillance/r_summary/action" type="string"/>
+      <bind nodeset="/traveller_surveillance/r_summary/r_action_taken" readonly="true()" type="string"/>
+      <bind nodeset="/traveller_surveillance/r_summary/r_followup" readonly="true()" type="string"/>
+      <bind nodeset="/traveller_surveillance/r_summary/r_followup_note" readonly="true()" type="string"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/traveller_surveillance/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body class="pages">
+    <group appearance="field-list" ref="/traveller_surveillance/inputs">
+      <label>Patient</label>
+      <group ref="/traveller_surveillance/inputs/contact">
+        <label>Contact</label>
+        <input appearance="db-object" ref="/traveller_surveillance/inputs/contact/_id">
+          <label>What is the traveller's name?</label>
+          <hint>Select a person from list</hint>
+        </input>
+      </group>
+    </group>
+    <group appearance="field-list" ref="/traveller_surveillance/group_biodata">
+      <label></label>
+      <input ref="/traveller_surveillance/group_biodata/n_details">
+        <label>**Name:** <output value=" /traveller_surveillance/inputs/contact/name "/> **Date of birth:** <output value=" /traveller_surveillance/inputs/contact/date_of_birth "/> **Phone number:** <output value=" /traveller_surveillance/inputs/contact/primary_phone "/></label></input>
+      <input ref="/traveller_surveillance/group_biodata/arrival_date">
+        <label>Date of arrival in Kenya</label>
+      </input>
+      <select1 ref="/traveller_surveillance/group_biodata/mode_of_arrival">
+        <label>Mode of arrival</label>
+        <item>
+          <label>Air</label>
+          <value>air</value>
+        </item>
+        <item>
+          <label>Road</label>
+          <value>road</value>
+        </item>
+        <item>
+          <label>Water</label>
+          <value>water</value>
+        </item>
+      </select1>
+      <input ref="/traveller_surveillance/group_biodata/airline">
+        <label>Airline</label>
+      </input>
+      <input ref="/traveller_surveillance/group_biodata/flight_number">
+        <label>Flight number</label>
+      </input>
+      <input ref="/traveller_surveillance/group_biodata/seat_number">
+        <label>Seat number</label>
+      </input>
+      <input ref="/traveller_surveillance/group_biodata/destination_city">
+        <label>Destination city in Kenya</label>
+      </input>
+      <input ref="/traveller_surveillance/group_biodata/phone">
+        <label>Telephone number in Kenya</label>
+        <hint>Please make sure the number is in the format +254 7XX XXX XXX or 07XX XXX XXX.</hint>
+      </input>
+      <input ref="/traveller_surveillance/group_biodata/alternate_phone">
+        <label>Alternate phone number</label>
+        <hint>Please make sure the number is in the format +254 7XX XXX XXX or 07XX XXX XXX.</hint>
+      </input>
+      <input ref="/traveller_surveillance/group_biodata/email">
+        <label>E-mail address</label>
+      </input>
+      <select1 appearance="horizontal" ref="/traveller_surveillance/group_biodata/residing_in_kenya">
+        <label>Are you planning to reside in Kenya for a duration exceeding 1 hour?</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <input ref="/traveller_surveillance/group_biodata/provide_contact_info_note">
+        <label>Please provide your contact information during your stay</label>
+      </input>
+      <input ref="/traveller_surveillance/group_biodata/contact_person_name">
+        <label>Name of your contact person (if not yourself)</label>
+      </input>
+      <input ref="/traveller_surveillance/group_biodata/village">
+        <label>Village/House number/Hotel</label>
+      </input>
+      <input ref="/traveller_surveillance/group_biodata/sublocation">
+        <label>Sublocation/Estate</label>
+      </input>
+      <select1 appearance="minimal" ref="/traveller_surveillance/group_biodata/county">
+        <label>County</label>
+        <item>
+          <label>Baringo</label>
+          <value>baringo</value>
+        </item>
+        <item>
+          <label>Bomet</label>
+          <value>bomet</value>
+        </item>
+        <item>
+          <label>Bungoma</label>
+          <value>bungoma</value>
+        </item>
+        <item>
+          <label>Busia</label>
+          <value>busia</value>
+        </item>
+        <item>
+          <label>Elgeyo-Marakwet</label>
+          <value>elgeyo-marakwet</value>
+        </item>
+        <item>
+          <label>Embu</label>
+          <value>embu</value>
+        </item>
+        <item>
+          <label>Garissa</label>
+          <value>garissa</value>
+        </item>
+        <item>
+          <label>Homa Bay</label>
+          <value>homa bay</value>
+        </item>
+        <item>
+          <label>Isiolo</label>
+          <value>isiolo</value>
+        </item>
+        <item>
+          <label>Kajiado</label>
+          <value>kajiado</value>
+        </item>
+        <item>
+          <label>Kakamega</label>
+          <value>kakamega</value>
+        </item>
+        <item>
+          <label>Kericho</label>
+          <value>kericho</value>
+        </item>
+        <item>
+          <label>Kiambu</label>
+          <value>kiambu</value>
+        </item>
+        <item>
+          <label>Kilifi</label>
+          <value>kilifi</value>
+        </item>
+        <item>
+          <label>Kirinyaga</label>
+          <value>kirinyaga</value>
+        </item>
+        <item>
+          <label>Kisii</label>
+          <value>kisii</value>
+        </item>
+        <item>
+          <label>Kisumu</label>
+          <value>kisumu</value>
+        </item>
+        <item>
+          <label>Kitui</label>
+          <value>kitui</value>
+        </item>
+        <item>
+          <label>Kwale</label>
+          <value>kwale</value>
+        </item>
+        <item>
+          <label>Laikipia</label>
+          <value>laikipia</value>
+        </item>
+        <item>
+          <label>Lamu</label>
+          <value>lamu</value>
+        </item>
+        <item>
+          <label>Machakos</label>
+          <value>machakos</value>
+        </item>
+        <item>
+          <label>Makueni</label>
+          <value>makueni</value>
+        </item>
+        <item>
+          <label>Mandera</label>
+          <value>mandera</value>
+        </item>
+        <item>
+          <label>Marsabit</label>
+          <value>marsabit</value>
+        </item>
+        <item>
+          <label>Meru</label>
+          <value>meru</value>
+        </item>
+        <item>
+          <label>Migori</label>
+          <value>migori</value>
+        </item>
+        <item>
+          <label>Mombasa</label>
+          <value>mombasa</value>
+        </item>
+        <item>
+          <label>Murang'a</label>
+          <value>murang'a</value>
+        </item>
+        <item>
+          <label>Nairobi</label>
+          <value>nairobi</value>
+        </item>
+        <item>
+          <label>Nakuru</label>
+          <value>nakuru</value>
+        </item>
+        <item>
+          <label>Nandi</label>
+          <value>nandi</value>
+        </item>
+        <item>
+          <label>Narok</label>
+          <value>narok</value>
+        </item>
+        <item>
+          <label>Nyamira</label>
+          <value>nyamira</value>
+        </item>
+        <item>
+          <label>Nyandarua</label>
+          <value>nyandarua</value>
+        </item>
+        <item>
+          <label>Nyeri</label>
+          <value>nyeri</value>
+        </item>
+        <item>
+          <label>Samburu</label>
+          <value>samburu</value>
+        </item>
+        <item>
+          <label>Siaya</label>
+          <value>siaya</value>
+        </item>
+        <item>
+          <label>Taita–Taveta</label>
+          <value>taita–taveta</value>
+        </item>
+        <item>
+          <label>Tana River</label>
+          <value>tana river</value>
+        </item>
+        <item>
+          <label>Tharaka-Nithi</label>
+          <value>tharaka-nithi</value>
+        </item>
+        <item>
+          <label>Trans-Nzoia</label>
+          <value>trans-nzoia</value>
+        </item>
+        <item>
+          <label>Turkana</label>
+          <value>turkana</value>
+        </item>
+        <item>
+          <label>Uasin Gishu</label>
+          <value>uasin gishu</value>
+        </item>
+        <item>
+          <label>Vihiga</label>
+          <value>vihiga</value>
+        </item>
+        <item>
+          <label>Wajir</label>
+          <value>wajir</value>
+        </item>
+        <item>
+          <label>West Pokot</label>
+          <value>west pokot</value>
+        </item>
+      </select1>
+      <input ref="/traveller_surveillance/group_biodata/postal_address">
+        <label>Postal address</label>
+      </input>
+      <input ref="/traveller_surveillance/group_biodata/contact_person_phone">
+        <label>Telephone No of your contact person (if any)</label>
+        <hint>Please make sure the number is in the format +254 7XX XXX XXX or 07XX XXX XXX.</hint>
+      </input>
+    </group>
+    <group ref="/traveller_surveillance/group_assessment">
+      <input ref="/traveller_surveillance/group_assessment/n_symptoms">
+        <label>**Today, or in the past 24 Hours, have you had any of the following symptoms?**</label>
+      </input>
+      <select1 appearance="horizontal" ref="/traveller_surveillance/group_assessment/fever">
+        <label>Fever (38C or higher), felt feverish or had chills?</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <select1 appearance="horizontal" ref="/traveller_surveillance/group_assessment/cough">
+        <label>Cough?</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <select1 appearance="horizontal" ref="/traveller_surveillance/group_assessment/difficulty_breathing">
+        <label>Difficulty breathing?</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <input ref="/traveller_surveillance/group_assessment/temperature">
+        <label>Measured temperature</label>
+        <hint>Should be in degree centrigade</hint>
+      </input>
+      <input ref="/traveller_surveillance/group_assessment/n_results">
+        <label>&lt;span style='color:red;'&gt;Traveller has presented symptoms &lt;i class="fa fa-warning"&gt;&lt;/i&gt;&lt;/span&gt;</label>
+      </input>
+      <input ref="/traveller_surveillance/group_assessment/airport_code">
+        <label>Arrival airport code</label>
+      </input>
+      <select1 ref="/traveller_surveillance/group_assessment/outcome">
+        <label>What actions were taken on <output value=" /traveller_surveillance/inputs/contact/name "/></label>
+        <itemset nodeset="instance('select_outcomes')/root/item[has_symptoms =  /traveller_surveillance/group_assessment/symptoms_calculation  or has_symptoms = 1]">
+          <value ref="name"/>
+          <label ref="jr:itext(itextId)"/>
+        </itemset>
+      </select1>
+      <input ref="/traveller_surveillance/group_assessment/n_results_guidance">
+        <label>&lt;span style='color:red;'&gt;Traveller should not be released when they've presented symptoms &lt;i class="fa fa-warning"&gt;&lt;/i&gt;&lt;/span&gt;</label>
+      </input>
+      <input ref="/traveller_surveillance/group_assessment/n_results_report">
+        <label>&lt;span style='color:red;'&gt;Report to the nearest health facility if you experience either of these symptoms: Fever/Chills, Cough or difficult in breathing &lt;i class="fa fa-warning"&gt;&lt;/i&gt;&lt;/span&gt;</label>
+      </input>
+      <input ref="/traveller_surveillance/group_assessment/n_fill_investigation">
+        <label>**Fill a Case investigation form immediately after submission of this form**</label>
+      </input>
+      <input ref="/traveller_surveillance/group_assessment/receiving_officer">
+        <label>Received and checked by</label>
+      </input>
+    </group>
+    <group appearance="field-list summary" ref="/traveller_surveillance/r_summary">
+      <label></label>
+      <input ref="/traveller_surveillance/r_summary/r_submit">
+        <label>**Click the Submit button at the bottom of the form.**</label>
+      </input>
+      <input appearance="h1 yellow" ref="/traveller_surveillance/r_summary/r_summary">
+        <label>Person's Details&lt;I class="fa fa-user"&gt;&lt;/i&gt;</label>
+      </input>
+      <input ref="/traveller_surveillance/r_summary/r_patient_info">
+        <label>&lt;h4 style=&quot;text-align:center;&quot;&gt;<output value=" /traveller_surveillance/inputs/contact/name "/>&lt;/h4&gt;&lt;h5 style=&quot;text-align:center;&quot;&gt;<output value=" /traveller_surveillance/patient_age_display "/> &lt;/h5&gt;</label>
+      </input>
+      <input appearance="h1 blue" ref="/traveller_surveillance/r_summary/r_screening">
+        <label>Screening Findings &lt;i class="fa fa-medkit"&gt;&lt;/i&gt;</label>
+      </input>
+      <input ref="/traveller_surveillance/r_summary/r_no_symptoms">
+        <label>No Symptoms</label>
+      </input>
+      <input ref="/traveller_surveillance/r_summary/r_symptoms">
+        <label>Has:</label>
+      </input>
+      <input appearance="li" ref="/traveller_surveillance/r_summary/c_fever">
+        <label>Fever</label>
+      </input>
+      <input appearance="li" ref="/traveller_surveillance/r_summary/c_cough">
+        <label>Cough</label>
+      </input>
+      <input appearance="li" ref="/traveller_surveillance/r_summary/c_difficulty_breathing">
+        <label>Difficulty in breathing</label>
+      </input>
+      <input appearance="li" ref="/traveller_surveillance/r_summary/c_temp">
+        <label>Temperature: <output value=" /traveller_surveillance/group_assessment/temperature "/></label>
+      </input>
+      <input appearance="h1 lime" ref="/traveller_surveillance/r_summary/r_action">
+        <label>Action taken &lt;i class="fa fa-heart"&gt;&lt;/i&gt;</label>
+      </input>
+      <input ref="/traveller_surveillance/r_summary/r_action_taken">
+        <label><output value=" /traveller_surveillance/r_summary/action "/></label>
+      </input>
+      <input appearance="h1 green" ref="/traveller_surveillance/r_summary/r_followup">
+        <label>Follow Up Tasks &lt;i class="fa fa-flag"&gt;&lt;/i&gt;</label>
+      </input>
+      <input ref="/traveller_surveillance/r_summary/r_followup_note">
+        <label>Case Investigation notification will be sent to the Rapid Response Team</label>
+      </input>
+    </group>
+  </h:body>
+</h:html>

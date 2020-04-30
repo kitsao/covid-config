@@ -1,0 +1,9 @@
+{
+    "icon": "icon-form-general",
+    "title": "Contact Listing Form",
+    "context": {
+        "person": false,
+        "place": false,
+        "expression": "contact.type === 'clinic'"
+    }
+}

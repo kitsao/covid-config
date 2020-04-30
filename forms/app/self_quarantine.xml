@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>Monitored Self Quarantine</h:title>
+    <model>
+      <instance>
+        <self_quarantine delimiter="#" id="self_quarantine" prefix="J1!self_quarantine!" version="2020-03-31 00:00:00">
+          <inputs>
+            <meta>
+              <location>
+                <lat/>
+                <long/>
+                <error/>
+                <message/>
+              </location>
+            </meta>
+            <source>user</source>
+            <source_id/>
+            <t_follow_up_count/>
+            <contact>
+              <_id/>
+              <name/>
+              <date_of_birth/>
+              <sex/>
+              <primary_phone/>
+            </contact>
+          </inputs>
+          <patient_id/>
+          <patient_age_in_years/>
+          <patient_age_in_months/>
+          <patient_age_display/>
+          <has_symptoms/>
+          <has_symptoms_only/>
+          <needs_follow_up/>
+          <exited/>
+          <group_introduction>
+            <n_steps_instruction/>
+            <n_greet/>
+            <n_introduce/>
+          </group_introduction>
+          <group_follow_up>
+            <n_details/>
+            <patient_in_quarantine/>
+            <days_in_quarantine/>
+            <has_thermal_gun/>
+            <temperature/>
+            <n_symptoms/>
+            <fever/>
+            <cough/>
+            <sore_throat/>
+            <difficulty_breathing/>
+            <n_results/>
+            <n_contact/>
+            <n_summary_note/>
+          </group_follow_up>
+          <r_summary>
+            <r_submit/>
+            <r_summary/>
+            <r_patient_info/>
+            <r_screening/>
+            <c_condition/>
+            <r_no_condition/>
+            <r_followup/>
+            <r_followup_note/>
+            <r_followup_note_14/>
+          </r_summary>
+          <meta tag="hidden">
+            <instanceID/>
+          </meta>
+        </self_quarantine>
+      </instance>
+      <instance id="contact-summary"/>
+      <bind nodeset="/self_quarantine/inputs" relevant="./source = 'user'"/>
+      <bind nodeset="/self_quarantine/inputs/source" type="string"/>
+      <bind nodeset="/self_quarantine/inputs/source_id" type="string"/>
+      <bind nodeset="/self_quarantine/inputs/t_follow_up_count" type="string"/>
+      <bind nodeset="/self_quarantine/inputs/contact/_id" type="db:person"/>
+      <bind nodeset="/self_quarantine/inputs/contact/name" type="string"/>
+      <bind nodeset="/self_quarantine/inputs/contact/date_of_birth" type="string"/>
+      <bind nodeset="/self_quarantine/inputs/contact/sex" type="string"/>
+      <bind nodeset="/self_quarantine/inputs/contact/primary_phone" type="string"/>
+      <bind calculate="../inputs/contact/_id" nodeset="/self_quarantine/patient_id" type="string"/>
+      <bind calculate="floor( difference-in-months(  /self_quarantine/inputs/contact/date_of_birth , today() ) div 12 )" nodeset="/self_quarantine/patient_age_in_years" type="string"/>
+      <bind calculate="difference-in-months(  /self_quarantine/inputs/contact/date_of_birth , today() )" nodeset="/self_quarantine/patient_age_in_months" type="string"/>
+      <bind calculate="concat(
+ concat( /self_quarantine/patient_age_in_years , if( /self_quarantine/patient_age_in_years =1,' year and ',' years and ')),
+ concat( /self_quarantine/patient_age_in_months  mod 12, if(( /self_quarantine/patient_age_in_months  mod 12)=1,' month old',' months old'))
+)" nodeset="/self_quarantine/patient_age_display" type="string"/>
+      <bind calculate="if( /self_quarantine/group_follow_up/cough  = 'yes' or  /self_quarantine/group_follow_up/fever  = 'yes' or  /self_quarantine/group_follow_up/difficulty_breathing  = 'yes' or  /self_quarantine/group_follow_up/temperature  &gt;=38, 'true', 'false')" nodeset="/self_quarantine/has_symptoms" type="string"/>
+      <bind calculate="if( /self_quarantine/group_follow_up/cough  = 'yes' or  /self_quarantine/group_follow_up/fever  = 'yes' or  /self_quarantine/group_follow_up/difficulty_breathing  = 'yes', 'true', 'false')" nodeset="/self_quarantine/has_symptoms_only" type="string"/>
+      <bind calculate="if( /self_quarantine/has_symptoms  = 'true' or  /self_quarantine/group_follow_up/temperature  &gt;= 38, 'yes', 'no')" nodeset="/self_quarantine/needs_follow_up" type="string"/>
+      <bind calculate="if( /self_quarantine/has_symptoms_only  = 'false' and  /self_quarantine/group_follow_up/temperature &lt;38 and  /self_quarantine/group_follow_up/days_in_quarantine =14,'true','false')" nodeset="/self_quarantine/exited" type="string"/>
+      <bind nodeset="/self_quarantine/group_introduction/n_steps_instruction" readonly="true()" required="true()" type="string"/>
+      <bind nodeset="/self_quarantine/group_introduction/n_greet" readonly="true()" required="true()" type="string"/>
+      <bind nodeset="/self_quarantine/group_introduction/n_introduce" readonly="true()" required="true()" type="string"/>
+      <bind nodeset="/self_quarantine/group_follow_up/n_details" readonly="true()" required="true()" type="string"/>
+      <bind nodeset="/self_quarantine/group_follow_up/patient_in_quarantine" required="true()" type="select1"/>
+      <bind constraint=".&lt;=14" jr:constraintMsg="Days should not be more than 14" nodeset="/self_quarantine/group_follow_up/days_in_quarantine" relevant=" /self_quarantine/group_follow_up/patient_in_quarantine ='yes'" required="true()" type="int"/>
+      <bind nodeset="/self_quarantine/group_follow_up/has_thermal_gun" required="true()" type="select1"/>
+      <bind constraint=".&lt;=45" jr:constraintMsg="should not be more than 45 degree centrigade" nodeset="/self_quarantine/group_follow_up/temperature" relevant=" /self_quarantine/group_follow_up/has_thermal_gun ='yes'" required="true()" type="decimal"/>
+      <bind nodeset="/self_quarantine/group_follow_up/n_symptoms" readonly="true()" required="true()" type="string"/>
+      <bind nodeset="/self_quarantine/group_follow_up/fever" required="true()" type="select1"/>
+      <bind nodeset="/self_quarantine/group_follow_up/cough" required="true()" type="select1"/>
+      <bind nodeset="/self_quarantine/group_follow_up/sore_throat" required="true()" type="select1"/>
+      <bind nodeset="/self_quarantine/group_follow_up/difficulty_breathing" required="true()" type="select1"/>
+      <bind nodeset="/self_quarantine/group_follow_up/n_results" readonly="true()" relevant=" /self_quarantine/has_symptoms  = 'true'" required="true()" type="string"/>
+      <bind nodeset="/self_quarantine/group_follow_up/n_contact" readonly="true()" relevant=" /self_quarantine/has_symptoms_only  = 'false' and  /self_quarantine/group_follow_up/temperature &lt;38" required="true()" type="string"/>
+      <bind nodeset="/self_quarantine/group_follow_up/n_summary_note" readonly="true()" required="true()" type="string"/>
+      <bind nodeset="/self_quarantine/r_summary/r_submit" readonly="true()" required="true()" type="string"/>
+      <bind nodeset="/self_quarantine/r_summary/r_summary" readonly="true()" type="string"/>
+      <bind nodeset="/self_quarantine/r_summary/r_patient_info" readonly="true()" type="string"/>
+      <bind nodeset="/self_quarantine/r_summary/r_screening" readonly="true()" type="string"/>
+      <bind calculate="if( /self_quarantine/has_symptoms_only  = 'true', 'Has Acute Respiratory infection symptoms','No Acute Respiratory infection symptoms')" nodeset="/self_quarantine/r_summary/c_condition" type="string"/>
+      <bind nodeset="/self_quarantine/r_summary/r_no_condition" readonly="true()" type="string"/>
+      <bind nodeset="/self_quarantine/r_summary/r_followup" readonly="true()" type="string"/>
+      <bind nodeset="/self_quarantine/r_summary/r_followup_note" readonly="true()" relevant=" /self_quarantine/group_follow_up/days_in_quarantine !=14 and  /self_quarantine/group_follow_up/patient_in_quarantine ='yes'" type="string"/>
+      <bind nodeset="/self_quarantine/r_summary/r_followup_note_14" readonly="true()" relevant=" /self_quarantine/group_follow_up/days_in_quarantine =14 or  /self_quarantine/group_follow_up/patient_in_quarantine ='no'" type="string"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/self_quarantine/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body class="pages">
+    <group appearance="field-list" ref="/self_quarantine/inputs">
+      <label>Patient</label>
+      <group ref="/self_quarantine/inputs/contact">
+        <label>Contact</label>
+        <input appearance="db-object" ref="/self_quarantine/inputs/contact/_id">
+          <label>What is the traveller's name?</label>
+          <hint>Select a person from list</hint>
+        </input>
+      </group>
+    </group>
+    <group appearance="field-list" ref="/self_quarantine/group_introduction">
+      <label></label>
+      <input ref="/self_quarantine/group_introduction/n_steps_instruction">
+        <label>**Follow the steps below when calling suspected cases for contact tracing/follow up**</label>
+      </input>
+      <input ref="/self_quarantine/group_introduction/n_greet">
+        <label>Greet the person</label>
+      </input>
+      <input ref="/self_quarantine/group_introduction/n_introduce">
+        <label>Introduce yourself (where you are calling from and why you calling)</label>
+      </input>
+    </group>
+    <group appearance="field-list" ref="/self_quarantine/group_follow_up">
+      <label></label>
+      <input ref="/self_quarantine/group_follow_up/n_details">
+        <label>Find out the following information from <output value=" /self_quarantine/inputs/contact/name "/></label>
+      </input>
+      <select1 ref="/self_quarantine/group_follow_up/patient_in_quarantine">
+        <label>Is <output value=" /self_quarantine/inputs/contact/name "/> still on quarantine</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <input ref="/self_quarantine/group_follow_up/days_in_quarantine">
+        <label>How many days so far</label>
+      </input>
+      <select1 ref="/self_quarantine/group_follow_up/has_thermal_gun">
+        <label>Does <output value=" /self_quarantine/inputs/contact/name "/> have a thermal gun</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <input ref="/self_quarantine/group_follow_up/temperature">
+        <label>What is <output value=" /self_quarantine/inputs/contact/name "/> body temperature today</label>
+        <hint>Should be in degree centrigade</hint>
+      </input>
+      <input ref="/self_quarantine/group_follow_up/n_symptoms">
+        <label>**Has <output value=" /self_quarantine/inputs/contact/name "/> developed any of the following symptoms so far**</label>
+      </input>
+      <select1 appearance="horizontal" ref="/self_quarantine/group_follow_up/fever">
+        <label>Fever</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <select1 appearance="horizontal" ref="/self_quarantine/group_follow_up/cough">
+        <label>Cough?</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <select1 appearance="horizontal" ref="/self_quarantine/group_follow_up/sore_throat">
+        <label>Sore throat</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <select1 appearance="horizontal" ref="/self_quarantine/group_follow_up/difficulty_breathing">
+        <label>Difficulty breathing?</label>
+        <item>
+          <label>Yes</label>
+          <value>yes</value>
+        </item>
+        <item>
+          <label>No</label>
+          <value>no</value>
+        </item>
+      </select1>
+      <input ref="/self_quarantine/group_follow_up/n_results">
+        <label>&lt;span style='color:red;'&gt;Refer <output value=" /self_quarantine/inputs/contact/name "/> to the health facility immediately for further testing &lt;i class=&quot;fa fa-warning&quot;&gt;&lt;/i&gt;&lt;/span&gt;</label>
+      </input>
+      <input ref="/self_quarantine/group_follow_up/n_contact">
+        <label>In case <output value=" /self_quarantine/inputs/contact/name "/> or any of their contacts develop any symptoms please contact the Emergency Operations Centre (EOC) on these Hotlines 0729471414 or 0732353535 and toll free line, 0800721316</label>
+      </input>
+      <input ref="/self_quarantine/group_follow_up/n_summary_note">
+        <label>**Provide information on the need to continue self quarantine upto 14 days, respond to any question then thank <output value=" /self_quarantine/inputs/contact/name "/> and end the call**</label>
+      </input>
+    </group>
+    <group appearance="field-list summary" ref="/self_quarantine/r_summary">
+      <label></label>
+      <input ref="/self_quarantine/r_summary/r_submit">
+        <label>**Click the Submit button at the bottom of the form.**</label>
+      </input>
+      <input appearance="h1 yellow" ref="/self_quarantine/r_summary/r_summary">
+        <label>Person's Details&lt;I class="fa fa-user"&gt;&lt;/i&gt;</label>
+      </input>
+      <input ref="/self_quarantine/r_summary/r_patient_info">
+        <label>&lt;h4 style=&quot;text-align:center;&quot;&gt;<output value=" /self_quarantine/inputs/contact/name "/>&lt;/h4&gt;&lt;h5 style=&quot;text-align:center;&quot;&gt;<output value=" /self_quarantine/patient_age_display "/> &lt;/h5&gt;</label>
+      </input>
+      <input appearance="h1 blue" ref="/self_quarantine/r_summary/r_screening">
+        <label>Patient Condition &lt;i class="fa fa-medkit"&gt;&lt;/i&gt;</label>
+      </input>
+      <input ref="/self_quarantine/r_summary/r_no_condition">
+        <label><output value=" /self_quarantine/r_summary/c_condition "/></label>
+      </input>
+      <input appearance="h1 green" ref="/self_quarantine/r_summary/r_followup">
+        <label>Follow Up Tasks &lt;i class="fa fa-flag"&gt;&lt;/i&gt;</label>
+      </input>
+      <input ref="/self_quarantine/r_summary/r_followup_note">
+        <label>Self Quarantine task will appear tomorrow</label>
+      </input>
+      <input ref="/self_quarantine/r_summary/r_followup_note_14">
+        <label>No more self quarantine tasks will be send for <output value=" /self_quarantine/inputs/contact/name "/></label>
+      </input>
+    </group>
+  </h:body>
+</h:html>

@@ -1,0 +1,1026 @@
+{
+  "locales": [
+    {
+      "code": "en",
+      "name": "English"
+    },
+    {
+      "code": "es",
+      "name": "Español (Spanish)"
+    },
+    {
+      "code": "fr",
+      "name": "Français (French)"
+    },
+    {
+      "code": "ne",
+      "name": "नेपाली (Nepali)"
+    },
+    {
+      "code": "sw",
+      "name": "Kiswahili (Swahili)"
+    }
+  ],
+  "locale": "en",
+  "locale_outgoing": "en",
+  "date_format": "D MMM, YYYY",
+  "reported_date_format": "DD-MMM-YYYY HH:mm:ss",
+  "forms_only_mode": false,
+  "place_hierarchy_types": [
+    "district_hospital",
+    "health_center"
+  ],
+  "default_responses": {
+    "start_date": ""
+  },
+  "district_admins_access_unallocated_messages": false,
+  "public_access": false,
+  "default_country_code": 254,
+  "gateway_number": "+254798217246",
+  "kujua-reporting": [
+    {
+      "code": "VPD",
+      "reporting_freq": "weekly"
+    }
+  ],
+  "schedule_morning_hours": 0,
+  "schedule_morning_minutes": 0,
+  "schedule_evening_hours": 23,
+  "schedule_evening_minutes": 0,
+  "synthetic_date": "",
+  "contact_display_short": "clinic.name",
+  "roles": {
+    "data_entry": {
+      "name": "usertype.data-entry"
+    },
+    "analytics": {
+      "name": "usertype.analytics"
+    },
+    "gateway": {
+      "name": "usertype.gateway"
+    },
+    "program_officer": {
+      "name": "usertype.program-officer"
+    },
+    "chw_supervisor": {
+      "name": "usertype.chw-supervisor",
+      "offline": true
+    },
+    "chw": {
+      "name": "usertype.chw",
+      "offline": true
+    },
+    "national_tracer": {
+      "name": "usertype.national-tracer"
+    },
+    "county_focal_person": {
+      "name": "usertype.county-focal-person"
+    },
+    "sub_county_focal_person": {
+      "name": "usertype.sub-county-focal-person"
+    },
+    "rapid_response_team_member": {
+      "name": "usertype.rapid-response-officer",
+      "offline": true
+    },
+    "ward_level_tracer": {
+      "name": "usertype.ward-level-tracer",
+      "offline": true
+    }
+  },
+  "permissions": {
+    "can_access_gateway_api": [
+      "gateway"
+    ],
+    "can_bulk_delete_reports": [
+      "national_admin",
+      "district_admin",
+      "program_officer",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member",
+      "ward_level_tracer"
+    ],
+    "can_configure": [
+      "national_admin",
+      "program_officer",
+      "national_tracer",
+      "sub_county_focal_person"
+    ],
+    "can_create_people": [
+      "national_admin",
+      "district_admin",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "ward_level_tracer"
+    ],
+    "can_create_places": [
+      "national_admin",
+      "district_admin",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member"
+    ],
+    "can_create_records": [
+      "national_admin",
+      "district_admin",
+      "data_entry",
+      "gateway",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member",
+      "ward_level_tracer"
+    ],
+    "can_create_users": [
+      "national_admin",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person"
+    ],
+    "can_delete_contacts": [
+      "national_admin",
+      "district_admin",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member",
+      "ward_level_tracer"
+    ],
+    "can_delete_messages": [
+      "national_admin",
+      "district_admin",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member"
+    ],
+    "can_delete_reports": [
+      "national_admin",
+      "district_admin",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member"
+    ],
+    "can_delete_users": [
+      "national_admin",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person"
+    ],
+    "can_edit": [
+      "national_admin",
+      "district_admin",
+      "gateway",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member",
+      "ward_level_tracer"
+    ],
+    "can_edit_profile": [
+      "national_admin",
+      "district_admin",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member",
+      "ward_level_tracer"
+    ],
+    "can_edit_verification": [
+      "national_admin",
+      "district_admin",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member",
+      "ward_level_tracer"
+    ],
+    "can_export_all": [
+      "national_admin",
+      "program_officer",
+      "national_tracer",
+      "sub_county_focal_person"
+    ],
+    "can_export_audit": [
+      "national_admin",
+      "program_officer",
+      "national_tracer",
+      "sub_county_focal_person"
+    ],
+    "can_export_contacts": [
+      "national_admin",
+      "district_admin",
+      "program_officer",
+      "national_tracer",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member",
+      "ward_level_tracer"
+    ],
+    "can_export_feedback": [
+      "national_admin",
+      "program_officer",
+      "national_tracer",
+      "sub_county_focal_person"
+    ],
+    "can_export_forms": [
+      "national_admin",
+      "district_admin",
+      "analytics",
+      "program_officer",
+      "national_tracer",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member",
+      "ward_level_tracer"
+    ],
+    "can_export_messages": [
+      "national_admin",
+      "district_admin",
+      "analytics",
+      "program_officer",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member"
+    ],
+    "can_log_out_on_android": [],
+    "can_update_messages": [
+      "national_admin",
+      "district_admin",
+      "gateway",
+      "program_officer",
+      "national_tracer",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member",
+      "ward_level_tracer"
+    ],
+    "can_update_people": [
+      "national_admin",
+      "district_admin",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member",
+      "ward_level_tracer"
+    ],
+    "can_update_places": [
+      "national_admin",
+      "district_admin",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member",
+      "ward_level_tracer"
+    ],
+    "can_update_reports": [
+      "national_admin",
+      "district_admin",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member",
+      "ward_level_tracer"
+    ],
+    "can_update_users": [
+      "national_admin",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person"
+    ],
+    "can_verify_reports": [
+      "national_admin",
+      "district_admin",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member",
+      "ward_level_tracer"
+    ],
+    "can_view_analytics": [
+      "national_admin",
+      "district_admin",
+      "analytics",
+      "program_officer",
+      "national_tracer",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw"
+    ],
+    "can_view_analytics_tab": [
+      "national_admin",
+      "district_admin",
+      "program_officer",
+      "national_tracer",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw"
+    ],
+    "can_view_call_action": [
+      "national_admin",
+      "district_admin",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member",
+      "ward_level_tracer"
+    ],
+    "can_view_contacts": [
+      "national_admin",
+      "district_admin",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member",
+      "ward_level_tracer"
+    ],
+    "can_view_contacts_tab": [
+      "national_admin",
+      "district_admin",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member",
+      "ward_level_tracer"
+    ],
+    "can_view_data_records": [
+      "national_admin",
+      "district_admin",
+      "analytics",
+      "gateway",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member",
+      "ward_level_tracer"
+    ],
+    "can_view_last_visited_date": [],
+    "can_view_message_action": [
+      "national_admin",
+      "district_admin",
+      "program_officer",
+      "national_tracer",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member",
+      "ward_level_tracer"
+    ],
+    "can_view_messages": [
+      "national_admin",
+      "district_admin",
+      "program_officer",
+      "national_tracer",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw"
+    ],
+    "can_view_messages_tab": [
+      "national_admin",
+      "district_admin",
+      "program_officer",
+      "national_tracer",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw"
+    ],
+    "can_view_outgoing_messages": [
+      "national_admin",
+      "program_officer",
+      "national_tracer",
+      "sub_county_focal_person"
+    ],
+    "can_view_reports": [
+      "national_admin",
+      "district_admin",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member",
+      "ward_level_tracer"
+    ],
+    "can_view_reports_tab": [
+      "national_admin",
+      "district_admin",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member",
+      "ward_level_tracer"
+    ],
+    "can_view_tasks": [
+      "district_admin",
+      "chw_supervisor",
+      "chw"
+    ],
+    "can_view_tasks_tab": [
+      "district_admin",
+      "chw_supervisor",
+      "chw"
+    ],
+    "can_view_unallocated_data_records": [
+      "national_admin",
+      "district_admin",
+      "gateway",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person",
+      "chw_supervisor",
+      "chw",
+      "rapid_response_team_member",
+      "ward_level_tracer"
+    ],
+    "can_view_users": [
+      "national_admin",
+      "program_officer",
+      "national_tracer",
+      "county_focal_person",
+      "sub_county_focal_person"
+    ],
+    "can_write_wealth_quintiles": []
+  },
+  "changes_controller": {
+    "reiterate_changes": true,
+    "changes_limit": 100,
+    "debounce_interval": 200
+  },
+  "uhc": {
+    "contacts_default_sort": "",
+    "visit_count": {
+      "month_start_date": 1,
+      "visit_count_goal": 0
+    }
+  },
+  "contact_types": [
+    {
+      "id": "national_office",
+      "name_key": "contact.type.national_office",
+      "group_key": "contact.type.national_office.plural",
+      "create_key": "contact.type.national_office.new",
+      "edit_key": "contact.type.place.edit",
+      "primary_contact_key": "national_office.field.contact",
+      "icon": "medic-national",
+      "create_form": "form:contact:national_office:create",
+      "edit_form": "form:contact:national_office:edit"
+    },
+    {
+      "id": "county_office",
+      "name_key": "contact.type.county_office",
+      "group_key": "contact.type.county_office.plural",
+      "create_key": "contact.type.county_office.new",
+      "edit_key": "contact.type.place.edit",
+      "primary_contact_key": "county_office.field.contact",
+      "parents": [
+        "national_office"
+      ],
+      "icon": "medic-county",
+      "create_form": "form:contact:county_office:create",
+      "edit_form": "form:contact:county_office:edit"
+    },
+    {
+      "id": "rapid_response_team",
+      "name_key": "contact.type.rapid_response_team",
+      "group_key": "contact.type.rapid_response_team.plural",
+      "create_key": "contact.type.rapid_response_team.new",
+      "edit_key": "contact.type.place.edit",
+      "primary_contact_key": "rapid_response_team.field.contact",
+      "parents": [
+        "county_office"
+      ],
+      "icon": "medic-rapid-response",
+      "create_form": "form:contact:rapid_response_team:create",
+      "edit_form": "form:contact:rapid_response_team:edit"
+    },
+    {
+      "id": "forwarded_case",
+      "name_key": "contact.type.forwarded_case",
+      "group_key": "contact.type.forwarded_case.plural",
+      "create_key": "contact.type.forwarded_case.new",
+      "edit_key": "contact.type.place.edit",
+      "primary_contact_key": "forwarded_case.field.contact",
+      "parents": [
+        "county_office"
+      ],
+      "icon": "medic-covid-case",
+      "edit_form": "form:contact:forwarded_case:edit"
+    },
+    {
+      "id": "response_squad",
+      "name_key": "contact.type.contact_tracing_team",
+      "group_key": "contact.type.contact_tracing_team.plural",
+      "create_key": "contact.type.contact_tracing_team.new",
+      "edit_key": "contact.type.place.edit",
+      "primary_contact_key": "contact_tracing_team.field.contact",
+      "parents": [
+        "county_office"
+      ],
+      "icon": "medic-response-squad",
+      "create_form": "form:contact:response_squad:create",
+      "edit_form": "form:contact:response_squad:edit",
+      "count_visits": true
+    },
+    {
+      "id": "trace_case",
+      "name_key": "contact.type.trace_case",
+      "group_key": "contact.type.trace_case.plural",
+      "create_key": "contact.type.trace_case.new",
+      "edit_key": "contact.type.place.edit",
+      "primary_contact_key": "trace_case.field.contact",
+      "parents": [
+        "rapid_response_team",
+        "response_squad"
+      ],
+      "icon": "medic-covid-case",
+      "create_form": "form:contact:trace_case:create",
+      "edit_form": "form:contact:trace_case:edit",
+      "count_visits": true
+    },
+    {
+      "id": "trace_contact",
+      "name_key": "contact.type.patient",
+      "group_key": "contact.type.patient.plural",
+      "create_key": "contact.type.patient.new",
+      "edit_key": "contact.type.patient.edit",
+      "primary_contact_key": "place.field.contact",
+      "parents": [
+        "trace_case"
+      ],
+      "icon": "medic-person",
+      "create_form": "form:contact:trace_contact:create",
+      "edit_form": "form:contact:trace_contact:edit",
+      "person": true
+    },
+    {
+      "id": "response_squad_member",
+      "name_key": "contact.type.contact_tracing_team_member",
+      "group_key": "contact.type.contact_tracing_team_member.plural",
+      "create_key": "contact.type.contact_tracing_team_member.new",
+      "edit_key": "contact.type.contact_tracing_team_member.edit",
+      "primary_contact_key": "clinic.field.contact",
+      "parents": [
+        ""
+      ],
+      "icon": "medic-health-worker",
+      "create_form": "form:contact:contact_tracing_team_member:create",
+      "edit_form": "form:contact:contact_tracing_team_member:edit",
+      "person": true
+    },
+    {
+      "id": "rapid_response_team_member",
+      "name_key": "contact.type.rapid_response_team_member",
+      "group_key": "contact.type.rapid_response_team_member.plural",
+      "create_key": "contact.type.rapid_response_team_member.new",
+      "edit_key": "contact.type.rapid_response_team_member.edit",
+      "primary_contact_key": "clinic.field.contact",
+      "parents": [
+        ""
+      ],
+      "icon": "medic-health-worker",
+      "create_form": "form:contact:rapid_response_team_member:create",
+      "edit_form": "form:contact:rapid_response_team_member:edit",
+      "person": true
+    },
+    {
+      "id": "sub_county_officer",
+      "name_key": "contact.type.sub_county_officer",
+      "group_key": "contact.type.sub_county_officer.plural",
+      "create_key": "contact.type.sub_county_officer.new",
+      "edit_key": "contact.type.sub_county_officer.edit",
+      "primary_contact_key": "clinic.field.contact",
+      "parents": [
+        ""
+      ],
+      "icon": "medic-health-worker",
+      "create_form": "form:contact:sub_county_officer:create",
+      "edit_form": "form:contact:sub_county_officer:edit",
+      "person": true
+    },
+    {
+      "id": "county_officer",
+      "name_key": "contact.type.county_officer",
+      "group_key": "contact.type.county_officer.plural",
+      "create_key": "contact.type.county_officer.new",
+      "edit_key": "contact.type.county_officer.edit",
+      "primary_contact_key": "clinic.field.contact",
+      "parents": [
+        ""
+      ],
+      "icon": "medic-health-worker",
+      "create_form": "form:contact:county_officer:create",
+      "edit_form": "form:contact:county_officer:edit",
+      "person": true
+    },
+    {
+      "id": "national_officer",
+      "name_key": "contact.type.national_officer",
+      "group_key": "contact.type.national_officer.plural",
+      "create_key": "contact.type.national_officer.new",
+      "edit_key": "contact.type.national_officer.edit",
+      "primary_contact_key": "clinic.field.contact",
+      "parents": [
+        ""
+      ],
+      "icon": "medic-health-worker",
+      "create_form": "form:contact:national_officer:create",
+      "edit_form": "form:contact:national_officer:edit",
+      "person": true
+    }
+  ],
+  "setup_complete": true,
+  "contact_summary": "var ContactSummary = {}; !function(e,t){if('object'==typeof exports&&'object'==typeof module)module.exports=t();else if('function'==typeof define&&define.amd)define([],t);else{var a=t();for(var n in a)('object'==typeof exports?exports:e)[n]=a[n]}}(ContactSummary,(function(){return function(e){var t={};function a(n){if(t[n])return t[n].exports;var o=t[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,a),o.l=!0,o.exports}return a.m=e,a.c=t,a.d=function(e,t,n){a.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},a.r=function(e){'undefined'!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:'Module'}),Object.defineProperty(e,'__esModule',{value:!0})},a.t=function(e,t){if(1&t&&(e=a(e)),8&t)return e;if(4&t&&'object'==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(a.r(n),Object.defineProperty(n,'default',{enumerable:!0,value:e}),2&t&&'string'!=typeof e)for(var o in e)a.d(n,o,function(t){return e[t]}.bind(null,o));return n},a.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return a.d(t,'a',t),t},a.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},a.p='',a(a.s=0)}([function(e,t,a){var n=a(1),o=a(4);e.exports=o(n,contact,reports)},function(e,t,a){const{hasExited:n,newestSelfQuarantineTimestamp:o}=a(2),r=[{appliesToType:'person',appliesIf:()=>!!contact.patient_id,label:'patient_id',value:contact.patient_id,width:4},{appliesToType:'person',label:'contact.age',value:contact.date_of_birth,width:4,filter:'age'},{appliesToType:'person',label:'contact.sex',value:'contact.sex.'+contact.sex,translate:!0,width:4},{appliesToType:'person',label:'contact.phone',value:contact.phone,width:4},{appliesToType:'person',appliesIf:()=>!!contact.alternate_phone,label:'contact.alternate_phone',value:contact.alternate_phone,width:4},{appliesToType:'person',appliesIf:()=>!!contact.external_id,label:'External ID',value:contact.external_id,width:4},{appliesToType:'person',label:'contact.parent',value:lineage,filter:'lineage'},{appliesToType:'!person',appliesIf:()=>'forwarded_case'!==contact.contact_type,label:'Contact',value:contact.contact&&contact.contact.name,width:4},{appliesToType:'!person',appliesIf:()=>'forwarded_case'!==contact.contact_type,label:'contact.phone',value:contact.contact&&contact.contact.phone,width:4},{appliesToType:'!person',appliesIf:()=>!!contact.external_id,label:'External ID',value:contact.external_id,width:4},{appliesToType:'!person',appliesIf:()=>contact.parent&&lineage[0],label:'contact.parent',value:lineage,filter:'lineage'},{appliesToType:'!person',appliesIf:()=>'trace_case'===contact.contact_type||'forwarded_case'===contact.contact_type,label:'Case ID',value:contact.case_id,width:4},{appliesToType:'!person',appliesIf:()=>'trace_case'===contact.contact_type||'forwarded_case'===contact.contact_type,label:'Case Name',value:contact.name,width:4},{appliesToType:'!person',appliesIf:()=>'trace_case'===contact.contact_type||'forwarded_case'===contact.contact_type,label:'Case Confirmation Date',value:contact.case_confirmation_date,width:4,filter:'age'},{appliesToType:'!person',appliesIf:()=>'forwarded_case'===contact.contact_type,label:'Assigned to tracer?',value:contact.assignee?'Yes':'No'}],i=reports.filter(n);r.push({appliesToType:'person',appliesIf:()=>i.length>0,label:'Exited',value:o(i),filter:'simpleDate',translate:!0}),e.exports={fields:r,cards:[]}},function(e,t,a){const{getField:n}=a(3);e.exports={hasExited:e=>e&&'self_quarantine'===e.form&&'true'===n(e,'exited'),newestSelfQuarantineTimestamp:e=>e.reduce((e,t)=>Math.max(t.reported_date,e),-1)}},function(e,t){const a=(e,t)=>['fields',...(t||'').split('.')].reduce((e,t)=>{if(void 0!==e)return e[t]},e),n=(e,t)=>Math.floor((new Date(t)-new Date(e))/o),o=864e5,r=new Date;e.exports={DAYS_IN_YEAR:365,getField:a,differenceInDays:n,differenceInYears:(e,t)=>Math.floor(n(e,t)/365),differenceInDaysFromNow:e=>Math.floor((new Date-new Date(e))/o),MS_IN_DAY:o,now:r,sortReports:(e,t)=>e.reported_date-t.reported_date,PNC_PERIOD_DAYS:42,MAX_PREGNANCY_AGE_IN_WEEKS:44,isEligibleForTasks:e=>!e.muted&&!e.deceased,isFormArraySubmittedInWindow:(e,t,n,o,r,i)=>{var c=!1,l=0;const p=Utils.addDate(n,-o.start).getTime(),s=Utils.addDate(n,o.end+1).getTime();return e.forEach((function(e){t.includes(e.form)&&e.reported_date>=p&&e.reported_date<=s&&(i?a(e,'inputs.source_id')===i&&(c=!0,r&&l++):(c=!0,r&&l++))})),r?l>=r:c},hasSymptoms:e=>'yes'===e.contact.fever||'yes'===e.contact.difficulty_breathing||'yes'===e.contact.cough,resolveIfClosure_isReportInEventWindow:e=>(t,a,n)=>((e,t,a,n)=>{if('string'==typeof t&&(t=[t]),t)return t.some(t=>Utils.isFormSubmittedInWindow(e,t,a,n))})(t.reports,e,Utils.addDate(n,-a.start).getTime(),Utils.addDate(n,a.end+1).getTime()),calculateEventIndex:(e,t,a)=>(((e,t,a,n)=>{if(!Array.isArray(t))throw new Error('Invalid argument events. Array expected');const o=Utils.now().getTime();return t.findIndex(t=>{const r=t.dueDate?t.dueDate(t,a,n):toDate(e),i=t.dueDate?0:t.days||0,c=Utils.addDate(r,i-t.start),l=Utils.addDate(r,i+t.end+1);return o>=c.getTime()&&o<l.getTime()})})(void 0,e,t,a)+1).toString(),latestReportHasField:(e,t,a,n,o)=>{const r=Utils.getMostRecentReport(e.reports,t),i=!o||!r||!r.fields||r.reported_date>o;return r&&!!r.fields&&r.fields[a]===n&&i}}},function(e,t){function a(e){return Array.isArray(e)?e:[e]}function n(e,t,a){if(e.appliesIf(a)){var n='function'==typeof e.fields?e.fields(a):e.fields.filter((function(e){switch(typeof e.appliesIf){case'undefined':return!0;case'function':return e.appliesIf(a);default:return e.appliesIf}})).map((function(e){var t={};return o(e,t,'label'),o(e,t,'value'),o(e,t,'translate'),o(e,t,'filter'),o(e,t,'width'),o(e,t,'icon'),e.context&&(t.context={},o(e.context,t.context,'count'),o(e.context,t.context,'total')),t}));return e.modifyContext&&e.modifyContext(t,a),{label:e.label,fields:n}}function o(e,t,n){switch(typeof e[n]){case'undefined':return;case'function':t[n]=e[n](a);break;default:t[n]=e[n]}}}e.exports=function(e,t,o){var r=e.fields||[],i=e.context||{},c=e.cards||[],l=t&&(t.contact_type||t.type),p={cards:[],fields:r.filter((function(e){var t=a(e.appliesToType),n=t.filter((function(e){return e&&'!'===e.charAt(0)}));if((t.includes(l)||n.length>0&&!n.includes('!'+l))&&(!e.appliesIf||e.appliesIf()))return delete e.appliesToType,delete e.appliesIf,!0}))};return c.forEach((function(e){var t,r,c,s,d=a(e.appliesToType);if(d.includes('report')&&d.length>1)throw new Error('You cannot set appliesToType to an array which includes the type \\'report\\' and another type.');if(d.includes('report'))for(t=0;t<o.length;++t)r=o[t],!(s=r)||s.errors&&s.errors.length||(c=n(e,i,r))&&p.cards.push(c);else{if(!d.includes(l))return;(c=n(e,i))&&p.cards.push(c)}})),p.context=i,p}}])})); return ContactSummary;",
+  "tasks": {
+    "rules": "define Target { _id: null, contact: null, deleted: null, type: null, pass: null, date: null, groupBy: null }\ndefine Contact { contact: null, reports: null, tasks: null }\ndefine Task { _id: null, deleted: null, doc: null, contact: null, icon: null, date: null, readyStart: null, readyEnd: null, title: null, fields: null, resolved: null, priority: null, priorityLabel: null, reports: null, actions: null }\nrule GenerateEvents {\n  when { c: Contact } then { !function(t){var e={};function o(a){if(e[a])return e[a].exports;var n=e[a]={i:a,l:!1,exports:{}};return t[a].call(n.exports,n,n.exports,o),n.l=!0,n.exports}o.m=t,o.c=e,o.d=function(t,e,a){o.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:a})},o.r=function(t){'undefined'!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:'Module'}),Object.defineProperty(t,'__esModule',{value:!0})},o.t=function(t,e){if(1&e&&(t=o(t)),8&e)return t;if(4&e&&'object'==typeof t&&t&&t.__esModule)return t;var a=Object.create(null);if(o.r(a),Object.defineProperty(a,'default',{enumerable:!0,value:t}),2&e&&'string'!=typeof t)for(var n in t)o.d(a,n,function(e){return t[e]}.bind(null,n));return a},o.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return o.d(e,'a',e),e},o.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},o.p='',o(o.s=2)}([function(t,e){const o=(t,e)=>['fields',...(e||'').split('.')].reduce((t,e)=>{if(void 0!==t)return t[e]},t),a=(t,e)=>Math.floor((new Date(e)-new Date(t))/n),n=864e5,s=new Date;t.exports={DAYS_IN_YEAR:365,getField:o,differenceInDays:a,differenceInYears:(t,e)=>Math.floor(a(t,e)/365),differenceInDaysFromNow:t=>Math.floor((new Date-new Date(t))/n),MS_IN_DAY:n,now:s,sortReports:(t,e)=>t.reported_date-e.reported_date,PNC_PERIOD_DAYS:42,MAX_PREGNANCY_AGE_IN_WEEKS:44,isEligibleForTasks:t=>!t.muted&&!t.deceased,isFormArraySubmittedInWindow:(t,e,a,n,s,i)=>{var r=!1,c=0;const l=Utils.addDate(a,-n.start).getTime(),p=Utils.addDate(a,n.end+1).getTime();return t.forEach((function(t){e.includes(t.form)&&t.reported_date>=l&&t.reported_date<=p&&(i?o(t,'inputs.source_id')===i&&(r=!0,s&&c++):(r=!0,s&&c++))})),s?c>=s:r},hasSymptoms:t=>'yes'===t.contact.fever||'yes'===t.contact.difficulty_breathing||'yes'===t.contact.cough,resolveIfClosure_isReportInEventWindow:t=>(e,o,a)=>((t,e,o,a)=>{if('string'==typeof e&&(e=[e]),e)return e.some(e=>Utils.isFormSubmittedInWindow(t,e,o,a))})(e.reports,t,Utils.addDate(a,-o.start).getTime(),Utils.addDate(a,o.end+1).getTime()),calculateEventIndex:(t,e,o)=>(((t,e,o,a)=>{if(!Array.isArray(e))throw new Error('Invalid argument events. Array expected');const n=Utils.now().getTime();return e.findIndex(e=>{const s=e.dueDate?e.dueDate(e,o,a):toDate(t),i=e.dueDate?0:e.days||0,r=Utils.addDate(s,i-e.start),c=Utils.addDate(s,i+e.end+1);return n>=r.getTime()&&n<c.getTime()})})(void 0,t,e,o)+1).toString(),latestReportHasField:(t,e,o,a,n)=>{const s=Utils.getMostRecentReport(t.reports,e),i=!n||!s||!s.fields||s.reported_date>n;return s&&!!s.fields&&s.fields[o]===a&&i}}},function(t,e){t.exports=function(t){var e={};!function t(e,o){var a=Object.keys(e);for(var n in a){var s=a[n];switch(typeof e[s]){case'object':t(e[s],o);break;case'function':e[s]=e[s].bind(o)}}}(t,e),e.definition=function t(e){var o=Object.assign({},e),a=Object.keys(o);for(var n in a){var s=a[n];if(Array.isArray(o[s])){o[s]=o[s].slice(0);for(var i=0;i<o[s].length;++i)'object'==typeof o[s][i]&&(o[s][i]=t(o[s][i]))}else'object'==typeof o[s]&&(o[s]=t(o[s]))}return o}(t)}},function(t,e,o){var a=o(3),n=o(4),s=o(5);o(6)(n,c,Utils,Target,emit),s(a,c,Utils,Task,emit),emit('_complete',{_id:!0})},function(t,e,o){const a=o(0),{isFormArraySubmittedInWindow:n,getField:s,MS_IN_DAY:i,now:r,hasSymptoms:c,latestReportHasField:l,calculateEventIndex:p}=a;t.exports=[{icon:'icon-follow-up',name:'case-investigation-registration',title:'task.case_investigation.title',appliesTo:'contacts',appliesToType:['person'],appliesIf:t=>c(t),actions:[{form:'case_investigation'}],events:[{days:0,start:0,end:7}],resolvedIf:(t,e,o,a)=>n(t.reports,['case_investigation'],a,o,null)},{icon:'icon-follow-up',name:'self-monitored-quarantine-registration',title:'task.self_monitored_quarantine.title',appliesTo:'contacts',appliesToType:['person'],appliesIf:t=>!c(t),actions:[{form:'self_quarantine'}],events:(()=>{let t=[];for(let e=1;e<=14;e++)t.push({id:`self-monitoring-${e}`,days:e,start:0,end:0});return t})(),resolvedIf:function(t,e,o,a){return n(t.reports,['self_quarantine'],a,o,null)||l(t,'self_quarantine','has_symptoms','true')}},{icon:'icon-follow-up',name:'case-investigation-surveillance-symptomatic',title:'task.case_investigation.title',appliesTo:'reports',appliesToType:['traveller_surveillance'],appliesIf:t=>c(t),actions:[{form:'case_investigation'}],events:[{days:0,start:0,end:7}],resolvedIf:(t,e,o,a)=>n(t.reports,['case_investigation'],a,o,null,e._id)},{icon:'icon-follow-up',name:'self-monitored-quarantine-surveillance',title:'task.self_monitored_quarantine.title',appliesTo:'reports',appliesToType:['traveller_surveillance'],appliesIf:t=>!c(t),actions:[{form:'self_quarantine'}],events:(()=>{let t=[];for(let e=1;e<=14;e++)t.push({id:`self-monitoring-${e}`,days:e,start:0,end:0});return t})(),resolvedIf:(t,e,o,a)=>n(t.reports,['self_quarantine'],a,o,null,e._id)||l(t,'self_quarantine','has_symptoms','true')},{icon:'icon-follow-up',name:'self-monitored-quarantine-case-investigation',title:'task.self_monitored_quarantine.title',appliesTo:'reports',appliesToType:['lab_results'],appliesIf:(t,e)=>'negative'===e.fields.covid_test_results,actions:[{form:'self_quarantine'}],events:(()=>{let t=[];for(let e=1;e<=14;e++)t.push({id:`self-monitoring-${e}`,days:e,start:0,end:0});return t})(),resolvedIf:(t,e,o,a)=>n(t.reports,['self_quarantine'],a,o,null,e._id)},{icon:'icon-follow-up',name:'contact-tracing-follow-up',title:'task.contact_follow_up.title',appliesTo:'contacts',appliesToType:['person'],actions:[{form:'contact_follow_up',modifyContent:function(t,e){t.t_follow_up_count=p(this.definition.events,e)}}],events:(()=>{let t=[];for(let e=1;e<=14;e++)t.push({id:`contact-follow-up-${e}`,dueDate:(t,o)=>{const a=new Date(s(o.contact.date_of_last_contact)).getTime()+i*e;return new Date(a)},start:0,end:0});return t})(),resolvedIf:(t,e,o,a)=>l(t,'contact_follow_up','group_follow_up.patient_alive','no')||n(t.reports,['contact_follow_up','case_investigation'],a,o,null)},{icon:'icon-follow-up',name:'contact-tracing-follow-up-missed-escalation-day7',title:'task.contact_follow_up.title',appliesTo:'contacts',appliesToType:['person'],appliesIf:t=>(this.dueDate=new Date(new Date(s(t.contact.date_of_last_contact)).getTime()+7*i),!!t.contact.date_of_last_contact&&!n(t.reports,['contact_follow_up'],this.dueDate,{start:0,end:3},null)&&r>this.dueDate&&'health_center'===user.parent.type),actions:[{form:'contact_follow_up'}],events:[{dueDate:()=>this.dueDate,start:0,end:3}],resolvedIf:function(t,e,o,a){return n(t.reports,['contact_follow_up','case_investigation'],a,o,null)}},{icon:'icon-follow-up',name:'contact-tracing-follow-up-missed-escalation-day14',title:'task.contact_follow_up.title',appliesTo:'contacts',appliesToType:['person'],appliesIf:t=>(this.dueDate=new Date(new Date(s(t.contact.date_of_last_contact)).getTime()+14*i),!!t.contact.date_of_last_contact&&!n(t.reports,['contact_follow_up'],this.dueDate,{start:14,end:0},null)&&r>this.dueDate&&'health_center'===user.parent.type),actions:[{form:'contact_follow_up'}],events:[{dueDate:()=>this.dueDate,start:0,end:3}],resolvedIf:function(t,e,o,a){return n(t.reports,['contact_follow_up','case_investigation'],a,o,null)}},{icon:'icon-follow-up',name:'contact-follow-up-case-investigation',title:'task.case_investigation.title',appliesTo:'reports',appliesToType:['contact_follow_up'],appliesIf:(t,e)=>'true'===s(e,'has_symptoms')&&'rapid_response_office'===user.parent.contact_type,actions:[{form:'case_investigation',modifyContent:(t,e,o)=>{t.t_id=s(o,'inputs.contact._id'),t.t_name=s(o,'inputs.contact.name'),t.t_patient_age_display=s(o,'patient_age_display'),t.t_date_of_birth=s(o,'inputs.contact.date_of_birth'),t.t_sex=s(o,'inputs.contact.sex'),t.t_primary_phone=s(o,'inputs.contact.primary_phone'),t.t_date_of_last_contact=s(o,'inputs.contact.date_of_last_contact'),t.t_family_name=s(o,'inputs.contact.family_name'),t.t_given_names=s(o,'inputs.contact.given_names'),t.t_country_of_residence=s(o,'inputs.contact.country_of_residence'),t.t_phone=s(o,'inputs.contact.phone'),t.t_alternate_phone=s(o,'inputs.contact.alternate_phone'),t.t_email=s(o,'inputs.contact.email'),t.t_reside_in_kenya=s(o,'inputs.contact.reside_in_kenya'),t.t_contact_person_name=s(o,'inputs.contact.contact_person_name'),t.t_place_location=s(o,'inputs.contact.place_location'),t.t_sublocation_estate=s(o,'inputs.contact.sublocation_estate'),t.t_county=s(o,'inputs.contact.county'),t.t_subcounty=s(o,'inputs.contact.subcounty'),t.t_town=s(o,'inputs.contact.town'),t.t_postal_address=s(o,'inputs.contact.postal_address'),t.t_reported_date=s(o,'inputs.contact.reported_date'),t.t_patient_id=s(o,'inputs.contact.patient_id'),t.t_type=s(o,'inputs.contact.type'),t.t_contact_type=s(o,'inputs.contact.contact_type'),t.t_parent=s(o,'inputs.contact.parent'),t.t_arrival_mode=s(o,'inputs.contact.arrival_mode'),t.t_arrival_date=s(o,'inputs.contact.arrival_date'),t.t_airline=s(o,'inputs.contact.airline'),t.t_flight_number=s(o,'inputs.contact.flight_number'),t.t_seat_number=s(o,'inputs.contact.seat_number'),t.t_destination_city=s(o,'inputs.contact.destination_city'),t.t_national_id=s(o,'inputs.contact.national_id'),t.t_passport_number=s(o,'inputs.contact.passport_number'),t.t_alien_id=s(o,'inputs.contact.alien_id'),t.t_c_id_type=s(o,'inputs.contact.c_id_type'),t.t_id_number=s(o,'inputs.contact.id_number'),t.t_role=s(o,'inputs.contact.role')}}],contactLabel:(t,e)=>s(e,'inputs.contact.name'),events:[{days:0,start:0,end:7}],resolvedIf:(t,e,o,a)=>n(t.reports,['case_investigation'],a,o,null,e._id)}]},function(t,e,o){const a=o(0),{differenceInDaysFromNow:n}=a;t.exports=[{id:'travellers-surveilled-this-month',type:'count',icon:'icon-calendar',goal:1,translation_key:'targets.surveilled.percent',subtitle_translation_key:'targets.this_month.subtitle',appliesTo:'contacts',appliesToType:['person'],appliesIf:t=>t.contact&&(!t.contact.outbreak_case_id||!t.contact.relation_to_case),date:'reported'},{id:'travellers-contact-listing-this-month',type:'count',icon:'icon-healthcare',goal:1,translation_key:'targets.contact_listing.count',subtitle_translation_key:'targets.this_month.subtitle',appliesTo:'contacts',appliesToType:['person'],appliesIf:t=>t.contact&&(''!==t.contact.outbreak_case_id||''!==t.contact.relation_to_case),date:'reported'},{id:'travellers-referred-this-month',type:'percent',icon:'icon-healthcare',goal:100,translation_key:'targets.contact_follow_up.percent',subtitle_translation_key:'targets.this_month.subtitle',appliesTo:'contacts',appliesToType:['person'],appliesIf:t=>t.reports.some(t=>'contact_follow_up'===t.form&&n(Utils.getField(t,'date_of_last_contact'))<15),passesIf:t=>t.contact&&t.reports.some(t=>'contact_follow_up'===t.form&&'yes'===Utils.getField(t,'group_follow_up.is_available')),date:'reported'},{id:'travellers-with-symptoms',type:'percent',icon:'icon-healthcare',goal:100,translation_key:'targets.travellers_with_symptoms.percent',subtitle_translation_key:'targets.this_month.subtitle',appliesTo:'contacts',appliesToType:['person'],appliesIf:t=>t.contact&&t.reports.some(t=>'contact_follow_up'===t.form&&n(Utils.getField(t,'date_of_last_contact'))<15),passesIf:t=>t.reports.some(t=>'contact_follow_up'===t.form&&'true'===Utils.getField(t,'has_symptoms_only')),date:'reported'},{id:'travellers-without-symptoms',type:'count',icon:'icon-healthcare',goal:1,translation_key:'targets.traveller_no_symptoms.count',subtitle_translation_key:'targets.this_month.subtitle',appliesTo:'contacts',appliesToType:void 0,emitCustom:(t,e,o)=>{'person'===c.contact.type&&'false'===c.contact.has_symptoms&&(e._id=o.contact._id+'-travellers-without-symptoms',t(e));const a=o.reports.filter(t=>'traveller_surveillance'===t.form&&'false'===Utils.getField(t,'has_symptoms'));for(let o of a)e._id=o._id+'-travellers-without-symptoms',t(e);const n=o.reports.filter(t=>'laboratory_information'===t.form&&'neg'===Utils.getField(t,'lab_information.preliminary_results'));for(let o of n)e._id=o._id+'-travellers-without-symptoms',t(e)},date:'reported'},{id:'travellers-on-self-quarantine',type:'percent',icon:'icon-healthcare',goal:100,translation_key:'targets.self_quarantine.percent',subtitle_translation_key:'targets.this_month.subtitle',appliesTo:'contacts',appliesToType:['person'],appliesIf:t=>t.contact&&t.reports.some(t=>'self_quarantine'===t.form),passesIf:t=>t.reports.some(t=>'self_quarantine'===t.form&&n(Utils.getField(t.reported_date))<=3),date:'reported'},{id:'travellers-on-self-quarantine-symptomatic',type:'percent',icon:'icon-healthcare',goal:100,translation_key:'targets.self_quarantine_symptomatic.percent',subtitle_translation_key:'targets.this_month.subtitle',appliesTo:'contacts',appliesToType:['person'],appliesIf:t=>t.contact&&t.reports.some(t=>'self_quarantine'===t.form&&parseInt(Utils.getField(t,'group_follow_up.days_in_quarantine'))<15&&'false'===Utils.getField(t,'exited')),passesIf:t=>t.reports.some(t=>'self_quarantine'===t.form&&'true'===Utils.getField(t,'has_symptoms')),date:'reported'},{id:'travellers-exited',type:'count',icon:'icon-healthcare',goal:1,translation_key:'targets.self_quarantine_exited.count',subtitle_translation_key:'targets.this_month.subtitle',appliesTo:'contacts',appliesToType:['person'],appliesIf:t=>t.contact&&t.reports.some(t=>'self_quarantine'===t.form&&'true'===Utils.getField(t,'exited')),date:'reported'},{id:'travellers-identified-with-symptoms',type:'count',icon:'icon-healthcare',goal:1,translation_key:'targets.persons_identified.count',subtitle_translation_key:'targets.this_month.subtitle',appliesTo:'contacts',appliesToType:void 0,emitCustom:(t,e,o)=>{'person'===c.contact.type&&'true'===c.contact.has_symptoms&&(e._id=o.contact._id+'-travellers-identified-with-symptoms',t(e));const a=o.reports.filter(t=>('traveller_surveillance'===t.form||'self_quarantine'===t.form||'contact_follow_up'===t.form)&&'true'===Utils.getField(t,'has_symptoms'));for(let o of a)e._id=o._id+'-travellers-identified-with-symptoms',t(e)},date:'reported'},{id:'travellers-investigated',type:'percent',icon:'icon-healthcare',goal:100,translation_key:'targets.case_investigation.percent',subtitle_translation_key:'targets.this_month.subtitle',appliesTo:'contacts',appliesToType:['person'],appliesIf:t=>t.contact&&t.reports.some(t=>'case_investigation'===t.form),passesIf:t=>t.reports.some(t=>'case_investigation'===t.form&&'yes'===Utils.getField(t,'group_laboratory_information.was_specimen_collected')),date:'reported'}]},function(t,e,o){var a=o(1);function n(t,e,o,a,n,s){var i;if(t.appliesToType){var r='contact'===n.contact.type?n.contact.contact_type:n.contact.type;if(!('contacts'===t.appliesTo?-1!==t.appliesToType.indexOf(r):s&&-1!==t.appliesToType.indexOf(s.form)))return}if('scheduled_tasks'===t.appliesTo||!t.appliesIf||t.appliesIf(n,s))if('scheduled_tasks'===t.appliesTo){if(s&&t.appliesIf){if(!s.scheduled_tasks)return;for(i=0;i<s.scheduled_tasks.length;i++)t.appliesIf(n,s,i)&&l(i)}}else l();function c(t,e,o){var a;return(a='function'==typeof t.contactLabel?t.contactLabel(e,o):t.contactLabel)?{name:a}:e.contact}function l(i){var r,l,_,d,u=null;for(r=0;r<t.events.length;r++){if((l=t.events[r]).dueDate)u=l.dueDate(l,n,s,i);else if(s)u=void 0!==i?new Date(e.addDate(new Date(s.scheduled_tasks[i].due),l.days)):new Date(e.addDate(new Date(s.reported_date),l.days));else if(l.dueDate)u=l.dueDate(l,n);else{var f=n.contact&&n.contact.reported_date?new Date(n.contact.reported_date):new Date;u=new Date(e.addDate(f,l.days))}e.isTimely(u,l)&&(d={_id:(s?s._id:n.contact&&n.contact._id)+'~'+(l.id||r)+'~'+t.name,deleted:!(!(n.contact&&n.contact.deleted||s)||!s.deleted),doc:n,contact:c(t,n,s),icon:t.icon,date:u,readyStart:l.start||0,readyEnd:l.end||0,title:t.title,resolved:t.resolvedIf(n,s,l,u,i),actions:t.actions.map(p)},void 0!==i&&(d._id+='-'+i),'function'==typeof(_=t.priority)&&(_=_(n,s)),_&&(d.priority=_.level,d.priorityLabel=_.label),a('task',new o(d)))}}function p(t){var e={source:'task',source_id:!!s?s._id:n.contact&&n.contact._id,contact:n.contact};return t.modifyContent&&t.modifyContent(e,n,s),{type:'report',form:t.form,label:t.label||'Follow up',content:e}}}t.exports=function(t,e,o,s,i){if(t)for(var r,c=0;c<t.length;++c)switch(r=t[c],a(r),r.appliesTo){case'reports':case'scheduled_tasks':for(var l=0;l<e.reports.length;++l)n(r,o,s,i,e,e.reports[l]);break;case'contacts':e.contact&&n(r,o,s,i,e);break;default:throw new Error('Unrecognised task.appliesTo: '+r.appliesTo)}}},function(t,e,o){var a=o(1);function n(t,e,o,a,n,s){var i=!!s;if(n.contact){var r=n.contact.contact_type||n.contact.type,c=i?s.form:r;if(!(t.appliesToType&&t.appliesToType.indexOf(c)<0)&&(!t.appliesIf||t.appliesIf(n,s)))for(var l=i?s:n.contact,p=function(t,e,o){var a;return a='function'==typeof t.idType?t.idType(e,o):'report'===t.idType?o&&o._id:e.contact&&e.contact._id,Array.isArray(a)||(a=[a]),a}(t,n,s),_=!t.passesIf||!!t.passesIf(n,s),d=function(t,e,o,a){if('function'==typeof t.date)return t.date(o,a);if(void 0===t.date||'now'===t.date)return e.now().getTime();if('reported'===t.date)return a?a.reported_date:o.contact.reported_date;throw new Error('Unrecognised value for target.date: '+t.date)}(t,o,n,s),u=t.groupBy&&t.groupBy(n,s),f=0;f<p.length;++f){var m=new e({_id:p[f]+'~'+t.id,contact:n.contact,deleted:!!l.deleted,type:t.id,pass:_,groupBy:u,date:d});t.emitCustom?t.emitCustom(y,m,n,s):y(m)}}function y(t){a('target',t)}}t.exports=function(t,e,o,s,i){for(var r=0;r<t.length;++r){var c=t[r];switch(a(c),c.appliesTo){case'contacts':n(c,s,o,i,e);break;case'reports':for(var l=0;l<e.reports.length;++l){n(c,s,o,i,e,e.reports[l])}break;default:throw new Error('Unrecognised target.appliesTo: '+c.appliesTo)}}}}]); }\n}",
+    "targets": {
+      "enabled": true,
+      "items": [
+        {
+          "id": "travellers-surveilled-this-month",
+          "type": "count",
+          "goal": 1,
+          "translation_key": "targets.surveilled.percent",
+          "icon": "icon-calendar",
+          "subtitle_translation_key": "targets.this_month.subtitle"
+        },
+        {
+          "id": "travellers-contact-listing-this-month",
+          "type": "count",
+          "goal": 1,
+          "translation_key": "targets.contact_listing.count",
+          "icon": "icon-healthcare",
+          "subtitle_translation_key": "targets.this_month.subtitle"
+        },
+        {
+          "id": "travellers-referred-this-month",
+          "type": "percent",
+          "goal": 100,
+          "translation_key": "targets.contact_follow_up.percent",
+          "icon": "icon-healthcare",
+          "subtitle_translation_key": "targets.this_month.subtitle"
+        },
+        {
+          "id": "travellers-with-symptoms",
+          "type": "percent",
+          "goal": 100,
+          "translation_key": "targets.travellers_with_symptoms.percent",
+          "icon": "icon-healthcare",
+          "subtitle_translation_key": "targets.this_month.subtitle"
+        },
+        {
+          "id": "travellers-without-symptoms",
+          "type": "count",
+          "goal": 1,
+          "translation_key": "targets.traveller_no_symptoms.count",
+          "icon": "icon-healthcare",
+          "subtitle_translation_key": "targets.this_month.subtitle"
+        },
+        {
+          "id": "travellers-on-self-quarantine",
+          "type": "percent",
+          "goal": 100,
+          "translation_key": "targets.self_quarantine.percent",
+          "icon": "icon-healthcare",
+          "subtitle_translation_key": "targets.this_month.subtitle"
+        },
+        {
+          "id": "travellers-on-self-quarantine-symptomatic",
+          "type": "percent",
+          "goal": 100,
+          "translation_key": "targets.self_quarantine_symptomatic.percent",
+          "icon": "icon-healthcare",
+          "subtitle_translation_key": "targets.this_month.subtitle"
+        },
+        {
+          "id": "travellers-exited",
+          "type": "count",
+          "goal": 1,
+          "translation_key": "targets.self_quarantine_exited.count",
+          "icon": "icon-healthcare",
+          "subtitle_translation_key": "targets.this_month.subtitle"
+        },
+        {
+          "id": "travellers-identified-with-symptoms",
+          "type": "count",
+          "goal": 1,
+          "translation_key": "targets.persons_identified.count",
+          "icon": "icon-healthcare",
+          "subtitle_translation_key": "targets.this_month.subtitle"
+        },
+        {
+          "id": "travellers-investigated",
+          "type": "percent",
+          "goal": 100,
+          "translation_key": "targets.case_investigation.percent",
+          "icon": "icon-healthcare",
+          "subtitle_translation_key": "targets.this_month.subtitle"
+        }
+      ]
+    }
+  },
+  "transitions": {
+    "muting": true,
+    "accept_patient_reports": false,
+    "conditional_alerts": false,
+    "default_responses": false,
+    "update_sent_by": false,
+    "registration": false,
+    "update_clinics": false,
+    "update_notifications": false,
+    "update_scheduled_reports": false,
+    "update_sent_forms": false,
+    "generate_patient_id_on_people": true,
+    "death_reporting": false,
+    "mark_for_outbound": true
+  },
+  "muting": {
+    "mute_forms": [
+      "trigger_muting"
+    ],
+    "unmute_forms": [
+      "contact_follow_up",
+      "traveller_surveillance"
+    ],
+    "validations": {
+      "join_responses": true,
+      "list": []
+    },
+    "messages": [
+      {
+        "translation_key": "",
+        "event_type": "mute",
+        "recipient": "reporting_unit"
+      },
+      {
+        "translation_key": "",
+        "event_type": "unmute",
+        "recipient": "reporting_unit"
+      },
+      {
+        "translation_key": "",
+        "event_type": "already_muted",
+        "recipient": "reporting_unit"
+      },
+      {
+        "translation_key": "",
+        "event_type": "already_unmuted",
+        "recipient": "reporting_unit"
+      },
+      {
+        "translation_key": "",
+        "event_type": "contact_not_found",
+        "recipient": "reporting_unit"
+      }
+    ]
+  },
+  "replications": [
+    {
+      "fromSuffix": "user-[^\\-]+-meta",
+      "toSuffix": "users-meta",
+      "text_expression": "",
+      "cron": "0 2 * * *"
+    }
+  ],
+  "sms": {
+    "outgoing_service": "medic-gateway"
+  },
+  "outbound": {
+    "contact_listing": {
+      "relevant_to": "doc.type === 'contact' && doc.contact_type === 'trace_contact'",
+      "destination": {
+        "base_url": "https://data.kenyahmis.org:7001",
+        "auth": {
+          "type": "basic",
+          "username": "admin",
+          "password_key": "kenyaemr"
+        },
+        "path": "/openmrs/ws/rest/v1/shr/chtcontactreport"
+      },
+      "mapping": {
+        "contact": "doc",
+        "contact.parent_uuid": "doc.parent.kemr_uuid",
+        "trace": {
+          "expr": "JSON.parse(doc.trace)"
+        }
+      }
+    },
+    "case_investigation": {
+      "relevant_to": "doc.type === 'data_record' && doc.form === 'case_investigation'",
+      "destination": {
+        "base_url": "https://data.kenyahmis.org:7001",
+        "auth": {
+          "type": "basic",
+          "username": "admin",
+          "password_key": "kenyaemr"
+        },
+        "path": "/openmrs/ws/rest/v1/shr/casereport"
+      },
+      "mapping": {
+        "contact": "doc.fields.inputs.contact",
+        "report._id": "doc._id",
+        "report.from": "doc.from",
+        "report.form": "doc.form",
+        "report.reported_date": "doc.reported_date",
+        "report.patient_id": "doc.fields.inputs.contact._id",
+        "report.fields.group_reporting_info": "doc.fields.group_reporting_info",
+        "report.fields.group_patient_information": "doc.fields.group_patient_information",
+        "report.fields.group_clinical_information": "doc.fields.group_clinical_information",
+        "report.fields.group_patient_symptoms": "doc.fields.group_patient_symptoms",
+        "report.fields.group_patient_signs": "doc.fields.group_patient_signs",
+        "report.fields.group_conditions_comorbidity": "doc.fields.group_conditions_comorbidity",
+        "report.fields.group_exposure_travel_information": "doc.fields.group_exposure_travel_information",
+        "report.fields.group_laboratory_information": "doc.fields.group_laboratory_information",
+        "report.geolocation": {
+          "expr": "doc.geolocation ? doc.geolocation : undefined",
+          "optional": true
+        }
+      }
+    },
+    "contact_follow_up": {
+      "relevant_to": "doc.type === 'data_record' && doc.form === 'contact_follow_up'",
+      "destination": {
+        "base_url": "https://data.kenyahmis.org:7001",
+        "auth": {
+          "type": "basic",
+          "username": "admin",
+          "password_key": "kenyaemr"
+        },
+        "path": "/openmrs/ws/rest/v1/shr/chtcontactreport"
+      },
+      "mapping": {
+        "contact": "doc.fields.inputs.contact",
+        "contact.parent_uuid": "doc.fields.inputs.contact.parent.kemr_uuid",
+        "trace._id": "doc._id",
+        "trace.from": "doc.from",
+        "trace.patient_id": "doc.fields.inputs.contact._id",
+        "trace.date_last_contacted": "doc.fields.group_follow_up.date_last_contact",
+        "trace.follow_up_type": "doc.fields.group_follow_up.follow_up_type",
+        "trace.is_available": "doc.fields.group_follow_up.is_available",
+        "trace.needs_follow_up": "doc.fields.needs_follow_up",
+        "trace.follow_up_count": "doc.fields.follow_up_count",
+        "trace.developed_symptoms": {
+          "expr": "doc.fields.group_follow_up.developed_symptoms ? doc.fields.group_follow_up.developed_symptoms : ''"
+        },
+        "trace.symptoms": "doc.fields.r_summary.c_condition",
+        "trace.patient_alive": "doc.fields.group_follow_up.patient_alive",
+        "trace.needs_referral": "doc.fields.group_follow_up.needs_referral",
+        "trace.reported_date": "doc.reported_date",
+        "trace.fever": "doc.fields.group_follow_up.c_fever",
+        "trace.cough": {
+          "expr": "doc.fields.group_follow_up.cough ? doc.fields.group_follow_up.cough : ''"
+        },
+        "trace.difficulty_breathing": {
+          "expr": "doc.fields.group_follow_up.difficulty_breathing ? doc.fields.group_follow_up.difficulty_breathing : ''"
+        },
+        "trace.temperature": {
+          "expr": "doc.fields.group_follow_up.c_temperature === '' ? '0' : doc.fields.group_follow_up.temperature"
+        },
+        "trace.sore_throat": {
+          "expr": "doc.fields.group_follow_up.sore_throat ? doc.fields.group_follow_up.sore_throat : ''"
+        },
+        "trace.is_not_available_reason": {
+          "expr": "doc.fields.group_follow_up.is_not_available_reason ? doc.fields.group_follow_up.is_not_available_reason : ''"
+        },
+        "trace.is_not_available_reason_other": {
+          "expr": "doc.fields.group_follow_up.is_not_available_reason_other ? doc.fields.group_follow_up.is_not_available_reason_other : ''"
+        },
+        "trace.geolocation": {
+          "expr": "doc.geolocation ? doc.geolocation : undefined",
+          "optional": true
+        }
+      }
+    }
+  },
+  "registrations": [
+    {
+      "form": "case_information",
+      "events": [
+        {
+          "name": "on_create",
+          "trigger": "assign_schedule",
+          "params": "One Week Reminder, Two Weeks Reminder",
+          "bool_expr": "doc.fields.patient_id !== ''"
+        }
+      ]
+    },
+    {
+      "form": "contact_follow_up",
+      "events": [
+        {
+          "name": "on_create",
+          "trigger": "clear_schedule",
+          "params": "One Week Reminder, Two Weeks Reminder",
+          "bool_expr": ""
+        }
+      ]
+    }
+  ],
+  "schedules": [
+    {
+      "name": "One Week Reminder",
+      "translation_key": "schedule.one_week_reminder",
+      "summary": "",
+      "description": "",
+      "start_from": "reported_date",
+      "messages": [
+        {
+          "translation_key": "messages.missed_follow_up.first_week",
+          "group": 1,
+          "offset": "7 days",
+          "send_day": "",
+          "send_time": "",
+          "recipient": "subcounty"
+        }
+      ]
+    },
+    {
+      "name": "Two Weeks Reminder",
+      "translation_key": "schedule.two_weeks_reminder",
+      "summary": "",
+      "description": "",
+      "start_from": "reported_date",
+      "messages": [
+        {
+          "translation_key": "messages.missed_follow_up.second_week",
+          "group": 1,
+          "offset": "14 days",
+          "send_day": "",
+          "send_time": "",
+          "recipient": "subcounty"
+        }
+      ]
+    }
+  ],
+  "replication_depth": [
+    {
+      "role": "rapid_response_team_member",
+      "depth": 1
+    }
+  ]
+}

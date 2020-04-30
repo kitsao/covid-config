@@ -1,0 +1,8 @@
+{
+  "icon": "icon-healthcare",
+    "title": "Laboratory Information",
+    "context": {
+        "place": false,
+        "person": false
+    }
+}
